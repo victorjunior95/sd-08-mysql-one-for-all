@@ -50,7 +50,7 @@ CREATE TABLE historico_reproducoes(
     cancoes_id INT NOT NULL,
     usuario_id INT NOT NULL,
     FOREIGN KEY (cancoes_id) REFERENCES cancoes(cancoes_id),
-	FOREIGN KEY (usuario_id) REFERENCES usuario(usuario_id) 
+	  FOREIGN KEY (usuario_id) REFERENCES usuario(usuario_id)
 ) engine = InnoDB;
 
 INSERT INTO plano(nome_plano, valor)
@@ -71,8 +71,8 @@ VALUES
   ('Walter Phoenix'),
   ('Peter Strong'),
   ('Lance Day'),
-  ('Freedie Shannon');     
- 
+  ('Freedie Shannon');
+
 INSERT INTO seguindo_artista(usuario_id, artista_id)
 VALUES
   (1, 1),
@@ -90,8 +90,8 @@ VALUES
   ('Exuberant', 1),
   ('Hallowed Steam', 2),
   ('Incandescent', 3),
-  ('Temporary Culture', 4);    
-   
+  ('Temporary Culture', 4);
+
 INSERT INTO cancoes(nome_cancao, album_id)
 VALUES
   ('Soul For Us', 1),
