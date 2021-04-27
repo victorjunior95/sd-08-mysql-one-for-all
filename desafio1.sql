@@ -41,9 +41,9 @@ CREATE TABLE Cancoes (
 )  ENGINE=INNODB;
 
 CREATE TABLE Seguindo (
-    seguindo_id INT PRIMARY KEY AUTO_INCREMENT,
     user_id INT NOT NULL,
     artista_id INT NOT NULL,
+    CONSTRAINT PRIMARY KEY (user_id, artista_id),
     FOREIGN KEY (artista_id)
         REFERENCES Artista (artista_id),
     FOREIGN KEY (user_id)
@@ -51,9 +51,9 @@ CREATE TABLE Seguindo (
 )  ENGINE=INNODB;
 
 CREATE TABLE Historico (
-    historico_id INT PRIMARY KEY AUTO_INCREMENT,
     user_id INT NOT NULL,
     cancao_id INT NOT NULL,
+    CONSTRAINT PRIMARY KEY (usuario_id, cancao_id),
     FOREIGN KEY (cancao_id)
         REFERENCES Cancoes (cancao_id),
     FOREIGN KEY (user_id)
