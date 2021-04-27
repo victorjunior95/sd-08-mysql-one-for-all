@@ -6,3 +6,4 @@ FROM Artists AS a
 INNER JOIN Artist_followers AS f ON f.artist_id = a.artist_id 
 GROUP BY artista
 ORDER BY seguidores DESC, artista
+LIMIT 3;
