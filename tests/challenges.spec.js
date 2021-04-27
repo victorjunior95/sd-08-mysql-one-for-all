@@ -204,7 +204,7 @@ describe('Queries de seleção', () => {
     });
   });
 
-  describe.skip('3 - Exibe o histórico de reprodução para cada pessoa usuária', () => {
+  describe('3 - Exibe o histórico de reprodução para cada pessoa usuária', () => {
     it('Verifica o desafio 3', async () => {
       const challengeQuery = readFileSync('desafio3.sql', 'utf8');
 
