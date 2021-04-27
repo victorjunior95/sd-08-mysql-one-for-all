@@ -40,6 +40,7 @@ FOREIGN KEY (album_id) REFERENCES Albums(album_id)
 CREATE TABLE Playback_history(
 user_id INT NOT NULL,
 song_id INT NOT NULL,
+PRIMARY KEY (user_id, song_id),
 FOREIGN KEY (user_id) REFERENCES Users(user_id),
 FOREIGN KEY (song_id) REFERENCES Songs(song_id)
 )ENGINE=InnoDB;
@@ -47,6 +48,7 @@ FOREIGN KEY (song_id) REFERENCES Songs(song_id)
 CREATE TABLE Artist_followers(
 user_id INT NOT NULL,
 artist_id INT NOT NULL,
+PRIMARY KEY (user_id, artist_id),
 FOREIGN KEY (user_id) REFERENCES Users(user_id),
 FOREIGN KEY (artist_id) REFERENCES Artists(artist_id)
 )ENGINE=InnoDB;
@@ -130,3 +132,5 @@ INSERT INTO Artist_followers (user_id, artist_id) VALUES
 -- Error Code: 1824. Failed to open the referenced table 'artists'
 -- Error Code: 1452. Cannot add or update a child row: a foreign key constraint fails (`SpotifyClone`.`Playback_history`, CONSTRAINT `Playback_history_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `Users` (`user_id`))
 -- Error Code: 1054. Unknown column 'Sweetie, Let's Go Wild' in 'field list'
+-- estava tendo erro em composed primary key, testarei essa solução proposta em 
+-- https://stackoverflow.com/questions/1110349/how-can-i-define-a-composite-primary-key-in-sql
