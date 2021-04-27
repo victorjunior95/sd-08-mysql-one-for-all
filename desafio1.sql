@@ -5,15 +5,17 @@ USE SpotifyClone;
 CREATE TABLE usuario(
     usuario_id INT PRIMARY KEY auto_increment,
     nome VARCHAR(20) NOT NULL,
-    idade INT NOT NULL
+    idade INT NOT NULL,
+    plano_id INT NOT NULL,
+    FOREIGN KEY (plano_id) REFERENCES plano (plano_id)
 ) engine = InnoDB;
 
-INSERT INTO usuario (nome, idade)
+INSERT INTO usuario (nome, idade, plano_id)
 VALUES
-  ('Thati', 23),
-  ('Cintia', 35),
-  ('Bill', 20),
-  ('Roger', 45);
+  ('Thati', 23, 1),
+  ('Cintia', 35, 2),
+  ('Bill', 20, 3),
+  ('Roger', 45, 1);
 
 CREATE TABLE plano(
     plano_id INT PRIMARY KEY auto_increment,
