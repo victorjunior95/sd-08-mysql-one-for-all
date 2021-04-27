@@ -11,5 +11,4 @@ END $$
 DELIMITER ;
 
 DELETE FROM SpotifyClone.Usuario WHERE usuario = 'Thati';
-
 SET SQL_SAFE_UPDATES = 0;
