@@ -59,7 +59,7 @@ VALUES
 CREATE TABLE cancoes(
     cancao_id INT PRIMARY KEY auto_increment,
     nome_cancao VARCHAR(40) NOT NULL,
-	album_id INT NOT NULL,
+    album_id INT NOT NULL,
     FOREIGN KEY (album_id) REFERENCES album (album_id)
 ) engine = InnoDB;
 
