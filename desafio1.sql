@@ -62,7 +62,7 @@ VALUES
 INSERT INTO Usuarios (nome_usuario, idade, plano_id)
 VALUES
   ('Thati', 23, 1),
-  ('Cinthia', 35, 2),
+  ('Cintia', 35, 2),
   ('Bill', 20, 3),
   ('Roger', 45, 1);
 
@@ -71,7 +71,7 @@ VALUES
   ('Walter Phoenix'),
   ('Peter Strong'),
   ('Lance Day'),
-  ('Freddie Shannon');
+  ('Freedie Shannon');
   
 INSERT INTO Albuns (nome_album, artista_id)
 VALUES
@@ -106,7 +106,7 @@ INSERT INTO HistoricoReproducoes (usuario_id, musica_id)
 VALUES
   (1, 1),
   (1, 6),
-  (1, 4),
+  (1, 14),
   (1, 16),
   (2, 13),
   (2, 17),
