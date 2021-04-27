@@ -128,3 +128,7 @@ VALUES
   (3, 2),
   (3, 1),
   (4, 4);
+
+-- DROP DATABASE SpotifyClone;
+-- SELECT * FROM SpotifyClone.historico_de_reproducoes;
+-- DROP TABLE SpotifyClone.historico_de_reproducoes;
