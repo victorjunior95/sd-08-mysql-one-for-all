@@ -85,5 +85,3 @@ INSERT INTO historico_de_reproducoes (usuario_id, cancao_id) VALUES
 
 INSERT INTO seguidores (usuario_id, artista_id) VALUES 
 (1,1),(1,4),(2,1),(2,3),(3,1),(3,2),(4,4);
-
-
