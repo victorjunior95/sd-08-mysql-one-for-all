@@ -48,8 +48,8 @@ CREATE TABLE reproducoes(
 ) ENGINE=InnoDB;
 
 CREATE TABLE follows(
-  usuario_id, INT NOT NULL,
-  artista_id, INT NOT NULL,
+  usuario_id INT NOT NULL,
+  artista_id INT NOT NULL,
   CONSTRAINT PRIMARY KEY(usuario_id, artista_id),
   FOREIGN KEY (usuario_id) REFERENCES usuarios(usuario_id),
   FOREIGN KEY (artista_id) REFERENCES artistas(artista_id)
@@ -77,7 +77,7 @@ VALUES
   (3, 'Lance Day'),
   (4, 'Freedie Shannon');
 
-INSERT INTO albuns (album_id, title, artista_id)
+INSERT INTO albuns (album_id, titulo, artista_id)
 VALUES
   (1, 'Envious', 1),
   (2, 'Exuberant', 1),
@@ -87,7 +87,7 @@ VALUES
 
 INSERT INTO cancoes (cancao_id, titulo, album_id)
 VALUES
-  (1, 'Soul For Us', 1);
+  (1, 'Soul For Us', 1),
   (2, 'Reflections Of Magic', 1),
   (3, 'Dance With Her Own', 1),
   (4, 'Troubles Of My Inner Fire', 2),
