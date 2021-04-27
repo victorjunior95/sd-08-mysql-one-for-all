@@ -68,7 +68,7 @@ INSERT INTO users(user_id, user_name, age, plan_id) VALUES('4', 'Roger', '45', '
 
 INSERT INTO all_artist(artist_id, artist_name) VALUES('1', 'Freedie Shannon');
 INSERT INTO all_artist(artist_id, artist_name) VALUES('2', 'Lance Day');
-INSERT INTO all_artist(artist_id, artist_name) VALUES('3', 'Peter Stroing');
+INSERT INTO all_artist(artist_id, artist_name) VALUES('3', 'Peter Strong');
 INSERT INTO all_artist(artist_id, artist_name) VALUES('4', 'Walter Phoenix');
 
 INSERT INTO all_album (album_id, album_title, artist_id) VALUES('1', 'Envious', '4');
