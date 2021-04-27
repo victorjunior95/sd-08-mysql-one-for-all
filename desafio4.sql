@@ -1,0 +1,8 @@
+SELECT
+  a.nome AS artista,
+  COUNT(*) AS seguidores
+FROM SpotifyClone.artistas AS a
+INNER JOIN SpotifyClone.follows AS f
+ON a.artista_id = f.artista_id
+GROUP BY artista
+ORDER BY seguidores DESC LIMIT 3;
