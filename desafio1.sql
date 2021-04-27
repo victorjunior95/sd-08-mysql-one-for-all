@@ -84,8 +84,8 @@ CREATE TABLE historico_de_reproducoes(
     usuario_id INT,
     cancao_id INT,
     PRIMARY KEY (usuario_id, cancao_id),
-    FOREIGN KEY (usuario_id) REFERENCES usuario(usuario_id),
-	FOREIGN KEY (cancao_id) REFERENCES cancoes(cancao_id)
+	FOREIGN KEY (usuario_id) REFERENCES usuario (usuario_id),
+	FOREIGN KEY (cancao_id) REFERENCES cancoes (cancao_id)
 ) engine = InnoDB;
 
 INSERT INTO historico_de_reproducoes (usuario_id, cancao_id)
@@ -118,8 +118,8 @@ CREATE TABLE seguindo_artista(
     usuario_id INT,
     artista_id INT,
     primary key (usuario_id, artista_id),
-	FOREIGN KEY (usuario_id) REFERENCES usuario(usuario_id),
-	FOREIGN KEY (artista_id) REFERENCES artista(artista_id)
+	FOREIGN KEY (usuario_id) REFERENCES usuario (usuario_id),
+	FOREIGN KEY (artista_id) REFERENCES artista (artista_id)
 ) engine = InnoDB;
 
 INSERT INTO seguindo_artista (usuario_id, artista_id)
