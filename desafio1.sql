@@ -4,18 +4,6 @@ CREATE DATABASE SpotifyClone;
 
 USE SpotifyClone;
 
-CREATE TABLE USUARIOS(
-  USUARIO_ID INT PRIMARY KEY AUTO_INCREMENT,
-  NOME VARCHAR(20),
-  IDADE SMALLINT 
-) ENGINE="InnoDB";
-
-INSERT INTO USUARIOS (NOME, IDADE) VALUES
-('Thati', 23),
-('Cintia', 35),
-('Bill', 20),
-('Roger', 45);
-
 CREATE TABLE PLANOS(
   PLANO_ID INT PRIMARY KEY AUTO_INCREMENT,
   NOME_PLANO VARCHAR(20),
@@ -27,112 +15,72 @@ INSERT INTO PLANOS (NOME_PLANO, VALOR_PLANO) VALUES
 ('familiar', 7.99),
 ('universitário', 5.99);
 
+CREATE TABLE USUARIOS(
+  USUARIO_ID INT PRIMARY KEY AUTO_INCREMENT,
+  NOME VARCHAR(20),
+  IDADE SMALLINT,
+  PLANO_ID INT,
+  FOREIGN KEY (PLANO_ID) REFERENCES PLANOS(PLANO_ID)
+) ENGINE="InnoDB";
+
+INSERT INTO USUARIOS (NOME, IDADE, PLANO_ID) VALUES
+('Thati', 23, 1),
+('Cintia', 35, 2),
+('Bill', 20, 3),
+('Roger', 45, 1);
+
+
 CREATE TABLE ARTISTAS(
   ARTISTA_ID INT PRIMARY KEY AUTO_INCREMENT,
-  NOME_ARTISTA VARCHAR(20),
-  SOBRENOME_ARTISTA VARCHAR(20)
+  NOME_ARTISTA VARCHAR(50)  
 );
 
-INSERT INTO ARTISTAS (NOME_ARTISTA, SOBRENOME_ARTISTA) VALUES
-('Walter', 'Phoenix'),
-('Peter', 'Strong'),
-('Lance', 'Day'),
-('Freedie', 'Shannon');
+INSERT INTO ARTISTAS (NOME_ARTISTA) VALUES
+('Walter Phoenix'),
+('Peter Strong'),
+('Lance Day'),
+('Freedie Shannon');
 
 CREATE TABLE ALBUNS(
   ALBUM_ID INT PRIMARY KEY AUTO_INCREMENT,
-  NOME_ALBUM VARCHAR(20)
+  NOME_ALBUM VARCHAR(20),
+  ARTISTA_ID INT,
+  FOREIGN KEY (ARTISTA_ID) REFERENCES ARTISTAS(ARTISTA_ID)
 ) ENGINE="InnoDB";
 
-INSERT INTO ALBUNS (NOME_ALBUM) VALUES
-('Envious'),
-('Exuberant'),
-('Hallowed Steam'),
-('Incandescent'),
-('Temporary Culture');
+INSERT INTO ALBUNS (NOME_ALBUM, ARTISTA_ID) VALUES
+('Envious', 1),
+('Exuberant', 1),
+('Hallowed Steam', 2),
+('Incandescent', 3),
+('Temporary Culture', 4);
 
 CREATE TABLE CANCOES(
   CANCAO_ID INT PRIMARY KEY AUTO_INCREMENT,
-  NOME_CANCAO VARCHAR(30)
-) ENGINE="InnoDB";
-
-INSERT INTO CANCOES (NOME_CANCAO) VALUES
-('Soul For Us'),
-('Reflections Of Magic'),
-('Dance With Her Own'),
-('Troubles Of My Inner Fire'),
-('Time Fireworks'),
-('Magic Circus'),
-('Honey, So Do I'),
-("Sweetie, Let's Go Wild"),
-('She Knows'),
-('Fantasy For Me'),
-('Celebration Of More'),
-('Rock His Everything'),
-('Home Forever'),
-('Diamond Power'),
-("Honey, Let's Be Silly"),
-('Thang Of Thunder'),
-('Words Of Her Life'),
-('Without My Streets');
-
-CREATE TABLE USUARIO_PLANO(
-  USUARIO_ID INT,
-  PLANO_ID INT,
-  FOREIGN KEY (USUARIO_ID) REFERENCES USUARIOS(USUARIO_ID),
-  FOREIGN KEY (PLANO_ID) REFERENCES PLANOS(PLANO_ID),
-  PRIMARY KEY(USUARIO_ID, PLANO_ID)
-) ENGINE="InnoDB";
-
-INSERT INTO USUARIO_PLANO (USUARIO_ID, PLANO_ID) VALUES
-(1,1),
-(2,2),
-(3,3),
-(4,1);
-
-CREATE TABLE ALBUM_CANCOES(
+  NOME_CANCAO VARCHAR(30),
   ALBUM_ID INT,
-  CANCAO_ID INT,
-  FOREIGN KEY (ALBUM_ID) REFERENCES ALBUNS(ALBUM_ID),
-  FOREIGN KEY (CANCAO_ID) REFERENCES CANCOES(CANCAO_ID),
-  PRIMARY KEY (ALBUM_ID, CANCAO_ID)
+  FOREIGN KEY (ALBUM_ID) REFERENCES ALBUNS(ALBUM_ID)
 ) ENGINE="InnoDB";
 
-INSERT INTO ALBUM_CANCOES (ALBUM_ID, CANCAO_ID) VALUES
-(1,1),
-(1,2),
-(1,3),
-(2,4),
-(2,5),
-(3,6),
-(3,7),
-(3,8),
-(3,9),
-(4,10),
-(4,11),
-(4,12),
-(4,13),
-(4,14),
-(4,15),
-(5,16),
-(5,17),
-(5,18);
-
-CREATE TABLE ALBUM_ARTISTA(
-  ALBUM_ID INT,
-  ARTISTA_ID INT,
-  FOREIGN KEY (ALBUM_ID) REFERENCES ALBUNS(ALBUM_ID),
-  FOREIGN KEY (ARTISTA_ID) REFERENCES ARTISTAS(ARTISTA_ID),
-  PRIMARY KEY (ALBUM_ID, ARTISTA_ID)
-) ENGINE="InnoDB";
-
-INSERT INTO ALBUM_ARTISTA (ALBUM_ID, ARTISTA_ID) VALUES
-(1,1),
-(2,1),
-(3,2),
-(4,3),
-(5,4);
-
+INSERT INTO CANCOES (NOME_CANCAO, ALBUM_ID) VALUES
+('Soul For Us', 1),
+('Reflections Of Magic', 1),
+('Dance With Her Own', 1),
+('Troubles Of My Inner Fire', 2),
+('Time Fireworks', 2),
+('Magic Circus', 3),
+('Honey, So Do I', 3),
+("Sweetie, Let's Go Wild", 3),
+('She Knows', 3),
+('Fantasy For Me', 4),
+('Celebration Of More', 4),
+('Rock His Everything', 4),
+('Home Forever', 4),
+('Diamond Power', 4),
+("Honey, Let's Be Silly", 4),
+('Thang Of Thunder', 5),
+('Words Of Her Life', 5),
+('Without My Streets', 5);
 CREATE TABLE USUARIO_CANCOES(
   USUARIO_ID INT,
   CANCAO_ID INT,
