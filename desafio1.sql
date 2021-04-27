@@ -108,13 +108,13 @@ INSERT INTO all_songs (song_id, song_title, artist_id, album_id) VALUES('18', 'D
 INSERT INTO history_songs(user_id, played_song, song_id) VALUES('1', 'Soul For Us', '16');
 INSERT INTO history_songs(user_id, played_song, song_id) VALUES('1', 'Magic Circus', '10');
 INSERT INTO history_songs(user_id, played_song, song_id) VALUES('1', 'Diamond Power', '8');
-INSERT INTO history_songs(user_id, played_song, song_id) VALUES('1', 'Thang of Thunder', '1');
+INSERT INTO history_songs(user_id, played_song, song_id) VALUES('1', 'Thang Of Thunder', '1');
 INSERT INTO history_songs(user_id, played_song, song_id) VALUES('2', 'Home Forever', '7');
-INSERT INTO history_songs(user_id, played_song, song_id) VALUES('2', 'Words of Her Life', '2');
-INSERT INTO history_songs(user_id, played_song, song_id) VALUES('2', 'Reflections of Magic', '17');
+INSERT INTO history_songs(user_id, played_song, song_id) VALUES('2', 'Words Of Her Life', '2');
+INSERT INTO history_songs(user_id, played_song, song_id) VALUES('2', 'Reflections Of Magic', '17');
 INSERT INTO history_songs(user_id, played_song, song_id) VALUES('2', "Honey, Let's Be Silly", '9');
 INSERT INTO history_songs(user_id, played_song, song_id) VALUES('3', 'Troubles Of My Inner Fire', '14');
-INSERT INTO history_songs(user_id, played_song, song_id) VALUES('3', 'Thang of Thunder', '1');
+INSERT INTO history_songs(user_id, played_song, song_id) VALUES('3', 'Thang Of Thunder', '1');
 INSERT INTO history_songs(user_id, played_song, song_id) VALUES('3', 'Magic Circus', '10');
 INSERT INTO history_songs(user_id, played_song, song_id) VALUES('4', 'Dance With Her Own', '18');
 INSERT INTO history_songs(user_id, played_song, song_id) VALUES('4', 'Without My Streets', '3');
