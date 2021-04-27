@@ -122,4 +122,3 @@ INSERT INTO reproductions_history (user_id, song_id) VALUES
 (4, 3),
 (4, 18),
 (4, 11);
-
