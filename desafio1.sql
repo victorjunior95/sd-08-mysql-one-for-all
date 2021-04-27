@@ -21,6 +21,8 @@ artista_id INT PRIMARY KEY AUTO_INCREMENT,
 artista VARCHAR(100) NOT NULL
 ) ENGINE=InnoDB;
 
+INSERT INT
+
 CREATE TABLE albuns_musicas_artistas(
 musica_id INT NOT NULL,
 artista_id INT NOT NULL,
@@ -57,4 +59,3 @@ musica_id INT NOT NULL,
 FOREIGN KEY(usuario_id) REFERENCES usuarios(usuario_id),
 FOREIGN KEY(musica_id) REFERENCES musicas(musica_id)
 ) ENGINE=InnoDB;
- 
