@@ -53,7 +53,7 @@ CREATE TABLE Seguindo (
 CREATE TABLE Historico (
     user_id INT NOT NULL,
     cancao_id INT NOT NULL,
-    CONSTRAINT PRIMARY KEY (usuario_id, cancao_id),
+    CONSTRAINT PRIMARY KEY (user_id, cancao_id),
     FOREIGN KEY (cancao_id)
         REFERENCES Cancoes (cancao_id),
     FOREIGN KEY (user_id)
