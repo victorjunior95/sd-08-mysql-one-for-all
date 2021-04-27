@@ -1,6 +1,5 @@
 node_modules/
-*.mwb
-*.bak
+# DataBaseModel/
 
 # VSCode repo settings
 .vscode
