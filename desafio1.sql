@@ -42,7 +42,7 @@ CREATE TABLE HistoricoReproducoes(
   musica_id INT,
   FOREIGN KEY (usuario_id) REFERENCES Usuarios (usuario_id),
   FOREIGN KEY (musica_id) REFERENCES Musicas (musica_id),
-  PRIMARY KEY (usuario_id, musica_id)
+  PRIMARY KEY (usuario_id, musica_id) #https://qastack.com.br/programming/5835978/how-to-properly-create-composite-primary-keys-mysql
 ) engine = InnoDB;
 
 CREATE TABLE ListaSeguidores(
