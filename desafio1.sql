@@ -26,7 +26,7 @@ VALUES
   ('gratuito', 0),
   ('familiar', 7.99),
   ('universitário', 5.99);
-   
+
 CREATE TABLE album(
     album_id INT PRIMARY KEY auto_increment,
     album VARCHAR(30) NOT NULL
@@ -126,4 +126,3 @@ VALUES
   (3, 2),
   (3, 1),
   (4, 4);
-  
