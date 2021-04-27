@@ -7,4 +7,4 @@ CREATE VIEW historico_reproducao_usuarios AS
         SpotifyClone.Historico h ON h.user_id = u.user_id
             LEFT JOIN
         SpotifyClone.Cancoes c ON c.cancao_id = h.cancao_id
-    ORDER BY usuario , nome;
+    ORDER BY usuario, nome;
