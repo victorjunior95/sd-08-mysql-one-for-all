@@ -31,14 +31,14 @@ CREATE TABLE albums(
 ) engine = InnoDB;
 
 CREATE TABLE songs(
-	song_id INT PRIMARY KEY AUTO_INCREMENT,
-    song_name VARCHAR(45) NOT NULL,
-    album_id INT NOT NULL,
-    FOREIGN KEY(album_id) REFERENCES albums(album_id)
+  song_id INT PRIMARY KEY AUTO_INCREMENT,
+  song_name VARCHAR(45) NOT NULL,
+  album_id INT NOT NULL,
+  FOREIGN KEY(album_id) REFERENCES albums(album_id)
 ) engine = InnoDB;
 
 CREATE TABLE listening_history(
-	song_id INT NOT NULL,
+  song_id INT NOT NULL,
   user_id INT NOT NULL,
   FOREIGN KEY(song_id) REFERENCES songs(song_id),
   FOREIGN KEY(user_id) REFERENCES users(user_id),
