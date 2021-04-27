@@ -7,7 +7,7 @@ USE SpotifyClone;
 CREATE TABLE Planos(
   plano_id INT PRIMARY KEY AUTO_INCREMENT,
   nome_plano VARCHAR(50),
-  valor_plano DOUBLE
+  valor_plano DECIMAL(10,2) #https://imasters.com.br/data/tipos-de-dados-do-mysql-50#:~:text=Tipos%20de%20Dados%20Suportados%20Pelo%20MySQL,-O%20MySQL%20suporta&text=S%C3%A3o%20eles%3A%20BIT%2C%20TINYINT%2C,cada%20lado%2C%20precis%C3%A3o%20e%20escala.
 ) engine = InnoDB;
 
 CREATE TABLE Usuarios(
