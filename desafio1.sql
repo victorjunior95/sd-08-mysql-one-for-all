@@ -31,9 +31,10 @@ CREATE TABLE albuns(
 ) engine = InnoDB;
 
 CREATE TABLE seguindo(
-    seguindo_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    seguindo_id INT NOT NULL AUTO_INCREMENT,
     usuario_id INT NOT NULL,
     artista_id INT NOT NULL,
+    PRIMARY KEY (seguindo_id, usuario_id, artista_id),
     FOREIGN KEY (usuario_id) REFERENCES usuarios(usuario_id),
     FOREIGN KEY (artista_id) REFERENCES artistas(artista_id)
 ) engine = InnoDB;
@@ -46,9 +47,10 @@ CREATE TABLE musicas(
 ) engine = InnoDB;
 
 CREATE TABLE reproducoes(
-    reproducoes_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    reproducoes_id INT NOT NULL AUTO_INCREMENT,
     musica_id INT NOT NULL,
     usuario_id INT NOT NULL,
+    PRIMARY KEY (reproducoes_id, musica_id, usuario_id),
     FOREIGN KEY (musica_id) REFERENCES musicas(musica_id),
     FOREIGN KEY (usuario_id) REFERENCES usuarios(usuario_id)
 ) engine = InnoDB;
