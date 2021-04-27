@@ -24,11 +24,11 @@ CREATE TABLE artista(
 ) engine = InnoDB;
 
 CREATE TABLE seguindo_artista(
-  seguindo_id INT PRIMARY KEY AUTO_INCREMENT,
   usuario_id INT NOT NULL,
   artista_id INT NOT NULL,
   FOREIGN KEY (usuario_id) REFERENCES usuario(usuario_id),
-  FOREIGN KEY (artista_id) REFERENCES artista(artista_id)
+  FOREIGN KEY (artista_id) REFERENCES artista(artista_id),
+  PRIMARY KEY (usuario_id, artista_id)
 ) engine = InnoDB;
 
 CREATE TABLE album(
@@ -46,11 +46,11 @@ CREATE TABLE cancoes(
 ) engine = InnoDB;
 
 CREATE TABLE historico_reproducoes(
-  historico_id INT PRIMARY KEY AUTO_INCREMENT,
   cancoes_id INT NOT NULL,
   usuario_id INT NOT NULL,
   FOREIGN KEY (cancoes_id) REFERENCES cancoes(cancoes_id),
-  FOREIGN KEY (usuario_id) REFERENCES usuario(usuario_id)
+  FOREIGN KEY (usuario_id) REFERENCES usuario(usuario_id),
+  PRIMARY KEY (cancoes_id, usuario_id)
 ) engine = InnoDB;
 
 INSERT INTO plano(nome_plano, valor)
