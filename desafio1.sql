@@ -51,13 +51,19 @@ CREATE TABLE `cancoes` (
 CREATE TABLE `historico_de_reproducoes` (
   `usuario_id` int NOT NULL,
   `cancao_id` int NOT NULL,
-  PRIMARY KEY (`usuario_id`,`cancao_id`)
+  PRIMARY KEY (`usuario_id`,`cancao_id`),
+  KEY `fk_historico_de_reproducoes_2_idx` (`cancao_id`),
+  CONSTRAINT `fk_historico_de_reproducoes_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`usuario_id`),
+  CONSTRAINT `fk_historico_de_reproducoes_2` FOREIGN KEY (`cancao_id`) REFERENCES `cancoes` (`cancao_id`)
 ) ENGINE=InnoDB;
 
 CREATE TABLE `seguidores` (
   `usuario_id` int NOT NULL,
   `artista_id` int NOT NULL,
-  PRIMARY KEY (`usuario_id`,`artista_id`)
+  PRIMARY KEY (`usuario_id`,`artista_id`),
+  KEY `fk_seguidores_2_idx` (`artista_id`),
+  CONSTRAINT `fk_seguidores_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`usuario_id`),
+  CONSTRAINT `fk_seguidores_2` FOREIGN KEY (`artista_id`) REFERENCES `artistas` (`artista_id`)
 ) ENGINE=InnoDB;
 
 INSERT INTO planos (plano, valor_plano)VALUES 
