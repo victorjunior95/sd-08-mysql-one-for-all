@@ -8,8 +8,8 @@ CREATE TABLE plano (
 `tipo_plano` VARCHAR(45) NOT NULL,
 `valor_plano` FLOAT NOT NULL,
 PRIMARY KEY (`id`),
-UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE,
-UNIQUE INDEX `tipo_plano_UNIQUE` (`tipo_plano` ASC) VISIBLE)
+UNIQUE INDEX `id_UNIQUE` (`id`) ,
+UNIQUE INDEX `tipo_plano_UNIQUE` (`tipo_plano`))
 ENGINE = InnoDB;
 
 INSERT INTO plano
@@ -24,8 +24,8 @@ CREATE TABLE usuario (
 `idade` INT NOT NULL,
 `plano_id` INT NOT NULL,
 PRIMARY KEY (`id`),
-UNIQUE INDEX `idusuario_UNIQUE` (`id` ASC) VISIBLE,
-INDEX `fk_usuario_plano_idx` (`plano_id` ASC) VISIBLE,
+UNIQUE INDEX `idusuario_UNIQUE` (`id`) ,
+INDEX `fk_usuario_plano_idx` (`plano_id`) ,
 CONSTRAINT `fk_usuario_plano`
 FOREIGN KEY (`plano_id`)
 REFERENCES `SpotifyClone`.`plano` (`id`)
@@ -44,8 +44,8 @@ CREATE TABLE artista (
 id INT NOT NULL AUTO_INCREMENT,
 nome_artista VARCHAR(45) NOT NULL,
 PRIMARY KEY (`id`),
-UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE,
-UNIQUE INDEX `nome_artista_UNIQUE` (`nome_artista` ASC) VISIBLE)
+UNIQUE INDEX `id_UNIQUE` (`id`),
+UNIQUE INDEX `nome_artista_UNIQUE` (`nome_artista`))
 ENGINE = InnoDB;
 
 INSERT INTO artista
@@ -60,9 +60,9 @@ CREATE TABLE album (
 `album_nome` VARCHAR(45) NOT NULL,
 `artista_id` INT NOT NULL,
 PRIMARY KEY (`id`),
-UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE,
-UNIQUE INDEX `algum_UNIQUE` (`album_nome` ASC) VISIBLE,
-INDEX `fk_album_artista1_idx` (`artista_id` ASC) VISIBLE,
+UNIQUE INDEX `id_UNIQUE` (`id`),
+UNIQUE INDEX `algum_UNIQUE` (`album_nome`),
+INDEX `fk_album_artista1_idx` (`artista_id`),
 CONSTRAINT `fk_album_artista1`
 FOREIGN KEY (`artista_id`)
 REFERENCES `SpotifyClone`.`artista` (`id`)
@@ -82,8 +82,8 @@ CREATE TABLE usuario_artista (
 `usuario_id` INT NOT NULL,
 `artista_id` INT NOT NULL,
 PRIMARY KEY (`usuario_id`, `artista_id`),
-INDEX `fk_usuario_has_artista_artista1_idx` (`artista_id` ASC) VISIBLE,
-INDEX `fk_usuario_has_artista_usuario1_idx` (`usuario_id` ASC) VISIBLE,
+INDEX `fk_usuario_has_artista_artista1_idx` (`artista_id`),
+INDEX `fk_usuario_has_artista_usuario1_idx` (`usuario_id`),
 CONSTRAINT `fk_usuario_has_artista_usuario1`
 FOREIGN KEY (`usuario_id`)
 REFERENCES `SpotifyClone`.`usuario` (`id`)
