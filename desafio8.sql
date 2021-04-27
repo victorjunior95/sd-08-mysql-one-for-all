@@ -6,7 +6,7 @@ FOR EACH ROW
 BEGIN
 DELETE FROM SpotifyClone.historico_de_reproducao 
 WHERE 
-	usuario_id = OLD.usuario_id;
+	  usuario_id = OLD.usuario_id;
 DELETE FROM SpotifyClone.seguindo_artista 
 WHERE
     usuario_id = OLD.usuario_id;
