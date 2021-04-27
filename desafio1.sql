@@ -5,7 +5,7 @@ CREATE DATABASE SpotifyClone;
 USE SpotifyClone;
 
 CREATE TABLE plano(
-	id_plano INT PRIMARY KEY,
+id_plano INT PRIMARY KEY,
   plano VARCHAR(50),
   valor_plano DOUBLE
 ) engine=InnoDB;
@@ -13,7 +13,7 @@ CREATE TABLE plano(
 INSERT INTO plano VALUES (1, 'gratuito', 0), (2, 'familiar', 7.99), (3, 'universitário', 5.99);
 
 CREATE TABLE usuario(
-	id_usuario INT PRIMARY KEY,
+id_usuario INT PRIMARY KEY,
   nome VARCHAR(50),
   idade INT,
   id_plano INT,
