@@ -8,5 +8,5 @@ CREATE VIEW perfil_artistas AS
   ON art.artista_id = alb.artista_id
   INNER JOIN SpotifyClone.ListaSeguidores AS ls
   ON art.artista_id = ls.artista_id
-  GROUP BY alb.nome_album, art.nome_artista
+  GROUP BY alb.nome_album, art.nome_artista # https://pt.stackoverflow.com/questions/164614/mysql-retornando-erro-de-group-by-ap%C3%B3s-atualiza%C3%A7%C3%A3o-para-vers%C3%A3o-5-7/164618
   ORDER BY `seguidores` DESC, `artista`, `album`;
