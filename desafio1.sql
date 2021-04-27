@@ -61,9 +61,10 @@ VALUES
 ('Temporary Culture', 4);
 
 CREATE TABLE seguindo_artista (
-    seguindo_artista_id INT PRIMARY KEY AUTO_INCREMENT,
+    seguindo_artista_id INT AUTO_INCREMENT,
     usuario_id INT NOT NULL,
     artista_id INT NOT NULL,
+    PRIMARY KEY (seguindo_artista_id, usuario_id, artista_id),
     FOREIGN KEY (usuario_id)
         REFERENCES usuario (usuario_id),
     FOREIGN KEY (artista_id)
@@ -111,9 +112,10 @@ VALUES
 ("Without My Streets", 5);
 
 CREATE TABLE historico_de_reproducao (
-    historico_id INT PRIMARY KEY AUTO_INCREMENT,
+    historico_id INT AUTO_INCREMENT,
     usuario_id INT NOT NULL,
     cancao_id INT NOT NULL,
+    PRIMARY KEY (historico_id, usuario_id, cancao_id),
     FOREIGN KEY (usuario_id)
         REFERENCES usuario (usuario_id),
     FOREIGN KEY (cancao_id)
