@@ -74,11 +74,11 @@ VALUES
     
 INSERT INTO albuns (album_id, album, artista_id)
 VALUES
-	(1,	'Envious', 1),
-	(2,	'Exuberant', 1),
-	(3,	'Hallowed Steam', 2),
-    (4,	'Incandescent', 3),
-    (5,	'Temporary Culture', 4);
+(1,	'Envious', 1),
+(2,	'Exuberant', 1),
+(3,	'Hallowed Steam', 2),
+(4,	'Incandescent', 3),
+(5,	'Temporary Culture', 4);
 
 INSERT INTO cancoes (cancao_id, nome, album_id, artista_id)
 VALUES
