@@ -7,3 +7,4 @@ CREATE VIEW top_2_hits_do_momento AS
   ON c.cancao_id = r.cancao_id
   GROUP BY cancoes
   ORDER BY reproducoes DESC, cancoes LIMIT 2;
+
