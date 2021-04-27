@@ -3,7 +3,7 @@ DROP DATABASE IF EXISTS SpotifyClone;
 CREATE SCHEMA IF NOT EXISTS `SpotifyClone` ;
 USE `SpotifyClone` ;
 
-CREATE TABLE IF NOT EXISTS `SpotifyClone.plano` (
+CREATE TABLE SpotifyClone.plano (
 `id` INT NOT NULL AUTO_INCREMENT,
 `tipo_plano` VARCHAR(45) NOT NULL,
 `valor_plano` FLOAT NOT NULL,
@@ -18,7 +18,7 @@ VALUES("gratuito", 0),
 ("familiar", 7.99),
 ("universitário", 5.99);
 
-CREATE TABLE IF NOT EXISTS `SpotifyClone`.`usuario` (
+CREATE TABLE SpotifyClone.usuario (
 `id` INT NOT NULL AUTO_INCREMENT,
 `nome` VARCHAR(45) NOT NULL,
 `idade` INT NOT NULL,
@@ -40,9 +40,9 @@ VALUES("Thati", 23, 1),
 ("Bill", 20, 3),
 ("Roger", 45, 1);
 
-CREATE TABLE IF NOT EXISTS `SpotifyClone`.`artista` (
-id` INT NOT NULL AUTO_INCREMENT,
-nome_artista` VARCHAR(45) NOT NULL,
+CREATE TABLE SpotifyClone.artista (
+id INT NOT NULL AUTO_INCREMENT,
+nome_artista VARCHAR(45) NOT NULL,
 PRIMARY KEY (`id`),
 UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE,
 UNIQUE INDEX `nome_artista_UNIQUE` (`nome_artista` ASC) VISIBLE)
@@ -55,7 +55,7 @@ VALUES("Walter Phoenix"),
 ("Lance Day"),
 ("Freedie Shannon");
 
-CREATE TABLE IF NOT EXISTS `SpotifyClone`.`album` (
+CREATE TABLE SpotifyClone.album (
 `id` INT NOT NULL AUTO_INCREMENT,
 `album_nome` VARCHAR(45) NOT NULL,
 `artista_id` INT NOT NULL,
@@ -78,7 +78,7 @@ VALUES("Envious", 1),
 ("Incandescent", 3),
 ("Temporary Culture", 4);
 
-CREATE TABLE IF NOT EXISTS `SpotifyClone`.`usuario_artista` (
+CREATE TABLE SpotifyClone.usuario_artista (
 `usuario_id` INT NOT NULL,
 `artista_id` INT NOT NULL,
 PRIMARY KEY (`usuario_id`, `artista_id`),
@@ -112,7 +112,7 @@ VALUES
 (4, 4),
 (4, 3);
 
-CREATE TABLE `cancoes` (
+CREATE TABLE SpotifyClone.cancoes (
 `id` int NOT NULL AUTO_INCREMENT,
 `nome_cancao` varchar(45) NOT NULL,
 `artista_id` int NOT NULL,
@@ -148,7 +148,7 @@ VALUES
 ("Words Of Her Life", 4, 5),
 ("Without My Streets", 4, 5);
 
-CREATE TABLE `usuario_has_cancoes` (
+CREATE TABLE SpotifyClone.usuario_has_cancoes (
 `usuario_id` int NOT NULL,
 `cancoes_id` int NOT NULL,
 PRIMARY KEY (`usuario_id`,`cancoes_id`),
