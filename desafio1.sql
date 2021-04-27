@@ -38,12 +38,16 @@ FOREIGN KEY (subscription_id) REFERENCES Subscription(subscription_id)
 ) ENGINE=InnoDB;
 
 CREATE TABLE History(
-CONSTRAINT PRIMARY KEY (usuario_id, cancao_id),
+user_id INT NOT NULL,
+song_id INT NOT NULL,
+CONSTRAINT PRIMARY KEY (user_id, song_id),
 FOREIGN KEY (song_id) REFERENCES Songs(song_id),
 FOREIGN KEY (user_id) REFERENCES Spotify_User(user_id)
 ) ENGINE=InnoDB;
 
 CREATE TABLE Following(
+artist_id INT NOT NULL,
+user_id INT NOT NULL,
 CONSTRAINT PRIMARY KEY (artist_id, user_id),
 FOREIGN KEY (artist_id) REFERENCES Artist(artist_id),
 FOREIGN KEY (user_id) REFERENCES Spotify_User(user_id)
