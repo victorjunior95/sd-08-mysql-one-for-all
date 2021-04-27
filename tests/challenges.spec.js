@@ -249,7 +249,7 @@ describe('Queries de seleção', () => {
     });
   });
 
-  describe.skip('5 - Exibe top 2 hits mais tocados no momento', () => {
+  describe('5 - Exibe top 2 hits mais tocados no momento', () => {
     it('Verifica o desafio 5', async () => {
       const challengeQuery = readFileSync('desafio5.sql', 'utf8');
 
