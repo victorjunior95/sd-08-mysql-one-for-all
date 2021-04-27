@@ -2,31 +2,26 @@ CREATE DATABASE IF NOT EXISTS SpotifyClone;
 
 USE SpotifyClone;
 
-CREATE TABLE albuns(
-album_id INT PRIMARY KEY AUTO_INCREMENT,
-album VARCHAR(100) NOT NULL
-) ENGINE=InnoDB;
-
-INSERT INTO albuns(album_id, album)
-VALUES(1,'Envious'),(2,'Exuberant'), (3, 'Hallowed Steam'),
-(4, 'Incandescent'), (5, 'Temporary Culture');
-
-CREATE TABLE musicas (
-musica_id INT PRIMARY KEY AUTO_INCREMENT,
-musica VARCHAR(200) NOT NULL
-) ENGINE=InnoDB;
-
 CREATE TABLE artistas (
 artista_id INT PRIMARY KEY AUTO_INCREMENT,
 artista VARCHAR(100) NOT NULL
 ) ENGINE=InnoDB;
 
-CREATE TABLE albuns_musicas_artistas(
-musica_id INT NOT NULL,
+CREATE TABLE albuns(
+album_id INT PRIMARY KEY AUTO_INCREMENT,
+album VARCHAR(100) NOT NULL,
 artista_id INT NOT NULL,
+FOREIGN KEY(artista_id) REFERENCES artistas(artista_id)
+) ENGINE=InnoDB;
+
+INSERT INTO albuns(album_id, album, artista_id)
+VALUES(1,"Envious"),(2,"Exuberant"), (3, "Hallowed Steam"),
+(4, "Incandescent"), (5, "Temporary Culture");
+
+CREATE TABLE musicas (
+musica_id INT PRIMARY KEY AUTO_INCREMENT,
+musica VARCHAR(200) NOT NULL,
 album_id INT NOT NULL,
-FOREIGN KEY(musica_id) REFERENCES musicas(musica_id),
-FOREIGN KEY(artista_id) REFERENCES artistas(artista_id),
 FOREIGN KEY(album_id) REFERENCES albuns(album_id)
 ) ENGINE=InnoDB;
 
