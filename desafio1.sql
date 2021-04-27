@@ -41,8 +41,11 @@ VALUES(1,"Soul For Us", 1), (2, "Reflections Of Magic", 1),
 CREATE TABLE planos(
 plano_id INT PRIMARY KEY AUTO_INCREMENT,
 plano VARCHAR(50) NOT NULL,
-valor DECIMAL(4,2) NOT NULL
+valor DOUBLE NOT NULL
 ) ENGINE=InnoDB;
+
+INSERT INTO planos(plano_id, plano, valor)
+VALUES(1, "gratuito", 0.00), (2, "universitário", 7.99), (3, "familiar", 5.99);
 
 CREATE TABLE usuarios (
 usuario_id INT PRIMARY KEY AUTO_INCREMENT,
@@ -52,12 +55,19 @@ plano_id INT NOT NULL,
 FOREIGN KEY(plano_id) REFERENCES planos(plano_id) 
 ) ENGINE=InnoDB;
 
+INSERT INTO usuarios(usuario_id, usuario, idade, plano_id)
+VALUES(1, "Thati", 23, 1),(2, "Cintia", 35, 3), 
+(3, "Bill", 20, 2), (4,"Roger", 45, 1);
+
 CREATE TABLE usuarios_artistas (
-artista_id INT NOT NULL,
 usuario_id INT NOT NULL,
-FOREIGN KEY(artista_id) REFERENCES artistas(artista_id),
-FOREIGN KEY(usuario_id) REFERENCES usuarios(usuario_id)
+artista_id INT NOT NULL,
+FOREIGN KEY(usuario_id) REFERENCES usuarios(usuario_id),
+FOREIGN KEY(artista_id) REFERENCES artistas(artista_id)
 ) ENGINE=InnoDB;
+
+INSERT INTO usuarios_artistas(usuario_id, artista_id)
+VALUES(1,1), (1,4),(1,3),(2,1),(2,3),(3,2),(3,1),(4,4);
 
 CREATE TABLE usuarios_musicas (
 usuario_id INT NOT NULL,
@@ -65,3 +75,7 @@ musica_id INT NOT NULL,
 FOREIGN KEY(usuario_id) REFERENCES usuarios(usuario_id),
 FOREIGN KEY(musica_id) REFERENCES musicas(musica_id)
 ) ENGINE=InnoDB;
+
+INSERT INTO usuarios_musicas(usuario_id,musica_id)
+VALUES(1,1),(1,6),(1,14),(1,16),(2,13),(2,17),(2,2),(3,4),(3,16),(3,6),(4,3),
+(4,18),(4,11);
