@@ -5,52 +5,52 @@ CREATE DATABASE SpotifyClone;
 USE SpotifyClone;
 
 CREATE TABLE Subscription(
-    subscription_id INT PRIMARY KEY AUTO_INCREMENT,
-    sub_type VARCHAR(50) NOT NULL,
-    price DECIMAL(5, 2) NOT NULL
+subscription_id INT PRIMARY KEY AUTO_INCREMENT,
+sub_type VARCHAR(50) NOT NULL,
+price DECIMAL(5, 2) NOT NULL
 ) ENGINE=InnoDB;
 
 CREATE TABLE Artist(
-	artist_id INT PRIMARY KEY AUTO_INCREMENT,
-    artist_name VARCHAR(70) NOT NULL
+artist_id INT PRIMARY KEY AUTO_INCREMENT,
+artist_name VARCHAR(70) NOT NULL
 ) ENGINE=InnoDB;
 
 CREATE TABLE Albums(
-	album_id INT PRIMARY KEY AUTO_INCREMENT,
-    album_name VARCHAR (150) NOT NULL,
-    artist_id INT NOT NULL,
-    FOREIGN KEY (artist_id) REFERENCES Artist(artist_id)
+album_id INT PRIMARY KEY AUTO_INCREMENT,
+album_name VARCHAR (150) NOT NULL,
+artist_id INT NOT NULL,
+FOREIGN KEY (artist_id) REFERENCES Artist(artist_id)
 ) ENGINE=InnoDB;
 
 CREATE TABLE Songs(
-	song_id INT PRIMARY KEY AUTO_INCREMENT,
-    song_name VARCHAR(150) NOT NULL,
-    album_id INT NOT NULL,
-    FOREIGN KEY (album_id) REFERENCES Albums(album_id)
+song_id INT PRIMARY KEY AUTO_INCREMENT,
+song_name VARCHAR(150) NOT NULL,
+album_id INT NOT NULL,
+FOREIGN KEY (album_id) REFERENCES Albums(album_id)
 ) ENGINE=InnoDB;
 
 CREATE TABLE Spotify_User(
-    user_id INT PRIMARY KEY AUTO_INCREMENT,
-    username VARCHAR(50) NOT NULL,
-    age INT NOT NULL,
-    subscription_id INT NOT NULL,
-    FOREIGN KEY (subscription_id) REFERENCES Subscription(subscription_id)
+user_id INT PRIMARY KEY AUTO_INCREMENT,
+username VARCHAR(50) NOT NULL,
+age INT NOT NULL,
+subscription_id INT NOT NULL,
+FOREIGN KEY (subscription_id) REFERENCES Subscription(subscription_id)
 ) ENGINE=InnoDB;
 
 CREATE TABLE History(
-	history_id INT PRIMARY KEY AUTO_INCREMENT,
-    song_id INT NOT NULL,
-    user_id INT NOT NULL,
-    FOREIGN KEY (song_id) REFERENCES Songs(song_id),
-    FOREIGN KEY (user_id) REFERENCES Spotify_User(user_id)
+history_id INT PRIMARY KEY AUTO_INCREMENT,
+song_id INT NOT NULL,
+user_id INT NOT NULL,
+FOREIGN KEY (song_id) REFERENCES Songs(song_id),
+FOREIGN KEY (user_id) REFERENCES Spotify_User(user_id)
 ) ENGINE=InnoDB;
 
 CREATE TABLE Following(
-	follow_id INT PRIMARY KEY AUTO_INCREMENT,
-    artist_id INT NOT NULL,
-    user_id INT NOT NULL,
-    FOREIGN KEY (artist_id) REFERENCES Artist(artist_id),
-    FOREIGN KEY (user_id) REFERENCES Spotify_User(user_id)
+follow_id INT PRIMARY KEY AUTO_INCREMENT,
+artist_id INT NOT NULL,
+user_id INT NOT NULL,
+FOREIGN KEY (artist_id) REFERENCES Artist(artist_id),
+FOREIGN KEY (user_id) REFERENCES Spotify_User(user_id)
 ) ENGINE=InnoDB;
 
 
