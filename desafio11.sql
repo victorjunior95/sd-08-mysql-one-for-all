@@ -12,5 +12,3 @@ ON P.planos_id = U.planos_id
 WHERE P.plano_nome = 'familiar' OR P.plano_nome = 'universitario'
 GROUP BY `nome`
 ORDER BY `nome`;
-
-SELECT * FROM cancoes_premium ;
