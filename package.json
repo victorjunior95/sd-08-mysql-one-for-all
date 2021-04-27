@@ -27,7 +27,8 @@
     "acorn": "5.7.4",
     "jest": "24.9.0",
     "minimist": "1.2.2",
-    "mysql-import": "4.0.24"
+    "mysql-import": "4.0.24",
+    "redux-devtools": "^3.7.0"
   },
   "dependencies": {
     "mysql2": "2.1.0",
