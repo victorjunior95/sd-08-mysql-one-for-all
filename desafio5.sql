@@ -8,4 +8,3 @@ CREATE VIEW top_2_hits_do_momento AS
     GROUP BY titulo
     ORDER BY reproducoes DESC , titulo
     LIMIT 2;
-    

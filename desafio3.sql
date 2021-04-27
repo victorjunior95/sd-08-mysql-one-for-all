@@ -8,4 +8,3 @@ CREATE VIEW historico_reproducao_usuarios AS
             LEFT JOIN
         SpotifyClone.Cancoes c ON c.cancao_id = h.cancao_id
     ORDER BY usuario , nome;
-    

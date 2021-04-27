@@ -9,4 +9,3 @@ CREATE VIEW perfil_artistas AS
         SpotifyClone.Album al ON al.artista_id = a.artista_id
     GROUP BY artista , album
     ORDER BY seguidores DESC , artista;
-    
