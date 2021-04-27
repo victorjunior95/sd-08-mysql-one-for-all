@@ -1,5 +1,3 @@
-USE SpotifyClone;
-
 CREATE VIEW top_2_hits_do_momento AS
 SELECT cancao, COUNT(*) AS reproducoes
 FROM SpotifyClone.historico_de_reproducoes AS hdr
