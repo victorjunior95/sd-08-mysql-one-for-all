@@ -5,56 +5,56 @@ CREATE DATABASE SpotifyClone;
 USE SpotifyClone;
 
 CREATE TABLE all_plans (
-    plan_id INT PRIMARY KEY,
-    plan_title VARCHAR(50),
-    plan_price DOUBLE PRECISION
+plan_id INT PRIMARY KEY,
+plan_title VARCHAR(50),
+plan_price DOUBLE PRECISION
 ) engine = InnoDB;
 
 CREATE TABLE users (
-    user_id INT PRIMARY KEY,
-    user_name VARCHAR(50),
-    age INT,
-    plan_id INT,
-    FOREIGN KEY(plan_id) REFERENCES all_plans(plan_id)
+user_id INT PRIMARY KEY,
+user_name VARCHAR(50),
+age INT,
+plan_id INT,
+FOREIGN KEY(plan_id) REFERENCES all_plans(plan_id)
 ) engine = InnoDB;
 
 CREATE TABLE all_artist (
-	artist_id INT PRIMARY KEY,
-    artist_name VARCHAR(50)
+artist_id INT PRIMARY KEY,
+artist_name VARCHAR(50)
 ) engine = InnoDB; 
 
 CREATE TABLE followed_artists (
-	following_id INT,
-	user_id INT,
-    artist_id INT,
-    CONSTRAINT PRIMARY KEY (user_id, artist_id),
-    FOREIGN KEY(user_id) REFERENCES  users(user_id),
-    FOREIGN KEY(artist_id) REFERENCES  all_artist(artist_id)
+following_id INT,
+user_id INT,
+artist_id INT,
+CONSTRAINT PRIMARY KEY (user_id, artist_id),
+FOREIGN KEY(user_id) REFERENCES  users(user_id),
+FOREIGN KEY(artist_id) REFERENCES  all_artist(artist_id)
 ) engine = InnoDB;
 
 CREATE TABLE all_album (
-	album_id INT PRIMARY KEY,
-    album_title VARCHAR(50),
-    artist_id INT,
-    FOREIGN KEY(artist_id) REFERENCES  all_artist(artist_id)
+album_id INT PRIMARY KEY,
+album_title VARCHAR(50),
+artist_id INT,
+FOREIGN KEY(artist_id) REFERENCES  all_artist(artist_id) 
 ) engine = InnoDB;
 
 CREATE TABLE all_songs (
-	song_id INT PRIMARY KEY,
-    song_title VARCHAR(50),
-    artist_id INT,
-    album_id INT,
-    FOREIGN KEY(artist_id) REFERENCES  all_artist(artist_id),
-    FOREIGN KEY(album_id) REFERENCES  all_album(album_id)
+song_id INT PRIMARY KEY,
+song_title VARCHAR(50),
+artist_id INT,
+album_id INT,
+FOREIGN KEY(artist_id) REFERENCES  all_artist(artist_id),
+FOREIGN KEY(album_id) REFERENCES  all_album(album_id)
 ) engine = InnoDB;
 
 CREATE TABLE history_songs (
-    user_id INT,
-    played_song VARCHAR(50),
-    song_id INT,
-    CONSTRAINT PRIMARY KEY (user_id, song_id),
-    FOREIGN KEY(user_id) REFERENCES  users(user_id),
-    FOREIGN KEY(song_id) REFERENCES  all_songs(song_id)
+user_id INT,
+played_song VARCHAR(50),
+song_id INT,
+CONSTRAINT PRIMARY KEY (user_id, song_id),
+FOREIGN KEY(user_id) REFERENCES  users(user_id),
+FOREIGN KEY(song_id) REFERENCES  all_songs(song_id)
 ) engine = InnoDB;
 
 INSERT INTO all_plans(plan_id, plan_title, plan_price) VALUES('1', 'gratuito', '0');
