@@ -79,7 +79,7 @@ INSERT INTO Albums(album_nome, artista_id) VALUES
 
 INSERT INTO Musicas(musica_nome, album_id) VALUES
 ('Soul For Us', 1),
-('Reflection Of Magic', 1),
+('Reflections Of Magic', 1),
 ('Dance With Her Own', 1),
 ('Troubles Of My Inner Fire', 2),
 ('Time Fireworks', 2),
@@ -95,7 +95,7 @@ INSERT INTO Musicas(musica_nome, album_id) VALUES
 ('Honey, Let''s Be Silly', 4),
 ('Thang Of Thunder', 5),
 ('Words Of Her Life', 5),
-('Withour My Streets', 5);
+('Without My Streets', 5);
 
 INSERT INTO Historico (usuario_id, musica_id) VALUES
 (1,1),
