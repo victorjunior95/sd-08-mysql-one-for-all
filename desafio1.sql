@@ -2,21 +2,6 @@ CREATE DATABASE IF NOT EXISTS SpotifyClone;
 
 USE SpotifyClone;
 
-CREATE TABLE usuario(
-    usuario_id INT PRIMARY KEY auto_increment,
-    nome VARCHAR(20) NOT NULL,
-    idade INT NOT NULL,
-    plano_id INT NOT NULL,
-    FOREIGN KEY (plano_id) REFERENCES plano (plano_id)
-) engine = InnoDB;
-
-INSERT INTO usuario (nome, idade, plano_id)
-VALUES
-  ('Thati', 23, 1),
-  ('Cintia', 35, 2),
-  ('Bill', 20, 3),
-  ('Roger', 45, 1);
-
 CREATE TABLE plano(
     plano_id INT PRIMARY KEY auto_increment,
     plano VARCHAR(25) NOT NULL,
@@ -41,6 +26,21 @@ VALUES
   ('Hallowed Steam'),
   ('Incandescent'),
   ('Temporary Culture');
+  
+CREATE TABLE usuario(
+    usuario_id INT PRIMARY KEY auto_increment,
+    nome VARCHAR(20) NOT NULL,
+    idade INT NOT NULL,
+    plano_id INT NOT NULL,
+    FOREIGN KEY (plano_id) REFERENCES plano (plano_id)
+) engine = InnoDB;
+
+INSERT INTO usuario (nome, idade, plano_id)
+VALUES
+  ('Thati', 23, 1),
+  ('Cintia', 35, 2),
+  ('Bill', 20, 3),
+  ('Roger', 45, 1);
 
 CREATE TABLE artista(
     artista_id INT PRIMARY KEY auto_increment,
@@ -130,5 +130,5 @@ VALUES
   (4, 4);
 
 -- DROP DATABASE SpotifyClone;
--- SELECT * FROM SpotifyClone.historico_de_reproducoes;
+-- SELECT * FROM SpotifyClone.usuario;
 -- DROP TABLE SpotifyClone.historico_de_reproducoes;
