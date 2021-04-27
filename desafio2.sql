@@ -1,6 +1,6 @@
 CREATE VIEW estatisticas_musicais AS
   SELECT 
     COUNT(*) AS cancoes, 
-    (SELECT COUNT(*) FROM spotifyclone.artistas) AS artistas,
-    (SELECT COUNT(*) FROM spotifyclone.albuns) AS albuns
-  FROM spotifyclone.musicas;
+    (SELECT COUNT(*) FROM SpotifyClone.Artistas) AS artistas,
+    (SELECT COUNT(*) FROM SpotifyClone.Albuns) AS albuns
+  FROM SpotifyClone.Musicas;
