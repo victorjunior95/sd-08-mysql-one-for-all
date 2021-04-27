@@ -1,4 +1,5 @@
 DELIMITER $$
+
 CREATE PROCEDURE albuns_do_artista(IN artistname VARCHAR(50))
 BEGIN
 SELECT a.artist AS artista,
@@ -10,6 +11,3 @@ ORDER BY al.album;
 END $$
 
 DELIMITER ;
-
-
-CALL albuns_do_artista('Walter Phoenix');
