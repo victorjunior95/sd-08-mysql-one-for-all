@@ -1,4 +1,3 @@
-USE SpotifyClone;
 CREATE VIEW faturamento_atual AS
   SELECT
   MIN(P.PRICE) AS 'faturamento_minimo',
