@@ -5,52 +5,52 @@ CREATE DATABASE SpotifyClone;
 USE SpotifyClone;
 
 CREATE TABLE planos(
-	plano_id INT PRIMARY KEY AUTO_INCREMENT,
-    plano VARCHAR(50) NOT NULL,
-    valor_plano DECIMAL(5,2) NOT NULL
+plano_id INT PRIMARY KEY AUTO_INCREMENT,
+plano VARCHAR(50) NOT NULL,
+valor_plano DECIMAL(5,2) NOT NULL
 ) engine = InnoDB;
 
 CREATE TABLE usuarios(
-	usuario_id INT PRIMARY KEY AUTO_INCREMENT,
-	usuario VARCHAR(100) NOT NULL,
-    idade INT NOT NULL,
-    plano_id INT,
-    FOREIGN KEY (plano_id) REFERENCES planos(plano_id)
+usuario_id INT PRIMARY KEY AUTO_INCREMENT,
+usuario VARCHAR(100) NOT NULL,
+idade INT NOT NULL,
+plano_id INT,
+FOREIGN KEY (plano_id) REFERENCES planos(plano_id)
 ) engine = InnoDB;
 
 CREATE TABLE artistas(
-	artista_id INT PRIMARY KEY AUTO_INCREMENT,
-    artista VARCHAR(50) NOT NULL
+artista_id INT PRIMARY KEY AUTO_INCREMENT,
+artista VARCHAR(50) NOT NULL
 ) engine = InnoDB;
 
 CREATE TABLE albuns(
-	album_id INT PRIMARY KEY AUTO_INCREMENT,
-    album VARCHAR(50) NOT NULL,
-    artista_id INT,
-    FOREIGN KEY (artista_id) REFERENCES artistas(artista_id)
+album_id INT PRIMARY KEY AUTO_INCREMENT,
+album VARCHAR(50) NOT NULL,
+artista_id INT,
+FOREIGN KEY (artista_id) REFERENCES artistas(artista_id)
 ) engine = InnoDB;
 
 CREATE TABLE cancoes(
-	cancao_id INT PRIMARY KEY AUTO_INCREMENT,
-    cancao VARCHAR(50) NOT NULL,
-    album_id INT,
-    FOREIGN KEY (album_id) REFERENCES albuns(album_id)
+cancao_id INT PRIMARY KEY AUTO_INCREMENT,
+cancao VARCHAR(50) NOT NULL,
+album_id INT,
+FOREIGN KEY (album_id) REFERENCES albuns(album_id)
 ) engine = InnoDB;
 
 CREATE TABLE historico_de_reproducoes(
-	usuario_id INT NOT NULL,
-    cancao_id INT NOT NULL,
-    CONSTRAINT PRIMARY KEY (usuario_id, cancao_id),
-	FOREIGN KEY (usuario_id) REFERENCES usuarios(usuario_id),
-    FOREIGN KEY (cancao_id) REFERENCES cancoes(cancao_id)
+usuario_id INT NOT NULL,
+cancao_id INT NOT NULL,
+CONSTRAINT PRIMARY KEY (usuario_id, cancao_id),
+FOREIGN KEY (usuario_id) REFERENCES usuarios(usuario_id),
+FOREIGN KEY (cancao_id) REFERENCES cancoes(cancao_id)
 )engine= InnoDB;
 
 CREATE TABLE seguindo_artistas(
-	artista_id INT,
-    usuario_id INT,
-    CONSTRAINT PRIMARY KEY (usuario_id, artista_id),
-	FOREIGN KEY (artista_id) REFERENCES usuarios(usuario_id),
-    FOREIGN KEY (usuario_id) REFERENCES artistas(artista_id)
+artista_id INT,
+usuario_id INT,
+CONSTRAINT PRIMARY KEY (usuario_id, artista_id),
+FOREIGN KEY (artista_id) REFERENCES usuarios(usuario_id),
+FOREIGN KEY (usuario_id) REFERENCES artistas(artista_id)
 )engine= InnoDB;
 
 INSERT INTO planos(plano, valor_plano)
