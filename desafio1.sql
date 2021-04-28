@@ -60,11 +60,13 @@ INSERT INTO users (username, user_age, plan_id) VALUES
 
 
 CREATE TABLE IF NOT EXISTS `following` (
-user_id INT NOT NULL,
-artist_id INT NOT NULL,
-FOREIGN KEY (user_id) REFERENCES users(user_id),
-FOREIGN KEY (artist_id) REFERENCES artists(artist_id)
-) ENGINE=InnoDB;
+    user_id INT NOT NULL,
+    artist_id INT NOT NULL,
+    FOREIGN KEY (user_id)
+        REFERENCES users (user_id),
+    FOREIGN KEY (artist_id)
+        REFERENCES artists (artist_id)
+)  ENGINE=InnoDB;
 
 INSERT INTO `following` VALUES 
 (1,1), (1,2), (1,3), (2,1), (2,3), (3,1), (3,3), (3,4), (4,2);
@@ -81,3 +83,4 @@ INSERT INTO reproductions_history (user_id, song_id) VALUES
   (2, 13), (2, 17), (2, 2), (2, 15),
   (3, 4), (3, 16), (3, 6), (4, 3),
   (4, 18), (4, 11);
+  
