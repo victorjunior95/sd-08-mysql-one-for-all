@@ -1,5 +1,3 @@
-DROP DATABASE IF EXISTS SpotifyClone;
-
 CREATE DATABASE IF NOT EXISTS SpotifyClone;
 
 USE SpotifyClone;
@@ -56,7 +54,6 @@ CREATE TABLE seguindo_artistas (
   FOREIGN KEY (id_artista) REFERENCES tb_artista(id_artista)
 );
 
-START TRANSACTION;
 INSERT INTO tb_plano (nome, valor) VALUES ('gratuito', 0.0), ('familiar', 7.99), ('universitário', 5.99);
 INSERT INTO tb_usuario (nome, idade, id_plano) VALUES ('Thati', 23, 1), ('Cintia', 35, 2), ('Bill', 20, 3), ('Roger', 45, 1);
 INSERT INTO tb_artista (nome) VALUES ('Walter Phoenix'),('Peter Strong'), ('Lance Day'),('Freedie Shannon');
@@ -75,4 +72,3 @@ INSERT INTO seguindo_artistas (id_seguindo_artistas, id_usuario, id_artista) VAL
 INSERT INTO seguindo_artistas (id_seguindo_artistas, id_usuario, id_artista) VALUES (2,2,1),(2, 2,3);
 INSERT INTO seguindo_artistas (id_seguindo_artistas, id_usuario, id_artista) VALUES (2,3,2),(3,3,1);
 INSERT INTO seguindo_artistas (id_seguindo_artistas, id_usuario, id_artista) VALUES (2,4,4);
-COMMIT;
