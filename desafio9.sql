@@ -4,7 +4,7 @@ DELIMITER $$
 CREATE PROCEDURE albuns_do_artista (IN artist_name VARCHAR(50))
 BEGIN
 SELECT 
-    AR.artist_name AS `atista`,
+    AR.artist_name AS `artista`,
     AL.album_name AS `album`
 FROM
     album AS AL
