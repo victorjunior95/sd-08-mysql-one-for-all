@@ -11,5 +11,3 @@ BEGIN
 END $$
 
 DELIMITER ;
-    
-CALL albuns_do_artista("Walter Phoenix")
