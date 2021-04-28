@@ -6,18 +6,18 @@ USE SpotifyClone;
 
 CREATE TABLE plano(
 plano_id INT PRIMARY KEY AUTO_INCREMENT,
-nome VARCHAR(50) NOT NULL,
+plano VARCHAR(50) NOT NULL,
 valor_plano DOUBLE NOT NULL
 ) ENGINE = InnoDB;
 
 CREATE TABLE artistas(
 artista_id INT PRIMARY KEY AUTO_INCREMENT,
-nome VARCHAR(50) NOT NULL
+artista VARCHAR(50) NOT NULL
 ) ENGINE = InnoDB;
 
 CREATE TABLE usuario(
 usuario_id INT PRIMARY KEY AUTO_INCREMENT,
-nome VARCHAR(50) NOT NULL,
+usuario VARCHAR(50) NOT NULL,
 idade INT NOT NULL,
 plano_id INT NOT NULL,
 FOREIGN KEY (plano_id) REFERENCES plano(plano_id)
@@ -25,19 +25,19 @@ FOREIGN KEY (plano_id) REFERENCES plano(plano_id)
 
 CREATE TABLE album(
 album_id INT PRIMARY KEY AUTO_INCREMENT,
-nome VARCHAR(50) NOT NULL,
+album VARCHAR(50) NOT NULL,
 artista_id INT NOT NULL,
 FOREIGN KEY (artista_id) REFERENCES artistas(artista_id)
 ) ENGINE = InnoDB;
 
 CREATE TABLE cancoes(
 cancao_id INT PRIMARY KEY AUTO_INCREMENT,
-nome VARCHAR(50) NOT NULL,
+cancao VARCHAR(50) NOT NULL,
 album_id INT NOT NULL,
 FOREIGN KEY (album_id) REFERENCES album(album_id)
 ) ENGINE = InnoDB;
 
-CREATE TABLE historico(
+CREATE TABLE historico_de_reproducoes(
 usuario_id INT NOT NULL,
 cancao_id INT NOT NULL,
 PRIMARY KEY (usuario_id, cancao_id),
@@ -45,7 +45,7 @@ FOREIGN KEY (usuario_id) REFERENCES usuario(usuario_id),
 FOREIGN KEY (cancao_id) REFERENCES cancoes(cancao_id)
 ) ENGINE = InnoDB;
 
-CREATE TABLE seguindo(
+CREATE TABLE seguindo_artistas(
 usuario_id INT NOT NULL,
 artista_id INT NOT NULL,
 PRIMARY KEY (usuario_id, artista_id),
@@ -53,27 +53,27 @@ FOREIGN KEY (usuario_id) REFERENCES usuario(usuario_id),
 FOREIGN KEY (artista_id) REFERENCES artistas(artista_id)
 ) ENGINE = InnoDB;
 
-INSERT INTO plano (nome, valor_plano)
+INSERT INTO plano (plano, valor_plano)
 VALUES
 ("gratuito", 0),
 ("familiar", 7.99),
 ("universitário", 5.99);
   
-INSERT INTO artistas (nome)
+INSERT INTO artistas (artista)
 VALUES
 ("Walter Phoenix"),
 ("Peter Strong"),
 ("Lance Day"),
 ("Freedie Shannon");
 
-INSERT INTO usuario (nome, idade, plano_id)
+INSERT INTO usuario (usuario, idade, plano_id)
 VALUES
 ("Thati", 23, 1),
 ("Cintia", 35, 2),
 ("Bill", 20, 3),
 ("Roger", 45, 1);
 
-INSERT INTO album (nome, artista_id)
+INSERT INTO album (album, artista_id)
 VALUES
 ("Envious", 1),
 ("Exuberant", 1),
@@ -81,7 +81,7 @@ VALUES
 ("Incandescent", 3),
 ("Temporary Culture", 4);
 
-INSERT INTO cancoes (nome, album_id)
+INSERT INTO cancoes (cancao, album_id)
 VALUES
 ("Soul For Us", 1),
 ("Reflections Of Magic", 1),
@@ -102,7 +102,7 @@ VALUES
 ("Words Of Her Life", 5),
 ("Without My Streets", 5);
 
-INSERT INTO historico (usuario_id, cancao_id)
+INSERT INTO historico_de_reproducoes (usuario_id, cancao_id)
 VALUES
 (1,	1),
 (1,	6),
@@ -119,7 +119,7 @@ VALUES
 (4,	18),
 (4,	11);
 
-INSERT INTO seguindo (usuario_id, artista_id)
+INSERT INTO seguindo_artistas (usuario_id, artista_id)
 VALUES
 (1,	1),
 (1,	4),
