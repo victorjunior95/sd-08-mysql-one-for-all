@@ -11,7 +11,7 @@ CREATE TABLE PLANOS(
 ) ENGINE="InnoDB";
 
 INSERT INTO PLANOS (NOME_PLANO, VALOR_PLANO) VALUES
-('gratuito', 0),
+('gratuito', 0.00),
 ('familiar', 7.99),
 ('universitário', 5.99);
 
