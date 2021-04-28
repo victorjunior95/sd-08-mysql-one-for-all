@@ -8,4 +8,3 @@ CREATE VIEW faturamento_atual AS
         SpotifyClone.tb_plano AS A
             INNER JOIN
         SpotifyClone.tb_usuario AS B USING (id_plano);
-
