@@ -2,7 +2,7 @@ CREATE DATABASE IF NOT EXISTS `SpotifyClone`;
 USE `SpotifyClone`;
 
 CREATE TABLE IF NOT EXISTS artist (
-artist_id INT AUTO_INCREMENT,
+artist_id INT AUTO_INCREMENT NOT NULL,
 artist_name VARCHAR(100),
 PRIMARY KEY (artist_id) 
 ) ENGINE=InnoDB;
@@ -11,7 +11,7 @@ INSERT INTO artist (artist_name) VALUES
 ('Walter Phoenix'), ('Freedie Shannon'),('Lance Day'),('Peter Strong');
 
 CREATE TABLE IF NOT EXISTS album (
-album_id INT AUTO_INCREMENT, 
+album_id INT AUTO_INCREMENT NOT NULL, 
 title VARCHAR(100),
 artist_id INT, 
 PRIMARY KEY (album_id),
@@ -22,7 +22,7 @@ INSERT INTO album (title, artist_id) VALUES
 ('Envious', 1), ('Exuberant', 1), ('Hallowed Steam', 4), ('Incandescent',3), ('Temporary Culture', 2);
 
 CREATE TABLE IF NOT EXISTS songs (
-song_id INT AUTO_INCREMENT,
+song_id INT AUTO_INCREMENT NOT NULL,
 title VARCHAR(100),
 album_id INT,
 PRIMARY KEY (song_id),
@@ -37,7 +37,7 @@ INSERT INTO songs (title, album_id) VALUES
 ("Thang Of Thunder", 5), ("Words Of Her Life", 5), ("Without My Streets", 5);
 
 CREATE TABLE IF NOT EXISTS plans (
-plan_id INT AUTO_INCREMENT,
+plan_id INT AUTO_INCREMENT NOT NULL,
 plan_type VARCHAR(100),
 price DECIMAL (6,2),
 PRIMARY KEY (plan_id)
@@ -47,7 +47,7 @@ INSERT INTO plans (plan_type, price) VALUES
 ('gratuito',0), ('familiar', '7.99' ), ('universitário', '5.99'); 
 
 CREATE TABLE IF NOT EXISTS users (
-user_id INT AUTO_INCREMENT,
+user_id INT AUTO_INCREMENT NOT NULL,
 username VARCHAR(100),
 user_age INT,
 plan_id INT,
@@ -60,8 +60,8 @@ INSERT INTO users (username, user_age, plan_id) VALUES
 
 
 CREATE TABLE IF NOT EXISTS `following` (
-user_id INT,
-artist_id INT,
+user_id INT NOT NULL,
+artist_id INT NOT NULL,
 FOREIGN KEY (user_id) REFERENCES users(user_id),
 FOREIGN KEY (artist_id) REFERENCES artist(artist_id)
 ) ENGINE=InnoDB;
@@ -70,8 +70,8 @@ INSERT INTO `following` VALUES
 (1,1), (1,2), (1,3), (2,1), (2,3), (3,1), (3,3), (3,4), (4,2);
 
 CREATE TABLE IF NOT EXISTS reproductions_history (
-user_id INT,
-song_id INT,
+user_id INT NOT NULL,
+song_id INT NOT NULL,
 FOREIGN KEY (user_id) REFERENCES users(user_id),
 FOREIGN KEY (song_id) REFERENCES songs(song_id)
 ) ENGINE=InnoDB;
