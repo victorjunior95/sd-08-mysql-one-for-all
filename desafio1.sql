@@ -45,7 +45,7 @@ FOREIGN KEY (usuario_id) REFERENCES usuarios(usuario_id),
 FOREIGN KEY (cancao_id) REFERENCES cancoes(cancao_id)
 )engine= InnoDB;
 
-CREATE TABLE seguindo_artistas(
+CREATE TABLE seguindo_artista(
 artista_id INT,
 usuario_id INT,
 PRIMARY KEY (usuario_id, artista_id),
@@ -106,7 +106,7 @@ VALUES
 (4,18),
 (4,11);
 
-INSERT INTO seguindo_artistas(usuario_id, artista_id)
+INSERT INTO seguindo_artista(usuario_id, artista_id)
 VALUES
 (1,1),
 (1,4),
