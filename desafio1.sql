@@ -41,7 +41,7 @@ VALUES(1,"Soul For Us", 1), (2, "Reflections Of Magic", 1),
 CREATE TABLE planos(
 plano_id INT PRIMARY KEY AUTO_INCREMENT,
 plano VARCHAR(50) NOT NULL,
-valor DOUBLE NOT NULL
+valor DECIMAL(4,2) NOT NULL
 ) ENGINE=InnoDB;
 
 INSERT INTO planos(plano_id, plano, valor)
