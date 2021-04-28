@@ -34,8 +34,8 @@ CREATE TABLE cancoes (
 `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
 `nome_cancao` varchar(45) NOT NULL,
 `album_id` int NOT NULL,
- FOREIGN KEY (`album_id`) REFERENCES album (`id`),
- FOREIGN KEY (`artista_id`) REFERENCES artista (`id`)
+FOREIGN KEY (`album_id`) REFERENCES album (`id`),
+FOREIGN KEY (`artista_id`) REFERENCES artista (`id`)
 ) ENGINE=InnoDB;
 
 CREATE TABLE usuario_has_cancoes (
