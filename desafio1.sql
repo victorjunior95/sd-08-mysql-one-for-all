@@ -12,7 +12,7 @@ CREATE TABLE pass(pass_id INT AUTO_INCREMENT, pass_name VARCHAR(25) NOT NULL, pa
 
 INSERT INTO pass (pass_name, pass_value) VALUES ROW('gratuito', 0), ROW('familiar', 7.99), ROW('universitário', 5.99);
 
-CREATE TABLE user_pass (user_id INT, pass_id INT, PRIMARY KEY (user_id, pass_id), FOREIGN KEY (user_id) REFERENCES users(user_id), FOREIGN KEY (pass_id) REFERENCES pass(pass_id)) ENGINE=INNODB;
+CREATE TABLE user_pass (user_id INT UNIQUE, pass_id INT, PRIMARY KEY (user_id, pass_id), FOREIGN KEY (user_id) REFERENCES users(user_id), FOREIGN KEY (pass_id) REFERENCES pass(pass_id)) ENGINE=INNODB;
 
 INSERT INTO user_pass (user_id, pass_id) VALUES ROW(1, 1), ROW(2, 2), ROW(3, 3), ROW(4, 1);
 
@@ -28,7 +28,7 @@ CREATE TABLE albums (album_id INT AUTO_INCREMENT, album_name VARCHAR(25) NOT NUL
 
 INSERT INTO albums (album_name) VALUES ROW('Envious'), ROW('Exuberant'), ROW('Hallowed Steam'), ROW('Incandescent'), ROW('Temporary Culture');
 
-CREATE TABLE album_musics (album_id INT, music_id INT, PRIMARY KEY (album_id, music_id), FOREIGN KEY (album_id) REFERENCES albums(album_id), FOREIGN KEY (music_id) REFERENCES musics(music_id)) ENGINE=INNODB;
+CREATE TABLE album_musics (album_id INT, music_id INT UNIQUE, PRIMARY KEY (album_id, music_id), FOREIGN KEY (album_id) REFERENCES albums(album_id), FOREIGN KEY (music_id) REFERENCES musics(music_id)) ENGINE=INNODB;
 
 INSERT INTO album_musics (album_id, music_id) VALUES ROW(1, 2), ROW(1, 9), ROW(1, 12), ROW(2, 15), ROW(2, 16), ROW(3, 7), ROW(3, 8), ROW(3, 11), ROW(3, 13), ROW(4, 1), ROW(4, 3), ROW(4, 4), ROW(4, 5), ROW(4, 6), ROW(4, 10), ROW(5, 14), ROW(5, 17), ROW(5, 18);
 
@@ -36,7 +36,7 @@ CREATE TABLE artiste (artiste_id INT AUTO_INCREMENT, artiste_name VARCHAR(25) NO
 
 INSERT INTO artiste(artiste_name) VALUES ROW('Freedie Shannon'), ROW('Lance Day'), ROW('Peter Strong'), ROW('Walter Phoenix');
 
-CREATE TABLE artiste_album ( artiste_id INT, album_id INT, PRIMARY KEY (artiste_id, album_id), FOREIGN KEY (artiste_id) REFERENCES artiste(artiste_id), FOREIGN KEY (album_id) REFERENCES albums(album_id)) ENGINE=INNODB;
+CREATE TABLE artiste_album ( artiste_id INT, album_id INT UNIQUE, PRIMARY KEY (artiste_id, album_id), FOREIGN KEY (artiste_id) REFERENCES artiste(artiste_id), FOREIGN KEY (album_id) REFERENCES albums(album_id)) ENGINE=INNODB;
 
 INSERT INTO artiste_album(artiste_id, album_id) VALUES ROW(1, 5), ROW(2, 4), ROW(3, 3), ROW(4, 1), ROW(4, 2);
 
