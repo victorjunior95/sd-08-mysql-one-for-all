@@ -116,7 +116,7 @@ CREATE TABLE Favorited(
     ArtistID INT NOT NULL,
     PRIMARY KEY (UserID, ArtistID),
     FOREIGN KEY (UserID) REFERENCES `User`(UserID),
-    FOREIGN KEY (ArtistID) REFERENCES Single(ArtistID)
+    FOREIGN KEY (ArtistID) REFERENCES Artist(ArtistID)
 ) ENGINE = InnoDB;
 
 INSERT INTO Favorited (UserID, ArtistID)
