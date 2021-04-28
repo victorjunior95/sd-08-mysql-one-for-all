@@ -11,4 +11,3 @@ WHERE
   END $$
   
   DELIMITER ;
-  
