@@ -1,5 +1,5 @@
 DELIMITER $$
-CREATE FUNCTION SpotifyClone(identificador INT)
+CREATE FUNCTION SpotifyClone.quantidade_musicas_no_historico(identificador INT)
 RETURNS INT READS SQL DATA
 BEGIN
 DECLARE total INT;
