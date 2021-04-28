@@ -9,4 +9,3 @@ CREATE VIEW estatisticas_musicais AS
         tb_album AS B USING (id_album)
             INNER JOIN
         tb_artista AS C USING (id_artista);
-
