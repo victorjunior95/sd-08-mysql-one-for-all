@@ -1,4 +1,4 @@
-	DROP DATABASE IF EXISTS SpotifyClone;
+DROP DATABASE IF EXISTS SpotifyClone;
 
 CREATE DATABASE SpotifyClone;
 
@@ -48,4 +48,14 @@ CREATE TABLE Historico (
         REFERENCES Usuario (usuario_id),
     FOREIGN KEY (musica_id)
         REFERENCES Musicas (musica_id)
+)  ENGINE = INNODB;
+
+CREATE TABLE Seguindo (
+    usuario_id INT NOT NULL,
+    artista_id INT NOT NULL,
+    CONSTRAINT PRIMARY KEY (usuario_id , artista_id),
+    FOREIGN KEY (usuario_id)
+        REFERENCES Usuario (usuario_id),
+    FOREIGN KEY (artista_id)
+        REFERENCES Artista (artista_id)
 )  ENGINE = INNODB;
