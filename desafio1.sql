@@ -50,13 +50,13 @@ VALUES
       FOREIGN KEY (singer_id) REFERENCES singer(singer_id)
     ) engine = InnoDB;
     
-    INSERT INTO album(album, singer_id)
-    VALUES
+  INSERT INTO album(album, singer_id)
+  VALUES
 		('Envious', 1),
-        ('Exuberant', 1),
-        ('Halowed Steam', 2),
-        ('Incandescent', 3),
-        ('Temporary Culture', 4);
+    ('Exuberant', 1),
+    ('Halowed Steam', 2),
+    ('Incandescent', 3),
+    ('Temporary Culture', 4);
 
   CREATE TABLE music(
     music_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
