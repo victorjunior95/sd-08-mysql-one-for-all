@@ -71,7 +71,7 @@ VALUES
 ('Walter Phoenix'),
 ('Peter Strong'),
 ('Lance Day'),
-('Freddie Shannon');
+('Freedie Shannon');
 
 INSERT INTO Album (Nome, Artista_id)
 VALUES
@@ -85,7 +85,7 @@ INSERT INTO Cancao (Nome, Album_id)
 VALUES
 ('Soul For Us', 1),
 ('Reflections Of Magic', 1),
-('Dance With her Own', 1),
+('Dance With Her Own', 1),
 ('Troubles Of My Inner Fire', 2),
 ('Time Fireworks', 2),
 ('Magic Circus', 3),
@@ -97,7 +97,7 @@ VALUES
 ('Rock His Everything', 4),
 ('Home Forever', 4),
 ('Diamond Power', 4),
-('Honey, Let’s Be Silly', 4),
+("Honey, Let's Be Silly", 4),
 ('Thang Of Thunder', 5),
 ('Words Of Her Life', 5),
 ('Without My Streets', 5);
