@@ -1,4 +1,5 @@
-CREATE DATABASE IF NOT EXISTS `SpotifyClone`;
+DROP DATABASE IF EXISTS `SpotifyClone`;
+CREATE DATABASE `SpotifyClone`;
 USE `SpotifyClone`;
 
 CREATE TABLE IF NOT EXISTS artists (
@@ -8,7 +9,7 @@ PRIMARY KEY (artist_id)
 ) ENGINE=InnoDB;
 
 INSERT INTO artists (artist_name) VALUES
-('Walter Phoenix'), ('Freedie Shannon'),('Lance Day'),('Peter Strong');
+('Walter Phoenix'), ('Peter Strong'), ('Lance Day'), ('Freedie Shannon');
 
 CREATE TABLE IF NOT EXISTS album (
 album_id INT AUTO_INCREMENT NOT NULL, 
@@ -69,7 +70,9 @@ CREATE TABLE IF NOT EXISTS `following` (
 )  ENGINE=InnoDB;
 
 INSERT INTO `following` VALUES 
-(1,1), (1,2), (1,3), (2,1), (2,3), (3,1), (3,3), (3,4), (4,2);
+(1, 1), (1, 3), (1, 4),
+(2, 1), (2, 3), (3, 1), (3, 2),
+(4, 4);
 
 CREATE TABLE IF NOT EXISTS reproductions_history (
 user_id INT NOT NULL,
