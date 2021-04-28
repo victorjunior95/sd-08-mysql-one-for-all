@@ -63,7 +63,8 @@ CREATE TABLE usuarios_artistas (
 usuario_id INT NOT NULL,
 artista_id INT NOT NULL,
 FOREIGN KEY(usuario_id) REFERENCES usuarios(usuario_id),
-FOREIGN KEY(artista_id) REFERENCES artistas(artista_id)
+FOREIGN KEY(artista_id) REFERENCES artistas(artista_id),
+PRIMARY KEY (usuario_id, artista_id)
 ) ENGINE=InnoDB;
 
 INSERT INTO usuarios_artistas(usuario_id, artista_id)
@@ -73,7 +74,8 @@ CREATE TABLE usuarios_musicas (
 usuario_id INT NOT NULL,
 musica_id INT NOT NULL,
 FOREIGN KEY(usuario_id) REFERENCES usuarios(usuario_id),
-FOREIGN KEY(musica_id) REFERENCES musicas(musica_id)
+FOREIGN KEY(musica_id) REFERENCES musicas(musica_id),
+PRIMARY KEY (usuario_id, musica_id)
 ) ENGINE=InnoDB;
 
 INSERT INTO usuarios_musicas(usuario_id,musica_id)
