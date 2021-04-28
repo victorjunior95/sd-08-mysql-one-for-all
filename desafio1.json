@@ -5,7 +5,7 @@
   "tabela_que_contem_plano": "AccessPlan",
   "coluna_historico_de_reproducoes": "UserID",
   "tabela_que_contem_historico_de_reproducoes": "Historic",
-  "coluna_seguindo_artistas": "UserID",
+  "coluna_seguindo_artistas": "ArtistID",
   "tabela_que_contem_seguindo_artistas": "Favorited",
   "coluna_artista": "Name",
   "tabela_que_contem_artista": "Artist",
