@@ -67,34 +67,34 @@ CREATE TABLE artiste_user (
         REFERENCES users (user_id)
 )  ENGINE=INNODB;
 
-INSERT INTO pass (pass_name, pass_value) VALUES ROW('gratuito', 0), ROW('familiar', 7.99), ROW('universitário', 5.99);
+INSERT INTO pass (pass_name, pass_value) VALUES ('gratuito', 0), ('familiar', 7.99), ('universitário', 5.99);
 
-INSERT INTO users (user_name, age, pass_id ) VALUES ROW('Thati', 23, 1), ROW('Cintia', 35, 2), ROW('Bill', 20, 3), ROW('Roger', 45, 1);
+INSERT INTO users (user_name, age, pass_id ) VALUES ('Thati', 23, 1), ('Cintia', 35, 2), ('Bill', 20, 3), ('Roger', 45, 1);
 
-INSERT INTO artiste(artiste_name) VALUES ROW('Freedie Shannon'), ROW('Lance Day'), ROW('Peter Strong'), ROW('Walter Phoenix');
+INSERT INTO artiste(artiste_name) VALUES ('Freedie Shannon'), ('Lance Day'), ('Peter Strong'), ('Walter Phoenix');
 
-INSERT INTO albums (album_name, artiste_id ) VALUES ROW('Envious', 4), ROW('Exuberant', 4), ROW('Hallowed Steam', 3), ROW('Incandescent', 2), ROW('Temporary Culture', 1);
+INSERT INTO albums (album_name, artiste_id ) VALUES ('Envious', 4), ('Exuberant', 4), ('Hallowed Steam', 3), ('Incandescent', 2), ('Temporary Culture', 1);
 
 INSERT INTO musics (music_name, album_id ) VALUES
-ROW('Celebration Of More', 4),
-ROW('Dance With Her Own', 1),
-ROW('Diamond Power', 4),
-ROW('Fantasy For Me', 4),
-ROW('Home Forever', 4),
-ROW("Honey, Let's Be Silly", 4),
-ROW('Honey, So Do I', 3),
-ROW('Magic Circus', 3),
-ROW('Reflections Of Magic', 1),
-ROW('Rock His Everything', 4),
-ROW('She Knows', 3),
-ROW('Soul For Us', 1),
-ROW("Sweetie, Let's Go Wild",3),
-ROW('Thang Of Thunder', 5),
-ROW('Time Fireworks', 2),
-ROW('Troubles Of My Inner Fire', 2),
-ROW('Without My Streets', 5),
-ROW('Words Of Her Life', 5);
+('Celebration Of More', 4),
+('Dance With Her Own', 1),
+('Diamond Power', 4),
+('Fantasy For Me', 4),
+('Home Forever', 4),
+("Honey, Let's Be Silly", 4),
+('Honey, So Do I', 3),
+('Magic Circus', 3),
+('Reflections Of Magic', 1),
+('Rock His Everything', 4),
+('She Knows', 3),
+('Soul For Us', 1),
+("Sweetie, Let's Go Wild",3),
+('Thang Of Thunder', 5),
+('Time Fireworks', 2),
+('Troubles Of My Inner Fire', 2),
+('Without My Streets', 5),
+('Words Of Her Life', 5);
 
-INSERT INTO historic (user_id, music_id) VALUES ROW(1, 3), ROW(1, 8), ROW(1, 12), ROW(1, 14), ROW(2, 5), ROW(2, 6), ROW(2, 9), ROW(2, 18), ROW(3, 8), ROW(3, 14), ROW(3, 16), ROW(4, 1), ROW(4, 2), ROW(4, 17);
+INSERT INTO historic (user_id, music_id) VALUES (1, 3), (1, 8), (1, 12), (1, 14), (2, 5), (2, 6), (2, 9), (2, 18), (3, 8), (3, 14), (3, 16), (4, 1), (4, 2), (4, 17);
 
-INSERT INTO artiste_user(artiste_id, user_id) VALUES ROW(1, 1), ROW(1, 4), ROW(2, 1), ROW(2, 2), ROW(3, 3), ROW(4, 1), ROW(4, 2), ROW(4, 3);
+INSERT INTO artiste_user(artiste_id, user_id) VALUES (1, 1), (1, 4), (2, 1), (2, 2), (3, 3), (4, 1), (4, 2), (4, 3);
