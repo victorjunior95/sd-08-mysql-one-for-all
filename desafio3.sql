@@ -1,4 +1,4 @@
-CREATE VIEW estatisticas_musicais AS
+CREATE VIEW historico_reproducao_usuarios AS
 SELECT usuario, nome_cancao 'nome'
 FROM historico H
 INNER JOIN usuarios U ON U.usuario_id = H.usuario_id
