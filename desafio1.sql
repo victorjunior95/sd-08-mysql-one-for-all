@@ -4,8 +4,6 @@ CREATE DATABASE SpotifyClone;
 
 USE SpotifyClone;
 
--- Criar tabelas
-
 CREATE TABLE planos(
   plano_id INT PRIMARY KEY AUTO_INCREMENT,
   nome VARCHAR(50) NOT NULL,
@@ -54,8 +52,6 @@ CREATE TABLE follows(
   FOREIGN KEY (usuario_id) REFERENCES usuarios(usuario_id),
   FOREIGN KEY (artista_id) REFERENCES artistas(artista_id)
 ) ENGINE=InnoDB;
-
--- Inserir valores
 
 INSERT INTO planos (plano_id, nome, preco)
 VALUES 
