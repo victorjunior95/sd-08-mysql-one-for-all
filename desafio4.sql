@@ -7,4 +7,5 @@ FROM artistas AS a
 INNER JOIN seguidores AS s
 ON s.artista_id = a.artista_id
 GROUP BY a.artista_id
-ORDER BY `seguidores` DESC, `artista` ASC;
+ORDER BY `seguidores` DESC, `artista` ASC
+LIMIT 3;
