@@ -15,7 +15,7 @@ usuario_id INT PRIMARY KEY AUTO_INCREMENT,
 usuario VARCHAR(100) NOT NULL,
 idade INT NOT NULL,
 plano_id INT,
-FOREIGN KEY (plano_id) REFERENCES planos(plano_id)
+FOREIGN KEY (plano_id) REFERENCES planos (plano_id)
 ) engine = InnoDB;
 
 CREATE TABLE artistas(
@@ -40,7 +40,7 @@ FOREIGN KEY (album_id) REFERENCES albuns(album_id)
 CREATE TABLE historico_de_reproducoes(
 usuario_id INT NOT NULL,
 cancao_id INT NOT NULL,
-CONSTRAINT PRIMARY KEY (usuario_id, cancao_id),
+PRIMARY KEY (usuario_id, cancao_id),
 FOREIGN KEY (usuario_id) REFERENCES usuarios(usuario_id),
 FOREIGN KEY (cancao_id) REFERENCES cancoes(cancao_id)
 )engine= InnoDB;
@@ -48,9 +48,9 @@ FOREIGN KEY (cancao_id) REFERENCES cancoes(cancao_id)
 CREATE TABLE seguindo_artistas(
 artista_id INT,
 usuario_id INT,
-CONSTRAINT PRIMARY KEY (usuario_id, artista_id),
-FOREIGN KEY (artista_id) REFERENCES usuarios(usuario_id),
-FOREIGN KEY (usuario_id) REFERENCES artistas(artista_id)
+PRIMARY KEY (usuario_id, artista_id),
+FOREIGN KEY (usuario_id) REFERENCES usuarios(usuario_id),
+FOREIGN KEY (artista_id) REFERENCES artistas(artista_id)
 )engine= InnoDB;
 
 INSERT INTO planos(plano, valor_plano)
