@@ -8,4 +8,3 @@ CREATE VIEW historico_reproducao_usuarios AS
             INNER JOIN
         song AS S ON S.song_id = P.song_id
     ORDER BY `usuario` , `nome`;
-    
