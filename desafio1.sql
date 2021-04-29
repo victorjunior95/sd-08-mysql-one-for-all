@@ -150,5 +150,3 @@ ALTER TABLE `_seguindo` ADD CONSTRAINT `fk_usuario_seg` FOREIGN KEY(usuario_id) 
 ALTER TABLE `_seguindo` ADD CONSTRAINT `fk_artista_seg` FOREIGN KEY(artista_id) REFERENCES _artistas(artista_id) ;
 ALTER TABLE `_albums` ADD CONSTRAINT `fk_artista` FOREIGN KEY(artista_id) REFERENCES _artistas(artista_id) ;
 ALTER TABLE `_musicas` ADD CONSTRAINT `fk_artista_mus` FOREIGN KEY(artista_id) REFERENCES _artistas(artista_id) ;
-
-
