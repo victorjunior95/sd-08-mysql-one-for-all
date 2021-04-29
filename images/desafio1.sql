@@ -60,7 +60,7 @@ INSERT INTO plans (plan_type, price)
 VALUES ('gratuito', 0),
     ('familiar', '7.99'),
     ('universitário', '5.99');
-    CREATE TABLE IF NOT EXISTS users (
+CREATE TABLE IF NOT EXISTS users (
     user_id INT AUTO_INCREMENT NOT NULL,
     username VARCHAR(100),
     user_age INT,
@@ -68,3 +68,44 @@ VALUES ('gratuito', 0),
     PRIMARY KEY (user_id),
     FOREIGN KEY (plan_id) REFERENCES plans(plan_id)
 ) ENGINE = InnoDB;
+INSERT INTO users (username, user_age, plan_id)
+VALUES ('Thati', 23, 1),
+    ('Cintia', 35, 2),
+    ('Bill', 20, 3),
+    ('Roger', 45, 1);
+CREATE TABLE IF NOT EXISTS `following` (
+    user_id INT NOT NULL,
+    artist_id INT NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES users (user_id),
+    FOREIGN KEY (artist_id) REFERENCES artists (artist_id)
+) ENGINE = InnoDB;
+INSERT INTO `following`
+VALUES (1, 1),
+    (1, 3),
+    (1, 4),
+    (2, 1),
+    (2, 3),
+    (3, 1),
+    (3, 2),
+    (4, 4);
+CREATE TABLE IF NOT EXISTS reproductions_history (
+    user_id INT NOT NULL,
+    song_id INT NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES users(user_id),
+    FOREIGN KEY (song_id) REFERENCES songs(song_id)
+) ENGINE = InnoDB;
+INSERT INTO reproductions_history (user_id, song_id)
+VALUES (1, 1),
+    (1, 6),
+    (1, 14),
+    (1, 16),
+    (2, 13),
+    (2, 17),
+    (2, 2),
+    (2, 15),
+    (3, 4),
+    (3, 16),
+    (3, 6),
+    (4, 3),
+    (4, 18),
+    (4, 11);
