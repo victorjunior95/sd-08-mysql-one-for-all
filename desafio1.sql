@@ -1,3 +1,5 @@
+DROP TABLE IF EXISTS SpotifyClone;
+
 CREATE DATABASE IF NOT EXISTS SpotifyClone;
 
 USE SpotifyClone;
@@ -51,7 +53,7 @@ CREATE TABLE IF NOT EXISTS history(
   FOREIGN KEY (song_id) REFERENCES songs(song_id)
 ) ENGINE = InnoDB;
 
-INSERT INTO plan (plan, plan_price)
+INSERT INTO plans (plan, plan_price)
 VALUES
   ("free", 0),
   ("family", 7.99),
