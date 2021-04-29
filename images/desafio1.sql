@@ -11,3 +11,52 @@ VALUES ('Walter Phoenix'),
     ('Peter Strong'),
     ('Lance Day'),
     ('Freedie Shannon');
+CREATE TABLE IF NOT EXISTS album (
+    album_id INT AUTO_INCREMENT NOT NULL,
+    title VARCHAR(100),
+    artist_id INT,
+    PRIMARY KEY (album_id),
+    FOREIGN KEY (artist_id) REFERENCES artists(artist_id)
+) ENGINE = InnoDB;
+INSERT INTO album (title, artist_id)
+VALUES ('Envious', 1),
+    ('Exuberant', 1),
+    ('Hallowed Steam', 4),
+    ('Incandescent', 3),
+    ('Temporary Culture', 2);
+CREATE TABLE IF NOT EXISTS songs (
+    song_id INT AUTO_INCREMENT NOT NULL,
+    title VARCHAR(100),
+    album_id INT,
+    PRIMARY KEY (song_id),
+    FOREIGN KEY (album_id) REFERENCES album(album_id)
+) ENGINE = InnoDB;
+INSERT INTO songs (title, album_id)
+VALUES ("Soul For Us", 1),
+    ("Reflections Of Magic", 1),
+    ("Dance With Her Own", 1),
+    ("Troubles Of My Inner Fire", 2),
+    ("Time Fireworks", 2),
+    ("Magic Circus", 3),
+    ("Honey, So Do I", 3),
+    ("Sweetie, Let's Go Wild", 3),
+    ("She Knows", 3),
+    ("Fantasy For Me", 4),
+    ("Celebration Of More", 4),
+    ("Rock His Everything", 4),
+    ("Home Forever", 4),
+    ("Diamond Power", 4),
+    ("Honey, Let's Be Silly", 4),
+    ("Thang Of Thunder", 5),
+    ("Words Of Her Life", 5),
+    ("Without My Streets", 5);
+CREATE TABLE IF NOT EXISTS plans (
+    plan_id INT AUTO_INCREMENT NOT NULL,
+    plan_type VARCHAR(100),
+    price DECIMAL (6, 2),
+    PRIMARY KEY (plan_id)
+) ENGINE = InnoDB;
+INSERT INTO plans (plan_type, price)
+VALUES ('gratuito', 0),
+    ('familiar', '7.99'),
+    ('universitário', '5.99');
