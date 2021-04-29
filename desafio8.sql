@@ -1,15 +1,9 @@
--- DELIMITER $$
--- CREATE TRIGGER trigger_usuario_delete
--- AFTER DELETE ON TABELA
--- FOR EACH ROW
--- BEGIN
--- INSERT INTO XXXXX (ACAO, DATA ACAO)
--- VALUES ("EXCLUSAO", NOW());
--- END $$
--- DELIMITIR ;
-
-SELECT * 
-FROM SpotifyClone.usuario;
-
-SELECT * 
-FROM SpotifyClone.historico_de_reproducoes;
+DELIMITER $$
+CREATE TRIGGER trigger_usuario_delete
+BEFORE DELETE ON SpotifyClone.usuario
+FOR EACH ROW
+BEGIN
+DELETE FROM SpotifyClone.historico_de_reproducoes AS hp WHERE hp.usuario_id = OLD.usuario_id;
+DELETE FROM SpotifyClone.seguindo_artista AS ar WHERE ar.usuario_id = OLD.usuario_id;
+END $$
+DELIMITER ;
