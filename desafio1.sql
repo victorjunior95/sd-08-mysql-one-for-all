@@ -1,16 +1,16 @@
 DROP DATABASE IF EXISTS SpotifyClone;
 
-CREATE DATABASE IF NOT EXISTS SpotifyClone;
+CREATE DATABASE SpotifyClone;
 
 USE SpotifyClone;
 
-CREATE TABLE IF NOT EXISTS plans(
+CREATE TABLE plans(
   plan_id INT PRIMARY KEY AUTO_INCREMENT,
   plan VARCHAR(45) NOT NULL,
   plan_price INT NOT NULL
 ) ENGINE = InnoDB;
 
-CREATE TABLE IF NOT EXISTS users(
+CREATE TABLE users(
   user_id INT PRIMARY KEY AUTO_INCREMENT,
   user VARCHAR(45) NOT NULL,
   age INT NOT NULL,
@@ -18,12 +18,12 @@ CREATE TABLE IF NOT EXISTS users(
   FOREIGN KEY (plan_id) REFERENCES plano(plan_id)
 ) ENGINE = InnoDB;
 
-CREATE TABLE IF NOT EXISTS artists(
+CREATE TABLE artists(
   artist_id INT PRIMARY KEY AUTO_INCREMENT,
   artist VARCHAR(45) NOT NULL
 ) ENGINE = InnoDB;
 
-CREATE TABLE IF NOT EXISTS following(
+CREATE TABLE following(
   user_id INT NOT NULL,
   artist_id INT NOT NULL,
   PRIMARY KEY (user_id, artist_id),
@@ -31,21 +31,21 @@ CREATE TABLE IF NOT EXISTS following(
   FOREIGN KEY (artist_id) REFERENCES artists(artist_id)
 ) ENGINE = InnoDB;
 
-CREATE TABLE IF NOT EXISTS albums(
+CREATE TABLE albums(
   album_id INT PRIMARY KEY AUTO_INCREMENT,
   album VARCHAR(45) NOT NULL,
   artist_id INT NOT NULL,
   FOREIGN KEY (artist_id) REFERENCES artists(artist_id)
 ) ENGINE = InnoDB;
 
-CREATE TABLE IF NOT EXISTS songs(
+CREATE TABLE songs(
   song_id INT PRIMARY KEY AUTO_INCREMENT,
   song VARCHAR(45) NOT NULL,
   album_id INT NOT NULL,
   FOREIGN KEY (album_id) REFERENCES album(album_id)
 ) ENGINE = InnoDB;
 
-CREATE TABLE IF NOT EXISTS history(
+CREATE TABLE history(
   user_id INT NOT NULL,
   song_id INT NOT NULL,
   PRIMARY KEY (user_id, song_id),
