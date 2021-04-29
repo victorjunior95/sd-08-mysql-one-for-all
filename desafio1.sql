@@ -59,8 +59,8 @@ CREATE TABLE _seguindo(
   seguindo_id INT NOT NULL,
   usuario_id INT NOT NULL,
   artista_id INT NOT NULL,
- PRIMARY KEY(seguindo_id)
- ) ENGINE = INNODB;
+  PRIMARY KEY(seguindo_id)
+  ) ENGINE = INNODB;
 
 
 INSERT INTO _usuarios (usuario_id,plano_id,usuario,idade)
@@ -129,7 +129,7 @@ VALUES
   (2,'Peter Strong'),
   (3,'Lance Day'),
   (4,'Freedie Shannon');
- 
+  
 INSERT INTO _seguindo (seguindo_id,usuario_id,artista_id)
 VALUES
   (1,1,1),
@@ -150,4 +150,5 @@ ALTER TABLE `_seguindo` ADD CONSTRAINT `fk_usuario_seg` FOREIGN KEY(usuario_id) 
 ALTER TABLE `_seguindo` ADD CONSTRAINT `fk_artista_seg` FOREIGN KEY(artista_id) REFERENCES _artistas(artista_id) ;
 ALTER TABLE `_albums` ADD CONSTRAINT `fk_artista` FOREIGN KEY(artista_id) REFERENCES _artistas(artista_id) ;
 ALTER TABLE `_musicas` ADD CONSTRAINT `fk_artista_mus` FOREIGN KEY(artista_id) REFERENCES _artistas(artista_id) ;
+
 
