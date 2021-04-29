@@ -60,3 +60,11 @@ INSERT INTO plans (plan_type, price)
 VALUES ('gratuito', 0),
     ('familiar', '7.99'),
     ('universitário', '5.99');
+    CREATE TABLE IF NOT EXISTS users (
+    user_id INT AUTO_INCREMENT NOT NULL,
+    username VARCHAR(100),
+    user_age INT,
+    plan_id INT,
+    PRIMARY KEY (user_id),
+    FOREIGN KEY (plan_id) REFERENCES plans(plan_id)
+) ENGINE = InnoDB;
