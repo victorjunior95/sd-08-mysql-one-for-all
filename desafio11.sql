@@ -8,7 +8,7 @@ CREATE VIEW cancoes_premium AS
   GROUP BY nome, U.plan_id
   HAVING
     U.plan_id IN (
-      SELECT p.plan_id
+      SELECT P.plan_id
       FROM SpotifyClone.plans AS P
       WHERE P.plan IN ("family", "student")
     )

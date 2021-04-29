@@ -4,7 +4,7 @@ DELIMITER $$
     SELECT
       A.artist AS artista,
       AL.album AS album 
-      FROM SpotifyClone.artistas AS A
+      FROM SpotifyClone.artists AS A
     INNER JOIN SpotifyClone.albums AS AL ON A.artist_id = AL.artist_id
     WHERE A.artist = artist
     ORDER BY album;
