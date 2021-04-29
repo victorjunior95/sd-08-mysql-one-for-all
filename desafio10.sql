@@ -1,3 +1,4 @@
+USE SpotifyClone;
 DELIMITER $$
 CREATE FUNCTION quantidade_musicas_no_historico(nome VARCHAR(100))
 RETURNS INT READS SQL DATA
