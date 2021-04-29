@@ -55,9 +55,9 @@ CREATE TABLE following(
 
 INSERT INTO plans (plan, plan_price)
 VALUES
-("gratuito", 0),
-("familiar", 7.99),
-("universitário", 5.99);
+("free", 0),
+("family", 7.99),
+("student", 5.99);
 
 INSERT INTO artists (artist)
 VALUES
