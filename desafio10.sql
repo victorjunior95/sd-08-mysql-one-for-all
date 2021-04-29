@@ -12,10 +12,3 @@ WHERE u.nome_usuario = nome INTO id_music;
 RETURN id_music;
 END $$
 DELIMITER ;
-
-
-
-
-
-
-
