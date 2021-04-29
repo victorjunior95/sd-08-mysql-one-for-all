@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS plans (
     PRIMARY KEY (plan_id)
 ) ENGINE = InnoDB;
 INSERT INTO plans (plan_type, price)
-VALUES ('gratuito', 0),
+VALUES ('gratuito', 0.00),
     ('familiar', '7.99'),
     ('universitário', '5.99');
 CREATE TABLE IF NOT EXISTS users (
