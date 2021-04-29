@@ -24,10 +24,10 @@ describe('Queries de seleção', () => {
     );
   });
 
-  afterAll(async () => {
-    await sequelize.query('DROP DATABASE SpotifyClone;', { type: 'RAW' });
-    sequelize.close();
-  });
+  // afterAll(async () => {
+  //   await sequelize.query('DROP DATABASE SpotifyClone;', { type: 'RAW' });
+  //   sequelize.close();
+  // });
 
   describe('1 - Normalize as tabelas para a 3ª Forma Normal', () => {
     const hasForeignKey = async (table, referencedTable) => {
