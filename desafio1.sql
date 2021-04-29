@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS following(
   FOREIGN KEY (artist_id) REFERENCES artists(artist_id)
 ) ENGINE = InnoDB;
 
-CREATE TABLE IF NOT EXISTS album(
+CREATE TABLE IF NOT EXISTS albums(
   album_id INT PRIMARY KEY AUTO_INCREMENT,
   album VARCHAR(45) NOT NULL,
   artist_id INT NOT NULL,
