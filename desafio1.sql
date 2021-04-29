@@ -24,11 +24,9 @@ CREATE TABLE _usuarios(
 
 DROP TABLE IF EXISTS _artistas;
 CREATE TABLE _artistas(
-  id INT NOT NULL,
   artista_id INT NOT NULL,
   artista VARCHAR(80),
-  album_id INT NOT NULL,
-  PRIMARY KEY(id)
+  PRIMARY KEY(artista_id)
   ) engine = InnoDB;
 
 DROP TABLE IF EXISTS _albums;
@@ -125,13 +123,12 @@ VALUES
   (13,4,'Without My Streets'),
   (14,4,'Celebration Of More');
 
-INSERT INTO  _artistas (id,artista_id,artista,album_id)
+INSERT INTO  _artistas (artista_id,artista)
 VALUES
-  (1,1,'Walter Phoenix',1),
-  (2,1,'Walter Phoenix',2),
-  (3,2,'Peter Strong',3),
-  (4,3,'Lance Day',4),
-  (5,4,'Freedie Shannon',5);
+  (1,'Walter Phoenix'),
+  (2,'Peter Strong'),
+  (3,'Lance Day'),
+  (4,'Freedie Shannon');
  
 INSERT INTO _seguindo (seguindo_id,usuario_id,artista_id)
 VALUES
@@ -145,13 +142,11 @@ VALUES
 
 ALTER TABLE `_artistas` ADD CONSTRAINT `fk_album` FOREIGN KEY(album_id) REFERENCES _albums(album_id) ;
 
-ALTER TABLE `_usuarios` ADD CONSTRAINT `fk_plano`   FOREIGN KEY(plano_id) REFERENCES _planos(plano_id) ;
+ALTER TABLE `_usuarios` ADD CONSTRAINT `fk_plano` FOREIGN KEY(plano_id) REFERENCES _planos(plano_id) ;
 
-ALTER TABLE `_albums` ADD CONSTRAINT `fk_artista`   FOREIGN KEY(id) REFERENCES _artistas(id) ;
+ALTER TABLE `_musicas` ADD CONSTRAINT `fk_usuario` FOREIGN KEY(usuario_id) REFERENCES _usuarios(usuario_id) ;
 
-ALTER TABLE `_musicas` ADD CONSTRAINT `fk_artista_mus`   FOREIGN KEY(id) REFERENCES _artistas(id) ;
-
-ALTER TABLE `_musicas` ADD CONSTRAINT `fk_usuario`   FOREIGN KEY(usuario_id) REFERENCES _usuarios(usuario_id) ;
-
-ALTER TABLE `_seguindo` ADD CONSTRAINT `fk_usuario_seg`   FOREIGN KEY(usuario_id) REFERENCES _usuarios(usuario_id) ;
-ALTER TABLE `_seguindo` ADD CONSTRAINT `fk_artista_seg`   FOREIGN KEY(id) REFERENCES _artistas(id) ;
+ALTER TABLE `_seguindo` ADD CONSTRAINT `fk_usuario_seg` FOREIGN KEY(usuario_id) REFERENCES _usuarios(usuario_id) ;
+ALTER TABLE `_seguindo` ADD CONSTRAINT `fk_artista_seg` FOREIGN KEY(artista_id) REFERENCES _artistas(artista_id) ;
+ALTER TABLE `_albums` ADD CONSTRAINT `fk_artista` FOREIGN KEY(artista_id) REFERENCES _artistas(artista_id) ;
+ALTER TABLE `_musicas` ADD CONSTRAINT `fk_artista_mus` FOREIGN KEY(artista_id) REFERENCES _artistas(artista_id) ;
