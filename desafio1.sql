@@ -6,12 +6,12 @@ USE SpotifyClone;
 
 
 DROP TABLE IF EXISTS _planos;
-CREATE TABLE _planos(
-  plano_id INT NOT NULL,
-  valor_plano VARCHAR(80),
-  plano VARCHAR(80),
-  PRIMARY KEY(plano_id)
-) engine = InnoDB;
+CREATE TABLE _planos (
+    plano_id INT NOT NULL,
+    valor_plano VARCHAR(80),
+    plano VARCHAR(80),
+    PRIMARY KEY (plano_id)
+)  ENGINE=INNODB;
 
 DROP TABLE IF EXISTS _usuarios;
 CREATE TABLE _usuarios(
@@ -20,22 +20,22 @@ CREATE TABLE _usuarios(
     usuario VARCHAR(50) NOT NULL,
     idade INT,
     PRIMARY KEY(usuario_id)
-  ) engine = InnoDB;
+  ) ENGINE = INNODB;
 
 DROP TABLE IF EXISTS _artistas;
 CREATE TABLE _artistas(
   artista_id INT NOT NULL,
   artista VARCHAR(80),
   PRIMARY KEY(artista_id)
-  ) engine = InnoDB;
+  ) ENGINE = INNODB;
 
 DROP TABLE IF EXISTS _albums;
 CREATE TABLE _albums(
     album_id INT NOT NULL,
-    album varchar(80),
+    album VARCHAR(80),
     artista_id INT NOT NULL,
     PRIMARY KEY(album_id)
-  ) engine = InnoDB;
+  ) ENGINE = INNODB;
 
 DROP TABLE IF EXISTS _musicas;
 CREATE TABLE _musicas(
@@ -43,7 +43,7 @@ CREATE TABLE _musicas(
   cancoes VARCHAR(80) NOT NULL,
   artista_id INT NOT NULL,
   PRIMARY KEY(cancoes_id)
-  ) engine = InnoDB;
+  ) ENGINE = INNODB;
 
 DROP TABLE IF EXISTS _historico;
 CREATE TABLE _historico(
@@ -51,7 +51,7 @@ CREATE TABLE _historico(
     usuario_id INT NOT NULL,
     historico_de_reproducoes VARCHAR(200) NOT NULL,
     PRIMARY KEY(historico_id)
-  ) engine = InnoDB;
+  ) ENGINE = INNODB;
 
 
 DROP TABLE IF EXISTS _seguindo;
@@ -60,7 +60,7 @@ CREATE TABLE _seguindo(
   usuario_id INT NOT NULL,
   artista_id INT NOT NULL,
  PRIMARY KEY(seguindo_id)
- ) engine = InnoDB;
+ ) ENGINE = INNODB;
 
 
 INSERT INTO _usuarios (usuario_id,plano_id,usuario,idade)
@@ -150,3 +150,4 @@ ALTER TABLE `_seguindo` ADD CONSTRAINT `fk_usuario_seg` FOREIGN KEY(usuario_id) 
 ALTER TABLE `_seguindo` ADD CONSTRAINT `fk_artista_seg` FOREIGN KEY(artista_id) REFERENCES _artistas(artista_id) ;
 ALTER TABLE `_albums` ADD CONSTRAINT `fk_artista` FOREIGN KEY(artista_id) REFERENCES _artistas(artista_id) ;
 ALTER TABLE `_musicas` ADD CONSTRAINT `fk_artista_mus` FOREIGN KEY(artista_id) REFERENCES _artistas(artista_id) ;
+
