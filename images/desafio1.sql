@@ -1,6 +1,7 @@
-DROP DATABASE IF EXISTS `SpotifyClone`;
-CREATE DATABASE `SpotifyClone`;
-USE `SpotifyClone`;
+CREATE DATABASE IF NOT EXISTS SpotifyClone;
+
+USE SpotifyClone;
+
 CREATE TABLE IF NOT EXISTS artists (
     artist_id INT AUTO_INCREMENT NOT NULL,
     artist_name VARCHAR(100),
@@ -109,4 +110,3 @@ VALUES (1, 1),
     (4, 3),
     (4, 18),
     (4, 11);
-    
