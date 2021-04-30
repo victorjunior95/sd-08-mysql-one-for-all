@@ -57,10 +57,9 @@ CONSTRAINT `fk_artistas_Seguidores`FOREIGN KEY (`artista_id`) REFERENCES `Artist
 
 INSERT INTO Planos (plano_id, plano, valor)
 VALUES
-(1, 'gratuito', 0),
+(1, 'gratuito', 0.00),
 (2, 'familiar', 7.99),
-(3, 'universitário', 5.99),
-(4, 'gratuito', 0);
+(3, 'universitário', 5.99);
   
 INSERT INTO Usuarios (usuario_id, usuario, idade, plano_id)
 VALUES
