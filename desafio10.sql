@@ -7,7 +7,7 @@ BEGIN
     DECLARE quantidade_de_musicas INT;
     SELECT COUNT(*)
     FROM historico_de_reproducoes
-    WHERE usuario_id = id INTO quantidade_de_musicas_historico;
+    WHERE usuario_id = id INTO quantidade_de_musicas;
     RETURN quantidade_de_musicas;
 END $$
 DELIMITER ;
