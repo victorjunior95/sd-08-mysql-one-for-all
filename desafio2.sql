@@ -12,4 +12,3 @@ SELECT
                 COUNT(*)
             FROM
                 album) AS `albuns`;
-                
