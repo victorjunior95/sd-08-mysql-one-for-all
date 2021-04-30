@@ -6,11 +6,11 @@ CREATE TABLE IF NOT EXISTS artists (
     artist_name VARCHAR(100),
     PRIMARY KEY (artist_id)
 ) ENGINE = InnoDB;
-INSERT INTO artists (artist_name)
-VALUES ('Walter Phoenix'),
-    ('Peter Strong'),
-    ('Lance Day'),
-    ('Freedie Shannon');
+INSERT INTO artists (artist_id, artist_name)
+VALUES (1, 'Walter Phoenix'),
+    (2, 'Peter Strong'),
+    (3, 'Lance Day'),
+    (4, 'Freedie Shannon');
 CREATE TABLE IF NOT EXISTS album (
     album_id INT AUTO_INCREMENT NOT NULL,
     title VARCHAR(100),
@@ -18,12 +18,12 @@ CREATE TABLE IF NOT EXISTS album (
     PRIMARY KEY (album_id),
     FOREIGN KEY (artist_id) REFERENCES artists(artist_id)
 ) ENGINE = InnoDB;
-INSERT INTO album (title, artist_id)
-VALUES ('Envious', 1),
-    ('Exuberant', 1),
-    ('Hallowed Steam', 4),
-    ('Incandescent', 3),
-    ('Temporary Culture', 2);
+INSERT INTO album (album_id, title, artist_id)
+VALUES (1, 'Envious', 1),
+    (2, 'Exuberant', 1),
+    (3, 'Hallowed Steam', 2),
+    (4, 'Incandescent', 3),
+    (5, 'Temporary Culture', 4);
 CREATE TABLE IF NOT EXISTS songs (
     song_id INT AUTO_INCREMENT NOT NULL,
     title VARCHAR(100),
