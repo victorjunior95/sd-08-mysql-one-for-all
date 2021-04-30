@@ -7,7 +7,7 @@ USE SpotifyClone;
 CREATE TABLE plano (
     plano_id INT PRIMARY KEY AUTO_INCREMENT,
     tipo VARCHAR(50) NOT NULL,
-    preco INT NOT NULL
+    preco DOUBLE NOT NULL
 )  ENGINE=INNODB;
 
 CREATE TABLE artista (
