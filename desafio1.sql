@@ -48,7 +48,6 @@ CREATE TABLE _historico(
     historico_id INT PRIMARY KEY NOT NULL,
     usuario_id INT NOT NULL,
     cancoes_id INT NOT NULL,
-    historico_de_reproducoes VARCHAR(200) NOT NULL,
     FOREIGN KEY(cancoes_id) REFERENCES _musicas(cancoes_id),
     FOREIGN KEY(usuario_id) REFERENCES _usuarios(usuario_id)
   ) ENGINE = INNODB;
@@ -115,22 +114,22 @@ VALUES
   (5,'Temporary Culture',4);
 
 
-INSERT INTO _historico (historico_id,usuario_id,cancoes_id,historico_de_reproducoes)
+INSERT INTO _historico (historico_id,usuario_id,cancoes_id)
 VALUES
-  (1,1,1,'Soul For Us'),
-  (2,2,14,'Home Forever'),
-  (3,3,2,'Troubles Of My Inner Fire'),
-  (4,4,7,'Dance With Her Own'),
-  (5,1,3,'Magic Circus'),
-  (6,1,15,'Diamond Power'),
-  (7,1,5,'Thang Of Thunder'),
-  (8,2,17,'Words Of Her Life'),
-  (9,2,6,'Reflections Of Magic'),
-  (10,2,16,"Honey, Let's Be Silly"),
-  (11,3,5,'Thang Of Thunder'),
-  (12,3,3,'Magic Circus'),
-  (13,4,18,'Without My Streets'),
-  (14,4,12,'Celebration Of More');
+  (1,1,1),
+  (2,2,14),
+  (3,3,2),
+  (4,4,7),
+  (5,1,3),
+  (6,1,15),
+  (7,1,5),
+  (8,2,17),
+  (9,2,6),
+  (10,2,16),
+  (11,3,5),
+  (12,3,3),
+  (13,4,18),
+  (14,4,12);
 
   
 INSERT INTO _seguindo (seguindo_id,usuario_id,artista_id)
