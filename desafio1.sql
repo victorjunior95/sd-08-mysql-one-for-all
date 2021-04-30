@@ -47,7 +47,9 @@ DROP TABLE IF EXISTS _historico;
 CREATE TABLE _historico(
     historico_id INT PRIMARY KEY NOT NULL,
     usuario_id INT NOT NULL,
+    cancoes_id INT NOT NULL,
     historico_de_reproducoes VARCHAR(200) NOT NULL,
+    FOREIGN KEY(cancoes_id) REFERENCES _musicas(cancoes_id),
     FOREIGN KEY(usuario_id) REFERENCES _usuarios(usuario_id)
   ) ENGINE = INNODB;
 
@@ -85,21 +87,21 @@ VALUES
 INSERT INTO _musicas (cancoes_id,cancoes,artista_id)
 VALUES
   (1,'Soul For Us',1),
-  (2,'Troubles Of My Inner Fire',2),
-  (3,'Magic Circus',3),
-  (4,'Fantasy For Me',4),
+  (2,'Troubles Of My Inner Fire',1),
+  (3,'Magic Circus',2),
+  (4,'Fantasy For Me',3),
   (5,'Thang Of Thunder',4),
   (6,'Reflections Of Magic',1),
   (7,'Dance With Her Own',1),
-  (8,'Time Fireworks',2),
-  (9,'Honey, So Do I',3),
-  (10,"Sweetie, Let's Go Wild",3),
+  (8,'Time Fireworks',1),
+  (9,'Honey, So Do I',2),
+  (10,"Sweetie, Let's Go Wild",2),
   (11,'She Knows',3),
-  (12,'Celebration Of More',4),
-  (13,'Rock His Everything',4),
-  (14,'Home Forever',4),
-  (15,'Diamond Power',4),
-  (16,"Honey, Let's Be Silly",4),
+  (12,'Celebration Of More',3),
+  (13,'Rock His Everything',3),
+  (14,'Home Forever',3),
+  (15,'Diamond Power',3),
+  (16,"Honey, Let's Be Silly",3),
   (17,'Words Of Her Life',4),
   (18,'Without My Streets',4);
 
@@ -113,22 +115,22 @@ VALUES
   (5,'Temporary Culture',4);
 
 
-INSERT INTO _historico (historico_id,usuario_id,historico_de_reproducoes)
+INSERT INTO _historico (historico_id,usuario_id,cancoes_id,historico_de_reproducoes)
 VALUES
-  (1,1,'Soul For Us'),
-  (2,2,'Home Forever'),
-  (3,3,'Troubles Of My Inner Fire'),
-  (4,4,'Dance With Her Own'),
-  (5,1,'Magic Circus'),
-  (6,1,'Diamond Power'),
-  (7,1,'Thang Of Thunder'),
-  (8,2,'Words Of Her Life'),
-  (9,2,'Reflections Of Magic'),
-  (10,2,"Honey, Let's Be Silly"),
-  (11,3,'Thang Of Thunder'),
-  (12,3,'Magic Circus'),
-  (13,4,'Without My Streets'),
-  (14,4,'Celebration Of More');
+  (1,1,1,'Soul For Us'),
+  (2,2,14,'Home Forever'),
+  (3,3,2,'Troubles Of My Inner Fire'),
+  (4,4,7,'Dance With Her Own'),
+  (5,1,3,'Magic Circus'),
+  (6,1,15,'Diamond Power'),
+  (7,1,5,'Thang Of Thunder'),
+  (8,2,17,'Words Of Her Life'),
+  (9,2,6,'Reflections Of Magic'),
+  (10,2,16,"Honey, Let's Be Silly"),
+  (11,3,5,'Thang Of Thunder'),
+  (12,3,3,'Magic Circus'),
+  (13,4,18,'Without My Streets'),
+  (14,4,12,'Celebration Of More');
 
   
 INSERT INTO _seguindo (seguindo_id,usuario_id,artista_id)
