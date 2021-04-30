@@ -61,6 +61,28 @@ CREATE TABLE _seguindo(
   FOREIGN KEY(artista_id) REFERENCES _artistas(artista_id)
   ) ENGINE = INNODB;
 
+INSERT INTO  _artistas (artista_id,artista)
+VALUES
+  (1,'Walter Phoenix'),
+  (2,'Peter Strong'),
+  (3,'Lance Day'),
+  (4,'Freedie Shannon');
+  
+INSERT INTO _planos (plano_id,valor_plano,plano)
+VALUES
+  (1,'0','gratuito'),
+  (2,'7,99','familiar'),
+  (3,'5,99','universitário');
+  
+INSERT INTO _usuarios (usuario_id,plano_id,usuario,idade)
+VALUES
+  (1,1,'Thati',23),
+  (2,2,'Cintia',35),
+  (3,3,'Bill',20),
+  (4,1,'Roger',45);
+  
+  
+SET FOREIGN_KEY_CHECKS=0;
 INSERT INTO _musicas (cancoes_id,cancoes,artista_id)
 VALUES
   (1,'Soul For Us',1),
@@ -82,19 +104,6 @@ VALUES
   (17,'Words Of Her Life',5),
   (18,'Without My Streets',5);
 
-INSERT INTO _usuarios (usuario_id,plano_id,usuario,idade)
-VALUES
-  (1,1,'Thati',23),
-  (2,2,'Cintia',35),
-  (3,3,'Bill',20),
-  (4,1,'Roger',45);
-
-INSERT INTO _planos (plano_id,valor_plano,plano)
-VALUES
-  (1,'0','gratuito'),
-  (2,'7,99','familiar'),
-  (3,'5,99','universitário');
-  
   
 INSERT INTO _albums (album_id,album,artista_id)
 VALUES
@@ -122,12 +131,6 @@ VALUES
   (13,4,'Without My Streets'),
   (14,4,'Celebration Of More');
 
-INSERT INTO  _artistas (artista_id,artista)
-VALUES
-  (1,'Walter Phoenix'),
-  (2,'Peter Strong'),
-  (3,'Lance Day'),
-  (4,'Freedie Shannon');
   
 INSERT INTO _seguindo (seguindo_id,usuario_id,artista_id)
 VALUES
@@ -138,3 +141,4 @@ VALUES
   (5,1,3),
   (6,2,3),
   (7,3,1);
+SET FOREIGN_KEY_CHECKS=1;
