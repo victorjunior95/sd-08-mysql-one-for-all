@@ -1,54 +1,54 @@
 CREATE TABLE Users(
-    user_id INT PRIMARY KEY,
-    user_name VARCHAR(35),
-    user_age INT NOT NULL
+user_id INT PRIMARY KEY,
+user_name VARCHAR(35),
+user_age INT NOT NULL
 ) engine = InnoDB;
 
 CREATE TABLE Planos(
-    plano_id INT PRIMARY KEY,
-    plano_name VARCHAR(35),
-    plano_valor FLOAT
+plano_id INT PRIMARY KEY,
+plano_name VARCHAR(35),
+plano_valor FLOAT
 ) engine = InnoDB;
 
 ALTER TABLE Users ADD plano_id INT;
 ALTER TABLE Users ADD FOREIGN KEY (plano_id) REFERENCES Planos(plano_id);
 
 CREATE TABLE Artistas(
-    artista_id INT PRIMARY KEY,
-    artista_name VARCHAR(35)
+artista_id INT PRIMARY KEY,
+artista_name VARCHAR(35)
 ) engine = InnoDB;
 
 CREATE TABLE Artistas(
-    artista_id INT PRIMARY KEY,
-    artista_name VARCHAR(35)
+artista_id INT PRIMARY KEY,
+artista_name VARCHAR(35)
 ) engine = InnoDB;
 
 CREATE TABLE Albuns(
-    album_id INT PRIMARY KEY,
-    album_name VARCHAR(50),
-    artista_id INT,
-    FOREIGN KEY (artista_id) REFERENCES Artistas(artista_id)
+album_id INT PRIMARY KEY,
+album_name VARCHAR(50),
+artista_id INT,
+FOREIGN KEY (artista_id) REFERENCES Artistas(artista_id)
 ) engine = InnoDB;
 
 CREATE TABLE Songs(
-    song_id INT PRIMARY KEY,
-    song_name VARCHAR(50),
-    album_id INT,
-    FOREIGN KEY (album_id) REFERENCES Albuns(album_id)
+song_id INT PRIMARY KEY,
+song_name VARCHAR(50),
+album_id INT,
+FOREIGN KEY (album_id) REFERENCES Albuns(album_id)
 ) engine = InnoDB;
 
 CREATE TABLE historico_de_reproducoes(
-	user_id INT,
-    song_id INT,
-    FOREIGN KEY (user_id) REFERENCES Users(user_id),
-    FOREIGN KEY (song_id) REFERENCES Songs(song_id)
+user_id INT,
+song_id INT,
+FOREIGN KEY (user_id) REFERENCES Users(user_id),
+FOREIGN KEY (song_id) REFERENCES Songs(song_id)
 ) engine = InnoDB;
 
 CREATE TABLE users_follow_artistas(
-	user_id INT,
-    artista_id INT,
-    FOREIGN KEY (user_id) REFERENCES Users(user_id),
-    FOREIGN KEY (artista_id) REFERENCES Artistas(artista_id)
+user_id INT,
+artista_id INT,
+FOREIGN KEY (user_id) REFERENCES Users(user_id),
+FOREIGN KEY (artista_id) REFERENCES Artistas(artista_id)
 ) engine = InnoDB;
 
 INSERT INTO Planos VALUES (1,"gratuito",0),
