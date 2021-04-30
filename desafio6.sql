@@ -8,4 +8,3 @@ FROM
 SpotifyClone.plano AS p
 INNER JOIN
 SpotifyClone.usuario AS u ON p.plano_id = u.plano_id;
---https://www.w3schools.com/sql/func_sqlserver_format.asp
