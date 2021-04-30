@@ -104,10 +104,10 @@ VALUES
 
 INSERT INTO usuario(nome, idade, plano_id)
 VALUES
-('Thati',23,1),
-('Cintia',35,2),
-('Bill',20,3),
-('Roger',45,1);
+('Thati',23, 1),
+('Cintia',35, 2),
+('Bill',20, 3),
+('Roger',45, 1);
 
 INSERT INTO seguindo(usuario_id, artista_id)
 VALUES
