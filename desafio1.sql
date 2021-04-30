@@ -37,6 +37,7 @@ FOREIGN KEY (album_id) REFERENCES albuns(album_id)
 CREATE TABLE historico_de_reproducoes(
 user_id INT NOT NULL,
 song_id INT NOT NULL,
+PRIMARY KEY (user_id, song_id),
 FOREIGN KEY (user_id) REFERENCES users(user_id),
 FOREIGN KEY (song_id) REFERENCES songs(song_id)
 ) engine = InnoDB;
@@ -44,6 +45,7 @@ FOREIGN KEY (song_id) REFERENCES songs(song_id)
 CREATE TABLE users_follow_artistas(
 user_id INT NOT NULL,
 artista_id INT NOT NULL,
+PRIMARY KEY (user_id, artista_id),
 FOREIGN KEY (user_id) REFERENCES users(user_id),
 FOREIGN KEY (artista_id) REFERENCES artistas(artista_id)
 ) engine = InnoDB;
