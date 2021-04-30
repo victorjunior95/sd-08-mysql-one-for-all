@@ -82,14 +82,13 @@ VALUES
   (4,1,'Roger',45);
   
   
-SET FOREIGN_KEY_CHECKS=0;
 INSERT INTO _musicas (cancoes_id,cancoes,artista_id)
 VALUES
   (1,'Soul For Us',1),
   (2,'Troubles Of My Inner Fire',2),
   (3,'Magic Circus',3),
   (4,'Fantasy For Me',4),
-  (5,'Thang Of Thunder',5),
+  (5,'Thang Of Thunder',4),
   (6,'Reflections Of Magic',1),
   (7,'Dance With Her Own',1),
   (8,'Time Fireworks',2),
@@ -101,17 +100,17 @@ VALUES
   (14,'Home Forever',4),
   (15,'Diamond Power',4),
   (16,"Honey, Let's Be Silly",4),
-  (17,'Words Of Her Life',5),
-  (18,'Without My Streets',5);
+  (17,'Words Of Her Life',4),
+  (18,'Without My Streets',4);
 
   
 INSERT INTO _albums (album_id,album,artista_id)
 VALUES
   (1,'Envious',1),
   (2,'Exuberant',1),
-  (3,'Hallowed Steam',3),
-  (4,'Incandescent',4),
-  (5,'Temporary Culture',5);
+  (3,'Hallowed Steam',2),
+  (4,'Incandescent',3),
+  (5,'Temporary Culture',4);
 
 
 INSERT INTO _historico (historico_id,usuario_id,historico_de_reproducoes)
@@ -141,4 +140,3 @@ VALUES
   (5,1,3),
   (6,2,3),
   (7,3,1);
-SET FOREIGN_KEY_CHECKS=1;
