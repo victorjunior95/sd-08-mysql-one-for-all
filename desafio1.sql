@@ -10,12 +10,6 @@ CREATE TABLE table_plans(
   `value` DECIMAL(3,2) NOT NULL
 ) ENGINE = InnoDB;
 
-INSERT INTO table_plans(plans, `value`)
-VALUES 
-	('gratuito', 0),
-	('familiar', 7.99),
-	('universitário', 5.99);
-
 CREATE TABLE table_users(
   id_users INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
   users VARCHAR(50) NOT NULL,
@@ -25,24 +19,10 @@ CREATE TABLE table_users(
 	REFERENCES table_plans(id_plans)
 ) ENGINE = InnoDB;
 
-INSERT INTO table_users(users, year_old, id_plans)
-VALUES 
-	('Thati', 23, 1),
-	('Cintia', 35, 2),
-	('Bill', 20, 3),
-	('Roger', 45, 1);
-
 CREATE TABLE table_stars(
   id_stars INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
   stars VARCHAR(50) NOT NULL
 ) ENGINE = InnoDB;
-
-INSERT INTO table_stars(stars)
-VALUES 
-	('Walter Phoenix'),
-	('Peter Strong'),
-	('Lance Day'),
-	('Freedie Shannon');
 
 CREATE TABLE table_follow_stars(
   id_follow_stars INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -53,6 +33,52 @@ CREATE TABLE table_follow_stars(
   FOREIGN KEY(id_stars)
 	REFERENCES table_stars(id_stars)
 ) ENGINE = InnoDB;
+
+CREATE TABLE table_albuns(
+  id_albuns INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  albuns VARCHAR(50) NOT NULL,
+  id_stars INT NOT NULL,
+  FOREIGN KEY(id_stars)
+	REFERENCES table_stars(id_stars)
+) ENGINE = InnoDB;
+
+CREATE TABLE table_sings(
+  id_sings INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  sings VARCHAR(50) NOT NULL,
+  id_albuns INT NOT NULL,
+  FOREIGN KEY(id_albuns)
+	REFERENCES table_albuns(id_albuns)
+) ENGINE = InnoDB;
+
+CREATE TABLE table_history(
+  id_history INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  id_users INT NOT NULL,
+  id_sings INT NOT NULL,
+  FOREIGN KEY(id_users)
+	REFERENCES table_users(id_users),
+    FOREIGN KEY(id_sings)
+	REFERENCES table_sings(id_sings)
+) ENGINE = InnoDB;
+
+INSERT INTO table_plans(plans, `value`)
+VALUES 
+	('gratuito', 0),
+	('familiar', 7.99),
+	('universitário', 5.99);
+
+INSERT INTO table_users(users, year_old, id_plans)
+VALUES 
+	('Thati', 23, 1),
+	('Cintia', 35, 2),
+	('Bill', 20, 3),
+	('Roger', 45, 1);
+
+INSERT INTO table_stars(stars)
+VALUES 
+	('Walter Phoenix'),
+	('Peter Strong'),
+	('Lance Day'),
+	('Freedie Shannon');
 
 INSERT INTO table_follow_stars(id_users, id_stars)
 VALUES 
@@ -65,14 +91,6 @@ VALUES
 	(3, 1),
 	(4, 1);
 
-CREATE TABLE table_albuns(
-  id_albuns INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  albuns VARCHAR(50) NOT NULL,
-  id_stars INT NOT NULL,
-  FOREIGN KEY(id_stars)
-	REFERENCES table_stars(id_stars)
-) ENGINE = InnoDB;
-
 INSERT INTO table_albuns(albuns, id_stars)
 VALUES 
 	('Envious', 1),
@@ -80,14 +98,6 @@ VALUES
 	('Hallowed Steam', 2),
 	('Incandescent', 3),
 	('Temporary Culture', 4);
-
-CREATE TABLE table_sings(
-  id_sings INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  sings VARCHAR(50) NOT NULL,
-  id_albuns INT NOT NULL,
-  FOREIGN KEY(id_albuns)
-	REFERENCES table_albuns(id_albuns)
-) ENGINE = InnoDB;
 
 INSERT INTO table_sings(sings, id_albuns)
 VALUES 
@@ -109,16 +119,6 @@ VALUES
 	('Thang Of Thunder', 4),
 	('Words Of Her Life', 4),
 	('Without My Streets', 4);
-
-CREATE TABLE table_history(
-  id_history INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  id_users INT NOT NULL,
-  id_sings INT NOT NULL,
-  FOREIGN KEY(id_users)
-	REFERENCES table_users(id_users),
-    FOREIGN KEY(id_sings)
-	REFERENCES table_sings(id_sings)
-) ENGINE = InnoDB;
 
 INSERT INTO table_history(id_users, id_sings)
 VALUES 
