@@ -1,7 +1,7 @@
 USE SpotifyClone;
 
 DELIMITER $$
-CREATE FUNCTION quantidade_musicas_no_historico(usuario VARCHAR(25))
+CREATE FUNCTION quantidade_musicas_no_historico(user_id INT)
 RETURNS INT READS SQL DATA
 BEGIN
 DECLARE quantidade INT;
@@ -11,18 +11,24 @@ COUNT(*)
 FROM
 SpotifyClone.historic AS h
 GROUP BY h.user_id
-HAVING h.user_id = (SELECT 
-user_id
-FROM
-SpotifyClone.users AS u
-WHERE
-u.user_name = usuario) INTO quantidade;
+HAVING h.user_id = user_id INTO quantidade;
 
 RETURN quantidade;
 
 END
 $$ DELIMITER ;
 
-DROP FUNCTION quantidade_musicas_no_historico;
-
-SELECT quantidade_musicas_no_historico("Bill");
+-- Eu tinha feito com parâmetro sendo o nome
+-- SELECT 
+-- COUNT(*)
+-- FROM
+-- SpotifyClone.historic AS h
+-- GROUP BY h.user_id
+-- HAVING h.user_id = (SELECT 
+-- user_id
+-- FROM
+-- SpotifyClone.users AS u
+-- WHERE
+-- u.user_name = usuario) INTO quantidade;
+-- RETURN quantidade;
+-- SELECT quantidade_musicas_no_historico(3); 
