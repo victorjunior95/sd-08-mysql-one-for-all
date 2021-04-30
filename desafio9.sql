@@ -8,7 +8,7 @@ SELECT
   FROM
   SpotifyClone.singer AS s
   INNER JOIN SpotifyClone.album AS a
-  N a.singer_id = s.singer_id
+  ON a.singer_id = s.singer_id
   WHERE s.singer = singer
   ORDER BY album;
 END $$;
