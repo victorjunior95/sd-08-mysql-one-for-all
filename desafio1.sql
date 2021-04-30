@@ -76,6 +76,7 @@ VALUES ('Thati', 23, 1),
 CREATE TABLE IF NOT EXISTS followers (
     user_id INT NOT NULL,
     artist_id INT NOT NULL,
+    PRIMARY KEY(user_id, artist_id),
     FOREIGN KEY (user_id) REFERENCES users (user_id),
     FOREIGN KEY (artist_id) REFERENCES artists (artist_id)
 ) ENGINE = InnoDB;
