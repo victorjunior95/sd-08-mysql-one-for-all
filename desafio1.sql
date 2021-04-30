@@ -131,4 +131,5 @@ INSERT INTO HistoricoDeMusicas(IdUser, idMusica)
     (4, 3),
     (4, 11),
     (4, 18);
+
     
