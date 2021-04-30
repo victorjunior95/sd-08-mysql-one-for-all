@@ -4,7 +4,7 @@ CREATE TRIGGER trigger_usuario_delete
     FOR EACH ROW
 BEGIN
     DELETE FROM
-    SpottifyClone.hist_views WHERE user_id = OLD.user_id;
+    SpotifyClone.hist_views WHERE user_id = OLD.user_id;
     DELETE FROM
     SpotifyClone.following WHERE user_id = OLD.user_id;
 END $$
