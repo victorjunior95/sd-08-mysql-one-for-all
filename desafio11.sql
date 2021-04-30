@@ -4,7 +4,7 @@ a.song_name AS 'nome', COUNT(b.song_id) AS 'reproducoes'
 FROM SpotifyClone.songs a
 INNER JOIN (
 SELECT song_id 
-FROM spotifyclone.historico_de_reproducoes 
+FROM SpotifyClone.historico_de_reproducoes 
 WHERE user_id IN (
 SELECT user_id 
 FROM SpotifyClone.users 
