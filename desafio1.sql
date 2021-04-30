@@ -14,7 +14,7 @@ INSERT INTO plan(plan, plan_value)
 VALUES
   ('gratuito', 0),
   ('familiar', 7.99),
-  ('universitário', 7.99);
+  ('universitário', 5.99);
 
 CREATE TABLE user(
     user_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
