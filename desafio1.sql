@@ -73,13 +73,13 @@ VALUES ('Thati', 23, 1),
     ('Cintia', 35, 2),
     ('Bill', 20, 3),
     ('Roger', 45, 1);
-CREATE TABLE IF NOT EXISTS `following` (
+CREATE TABLE IF NOT EXISTS followers (
     user_id INT NOT NULL,
     artist_id INT NOT NULL,
     FOREIGN KEY (user_id) REFERENCES users (user_id),
     FOREIGN KEY (artist_id) REFERENCES artists (artist_id)
 ) ENGINE = InnoDB;
-INSERT INTO `following`
+INSERT INTO followers
 VALUES (1, 1),
     (1, 3),
     (1, 4),
