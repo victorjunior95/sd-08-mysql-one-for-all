@@ -1,3 +1,6 @@
+CREATE DATABASE IF NOT EXISTS SpotifyClone;
+USE SpotifyClone;
+
 CREATE TABLE Users(
 user_id INT PRIMARY KEY,
 user_name VARCHAR(35),
