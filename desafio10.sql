@@ -2,9 +2,9 @@ USE SpotifyClone;
 DELIMITER $$
 
 CREATE FUNCTION quantidade_musicas_no_historico(user_name VARCHAR(50))
-RETURNS DECIMAL(3,0) READS SQL DATA
+RETURNS INT READS SQL DATA
 BEGIN
-  DECLARE quantity DECIMAL(3,0);
+  DECLARE quantity INT;
   SELECT
   COUNT(*)
   FROM users AS U
