@@ -1,4 +1,4 @@
-CREATE VIEW faturamento_atual AS
+CREATE VIEW perfil_artistas AS
   SELECT
   AR.NAME AS 'artista',
   AB.NAME AS 'album',
