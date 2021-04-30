@@ -5,8 +5,7 @@ CREATE FUNCTION quantidade_musicas_no_historico(usuario VARCHAR(50))
 RETURNS INT READS SQL DATA
 BEGIN
     DECLARE quantidade_de_musicas_historico INT;
-    SELECT 
-	COUNT(hr.cancao_id)
+    SELECT COUNT(hr.cancao_id)
     FROM SpotifyClone.historico_de_reproducoes AS hr
     INNER JOIN SpotifyClone.usuarios AS u
     ON u.usuario_id = hr.usuario_id
