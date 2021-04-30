@@ -16,5 +16,3 @@ CREATE VIEW perfil_artistas AS
     FROM
         SpotifyClone.albums AS alb
     ORDER BY seguidores DESC , artista , album;
-
-
