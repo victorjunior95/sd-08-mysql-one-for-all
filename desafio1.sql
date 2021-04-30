@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS `SpotifyClone`.`usuario`(
   `plano_ID` INT NOT NULL,  
   PRIMARY KEY (`usuario_ID`),
   FOREIGN KEY (`plano_ID`) REFERENCES `SpotifyClone`.`plano`(`plano_ID`)
- ) ENGINE = InnoDB;
+) ENGINE = InnoDB;
 
 -- -----------------------------------------------------
 -- Table `SpotifyClone`.`artista`
@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `SpotifyClone`.`artista_seguido`(
   PRIMARY KEY (`usuario_ID`, `artista_ID`),
   FOREIGN KEY (`usuario_ID`) REFERENCES `SpotifyClone`.`usuario`(`usuario_ID`),
   FOREIGN KEY (`artista_ID`) REFERENCES `SpotifyClone`.`artista`(`artista_ID`) 
- ) ENGINE = InnoDB;
+) ENGINE = InnoDB;
 
 -- -----------------------------------------------------
 -- Table `SpotifyClone`.`album`
@@ -93,10 +93,10 @@ VALUES
 -- -----------------------------------------------------
 INSERT INTO `SpotifyClone`.`usuario`(`nome_usuario`, `idade`, `plano_ID`)
 VALUES
- ('Thati', 23, 1),
- ('Cintia', 35, 2),
- ('Bill', 20, 3),
- ('Roger', 45, 1);
+  ('Thati', 23, 1),
+  ('Cintia', 35, 2),
+  ('Bill', 20, 3),
+  ('Roger', 45, 1);
 
 -- -----------------------------------------------------
 -- INSERT INTO `SpotifyClone`.`artista`
@@ -142,7 +142,7 @@ VALUES
   ("Thang Of Thunder", 5),
   ("Words Of Her Life", 5),
   ("Without My Streets", 5);
- 
+
 -- -----------------------------------------------------
 -- INSERT INTO `SpotifyClone`.`artista_seguido`
 -- -----------------------------------------------------
