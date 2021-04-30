@@ -8,3 +8,16 @@ CREATE VIEW faturamento_atual AS
         SpotifyClone.users AS u
             INNER JOIN
         SpotifyClone.pass AS p ON u.pass_id = p.pass_id;
+
+-- Tentar algo parecido com isso para subqueries
+-- SELECT 
+--     COUNT(*)
+-- FROM
+--     SpotifyClone.historic AS h
+-- GROUP BY h.user_id
+-- HAVING h.user_id = (SELECT 
+--         user_id
+--     FROM
+--         SpotifyClone.users AS u
+--     WHERE
+--         u.user_name = 'Bill');
