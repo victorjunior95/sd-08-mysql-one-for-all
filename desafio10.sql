@@ -22,3 +22,7 @@ RETURN quantidade;
 
 END
 $$ DELIMITER ;
+
+DROP FUNCTION quantidade_musicas_no_historico;
+
+SELECT quantidade_musicas_no_historico("Bill");
