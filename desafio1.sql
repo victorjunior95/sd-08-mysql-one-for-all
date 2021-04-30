@@ -111,7 +111,7 @@ INSERT INTO Musicas(Nome, idAlbum)
     ("Home Forever", 4),
     ("Diamond Power", 4),
     ("Honey, Let's Be Silly", 4),
-	("Thang Of Thunder", 5),
+("Thang Of Thunder", 5),
     ("Words Of Her Life", 5),
     ("Without My Streets", 5);
 
@@ -130,6 +130,4 @@ INSERT INTO HistoricoDeMusicas(IdUser, idMusica)
     (3, 16),
     (4, 3),
     (4, 11),
-    (4, 18);
-
-    
+(4, 18);
