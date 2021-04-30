@@ -56,7 +56,7 @@ id_users INT NOT NULL,
 id_sings INT NOT NULL,
 FOREIGN KEY(id_users)
 REFERENCES table_users(id_users),
-	FOREIGN KEY(id_sings)
+FOREIGN KEY(id_sings)
 REFERENCES table_sings(id_sings)
 ) ENGINE = InnoDB;
 
