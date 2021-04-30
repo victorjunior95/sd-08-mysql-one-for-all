@@ -1,4 +1,4 @@
-CREATE VIEW `estatisticas_musicais1`
+CREATE VIEW `estatisticas_musicais`
 AS
 SELECT
 (SELECT COUNT(sings) FROM SpotifyClone.table_sings) AS cancoes,
