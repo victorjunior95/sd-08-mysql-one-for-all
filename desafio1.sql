@@ -29,8 +29,8 @@ CREATE TABLE IF NOT EXISTS albums (
   album VARCHAR(45) NOT NULL,
   artist_id INT NOT NULL,
   PRIMARY KEY (album_id),
-	FOREIGN KEY (artist_id)
-    REFERENCES artists (artist_id)
+  FOREIGN KEY (artist_id)
+  REFERENCES artists (artist_id)
 )
 ENGINE = InnoDB;
 
