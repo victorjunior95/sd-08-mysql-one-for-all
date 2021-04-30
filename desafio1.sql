@@ -63,7 +63,7 @@ VALUES
   
 INSERT INTO Usuarios (usuario_id, usuario, idade, plano_id)
 VALUES
-(1, 'thati', 23, 1), 
+(1, 'Thati', 23, 1), 
 (2, 'Cintia', 35, 2),
 (3, 'Bill', 20, 3),
 (4, 'Roger', 45, 1);
@@ -88,7 +88,7 @@ VALUES
 (1, 'Soul For Us', 1, 1),
 (2, 'Reflections Of Magic', 1, 1),
 (3, 'Dance With Her Own', 1, 1),
-(4, 'Trouble Of My Inner Fire', 1, 2),
+(4, 'Troubles Of My Inner Fire', 1, 2),
 (5, 'Time', 1, 2),
 (6, 'Magic Circus', 2, 3),
 (7, 'Honey,So Do I', 2, 3),
@@ -99,7 +99,7 @@ VALUES
 (12, 'Rock His Everything', 3, 4),
 (13, 'Home Forever', 3, 4),
 (14, 'Diamond Power', 3, 4),
-(15, 'Honey, Let`s Be Silly', 3, 4),
+(15, "Honey, Let's Be Silly", 3, 4),
 (16, 'Thang Of Thunder', 4, 5),
 (17, 'Words Of Her Life', 4, 5),
 (18, 'Without My Streets', 4, 5);
