@@ -28,7 +28,7 @@ CREATE TABLE table_follow_stars(
 id_follow_stars INT NOT NULL AUTO_INCREMENT,
 id_users INT NOT NULL,
 id_stars INT NOT NULL,
-PRIMARY KEY (`id_follow_stars`),
+PRIMARY KEY (`id_follow_stars`, id_users),
 FOREIGN KEY(id_users)
 REFERENCES table_users(id_users),
 FOREIGN KEY(id_stars)
@@ -55,7 +55,7 @@ CREATE TABLE table_history(
 id_history INT NOT NULL AUTO_INCREMENT,
 id_users INT NOT NULL,
 id_sings INT NOT NULL,
-PRIMARY KEY (`id_history`),
+PRIMARY KEY (`id_history`, id_sings),
 FOREIGN KEY(id_users)
 REFERENCES table_users(id_users),
 FOREIGN KEY(id_sings)
