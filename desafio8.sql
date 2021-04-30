@@ -6,10 +6,10 @@ CREATE TRIGGER trigger_usuario_delete
 BEFORE DELETE ON usuarios
 FOR EACH ROW
 BEGIN
-DELETE FROM historico_de_reproducoes
-WHERE usuario_id = OLD.usuario_id;
-DELETE FROM seguidores
-WHERE usuario_id = OLD.usuario_id;
+DELETE FROM SpotifyClone.historico_de_reproducoes as shr
+WHERE shr.usuario_id = OLD.usuario_id;
+DELETE FROM SpotifyClone.seguidores as ss
+WHERE ss.usuario_id = OLD.usuario_id;
 
 END $$
 DELIMITER ;
