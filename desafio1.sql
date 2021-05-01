@@ -40,19 +40,19 @@ CREATE TABLE IF NOT EXISTS `SpotifyClone`.`artista`(
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `SpotifyClone`.`artista_seguido`(  
   `usuario_ID` INT NOT NULL,
-  `artista_ID` INT NOT NULL,  
+  `artista_ID` INT NOT NULL,
   PRIMARY KEY (`usuario_ID`, `artista_ID`),
   FOREIGN KEY (`usuario_ID`) REFERENCES `SpotifyClone`.`usuario`(`usuario_ID`),
-  FOREIGN KEY (`artista_ID`) REFERENCES `SpotifyClone`.`artista`(`artista_ID`) 
+  FOREIGN KEY (`artista_ID`) REFERENCES `SpotifyClone`.`artista`(`artista_ID`)
 ) ENGINE = InnoDB;
 
 -- -----------------------------------------------------
 -- Table `SpotifyClone`.`album`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `SpotifyClone`.`album`(
-  `album_ID` INT NOT NULL AUTO_INCREMENT,  
+  `album_ID` INT NOT NULL AUTO_INCREMENT,
   `nome_album` VARCHAR(45) NOT NULL,
-  `artista_ID` INT NOT NULL,  
+  `artista_ID` INT NOT NULL,
   PRIMARY KEY (`album_ID`),
   FOREIGN KEY (`artista_ID`) REFERENCES `SpotifyClone`.`artista`(`artista_ID`)
 ) ENGINE = InnoDB;
@@ -62,7 +62,7 @@ CREATE TABLE IF NOT EXISTS `SpotifyClone`.`album`(
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `SpotifyClone`.`musica`(
   `musica_ID` INT NOT NULL AUTO_INCREMENT,
-  `nome_musica` VARCHAR(45) NOT NULL,  
+  `nome_musica` VARCHAR(45) NOT NULL,
   `album_ID` INT NULL,
   PRIMARY KEY (`musica_ID`),
   FOREIGN KEY (`album_ID` ) REFERENCES `SpotifyClone`.`album`(`album_ID`)
