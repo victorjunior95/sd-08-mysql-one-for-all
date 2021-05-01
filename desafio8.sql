@@ -3,7 +3,7 @@ USE SpotifyClone;
 DELIMITER $$
 CREATE 
     TRIGGER  trigger_usuario_delete
- AFTER DELETE ON Users FOR EACH ROW 
+AFTER DELETE ON Users FOR EACH ROW 
     BEGIN
       DELETE FROM Followers WHERE Followers.user_id = OLD.Followers.user_id;
 DELETE FROM Playback_History 
