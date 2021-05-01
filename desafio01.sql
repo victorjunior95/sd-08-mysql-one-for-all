@@ -130,6 +130,3 @@ VALUES
 (4,3),
 (4,18),
 (4,11);
--- tive auxilio dos alunos ana karine e do arnaelcio Gomes 
--- https://github.com/tryber/sd-08-mysql-one-for-all/tree/ana-karine-mysql-one-for-all
--- https://github.com/Arnaelcio
