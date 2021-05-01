@@ -1,12 +1,15 @@
+-- tive auxilio dos alunos ana karine e do arnaelcio Gomes 
+-- https://github.com/tryber/sd-08-mysql-one-for-all/tree/ana-karine-mysql-one-for-all
+-- https://github.com/tryber/sd-08-mysql-one-for-all/pull/8
 DROP DATABASE IF EXISTS SpotifyClone;
 CREATE DATABASE SpotifyClone;
 USE SpotifyClone;
 
 CREATE TABLE planos (
-	planoID INT PRIMARY KEY AUTO_INCREMENT,
+    planoID INT PRIMARY KEY AUTO_INCREMENT,
     plano VARCHAR(50),
-	valor_plano DOUBLE
-    ) ENGINE = InnoDB;
+    valor_plano DOUBLE
+)  ENGINE=INNODB;
 
 INSERT INTO planos(plano, valor_plano) 
 VALUES
@@ -14,13 +17,14 @@ VALUES
 ('familiar',7.99),
 ('universitário', 5.99);
 
-CREATE TABLE usuarios(
-usuarioID INT PRIMARY KEY AUTO_INCREMENT,
-usuario VARCHAR(50),
-idade INT,
-planoID INT,
-FOREIGN KEY (planoID) REFERENCES planos (planoID)
-)ENGINE = InnoDB;
+CREATE TABLE usuarios (
+    usuarioID INT PRIMARY KEY AUTO_INCREMENT,
+    usuario VARCHAR(50),
+    idade INT,
+    planoID INT,
+    FOREIGN KEY (planoID)
+        REFERENCES planos (planoID)
+)  ENGINE=INNODB;
 
 INSERT INTO usuarios(usuario, idade, planoID)
 VALUES 
@@ -30,9 +34,9 @@ VALUES
     ('Roger',45,1);
 
 CREATE TABLE artistas (
-artistaID INT PRIMARY KEY AUTO_INCREMENT,
-artista VARCHAR(50)
-) ENGINE = InnoDB;
+    artistaID INT PRIMARY KEY AUTO_INCREMENT,
+    artista VARCHAR(50)
+)  ENGINE=INNODB;
 
 INSERT INTO artistas (artista)
 VALUES
@@ -42,11 +46,12 @@ VALUES
 ('Freedie Shannon');
 
 CREATE TABLE albuns (
-albumID INT PRIMARY KEY AUTO_INCREMENT,
-album VARCHAR(50),
-artistaID INT,
-FOREIGN KEY (artistaID) REFERENCES artistas (artistaID)
-) ENGINE = InnoDB;
+    albumID INT PRIMARY KEY AUTO_INCREMENT,
+    album VARCHAR(50),
+    artistaID INT,
+    FOREIGN KEY (artistaID)
+        REFERENCES artistas (artistaID)
+)  ENGINE=INNODB;
 
 INSERT INTO albuns (album, artistaID)
 VALUES
@@ -58,11 +63,12 @@ VALUES
 
 
 CREATE TABLE cancoes (
-cancaoID INT PRIMARY KEY AUTO_INCREMENT,
-cancao VARCHAR(50),
-albumID INT,
-FOREIGN KEY (albumID) REFERENCES albuns (albumID)
-) ENGINE = InnoDB;
+    cancaoID INT PRIMARY KEY AUTO_INCREMENT,
+    cancao VARCHAR(50),
+    albumID INT,
+    FOREIGN KEY (albumID)
+        REFERENCES albuns (albumID)
+)  ENGINE=INNODB;
 
 INSERT INTO cancoes (cancao, albumID)
 VALUES
@@ -86,13 +92,15 @@ VALUES
 ("Without My Streets",5);
 
 CREATE TABLE seguindores (
-seguindorID INT  AUTO_INCREMENT,
-usuarioID INT,
-artistaID INT,
-CONSTRAINT PRIMARY KEY (seguindorID,usuarioID,artistaID),
-FOREIGN KEY (usuarioID) REFERENCES usuarios (usuarioID),
-FOREIGN KEY (artistaID) REFERENCES artistas (artistaID)
-) ENGINE = InnoDB;
+    seguindorID INT AUTO_INCREMENT,
+    usuarioID INT,
+    artistaID INT,
+    CONSTRAINT PRIMARY KEY (seguindorID , usuarioID , artistaID),
+    FOREIGN KEY (usuarioID)
+        REFERENCES usuarios (usuarioID),
+    FOREIGN KEY (artistaID)
+        REFERENCES artistas (artistaID)
+)  ENGINE=INNODB;
 
 INSERT INTO seguindores (usuarioID, artistaID)
 VALUES
@@ -105,14 +113,16 @@ VALUES
 (3,1),
 (4,4);
 
-CREATE TABLE historicos(
-historicoID INT AUTO_INCREMENT,
-usuarioID INT,
-cancaoID INT,
-CONSTRAINT PRIMARY KEY (historicoID,usuarioID,cancaoID),
-FOREIGN KEY (usuarioID) REFERENCES usuarios (usuarioID),
-FOREIGN KEY (cancaoID) REFERENCES cancoes (cancaoID)
-) ENGINE = InnoDB;
+CREATE TABLE historicos (
+    historicoID INT AUTO_INCREMENT,
+    usuarioID INT,
+    cancaoID INT,
+    CONSTRAINT PRIMARY KEY (historicoID , usuarioID , cancaoID),
+    FOREIGN KEY (usuarioID)
+        REFERENCES usuarios (usuarioID),
+    FOREIGN KEY (cancaoID)
+        REFERENCES cancoes (cancaoID)
+)  ENGINE=INNODB;
 
 INSERT INTO historicos (usuarioID, cancaoID)
 VALUES
