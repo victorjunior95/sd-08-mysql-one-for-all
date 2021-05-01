@@ -59,85 +59,85 @@ CREATE TABLE Playback_History (
 )  ENGINE=INNODB;
 
 INSERT INTO
-	Plans (plan_id, plan_name, plan_price)
+Plans (plan_id, plan_name, plan_price)
 VALUES
-	(1, 'Gratuito', 0),
-	(2, 'Universitário', 5.99),
-	(3, 'Familiar', 7.99);
+(1, 'Gratuito', 0),
+(2, 'Universitário', 5.99),
+(3, 'Familiar', 7.99);
   
 INSERT INTO
-	Users (user_name, user_age, plan_id)
+Users (user_name, user_age, plan_id)
 VALUES
-	('Bill', 20, 2),
-  ('Cintia', 35, 3),
-  ('Roger', 45, 1),
-  ('Thati', 23, 1);
+('Bill', 20, 2),
+('Cintia', 35, 3),
+('Roger', 45, 1),
+('Thati', 23, 1);
   
 INSERT INTO
-	Artists (artist_name)
+Artists (artist_name)
 VALUES
-	('Freedie Shannon'),
-  ('Lance Day'),
-  ('Peter Strong'),
-  ('Walter Phoenix');
+('Freedie Shannon'),
+('Lance Day'),
+('Peter Strong'),
+('Walter Phoenix');
   
 INSERT INTO
-	Albuns (album_name, artist_id)
+Albuns (album_name, artist_id)
 VALUES
-	('Envious', 4),
-  ('Exuberant', 4),
-  ('Incandescent', 2),
-  ('Hallowed Steam', 3),
-  ('Temporary Culture', 1);
+('Envious', 4),
+('Exuberant', 4),
+('Incandescent', 2),
+('Hallowed Steam', 3),
+('Temporary Culture', 1);
   
 INSERT INTO
-	Songs (song_name, album_id)
+Songs (song_name, album_id)
 VALUES
-	('Soul For Us', 1),
-  ('Reflections Of Magic', 1),
-  ('Dance With Her Own', 1),
-  ('Troubles Of My Inner Fire', 2),
-  ('Time Fireworks', 2),
-  ('Fantasy For Me', 3),
-  ('Celebration Of More', 3),
-  ('Rock His Everything', 3),
-  ('Home Forever', 3),
-  ('Diamond Power', 3),
-  ('Honey, Lets Be Silly', 3),
-  ('Magic Circus', 4),
-  ('Honey, So Do I', 4),
-  ('Sweetie, Lets Go Wild', 4),
-  ('She Knows', 4),
-  ('Thang Of Thunder', 5),
-  ('Words Of Her Life', 5),
-  ('Without My Streets', 5);
+('Soul For Us', 1),
+('Reflections Of Magic', 1),
+('Dance With Her Own', 1),
+('Troubles Of My Inner Fire', 2),
+('Time Fireworks', 2),
+('Fantasy For Me', 3),
+('Celebration Of More', 3),
+('Rock His Everything', 3),
+('Home Forever', 3),
+('Diamond Power', 3),
+('Honey, Lets Be Silly', 3),
+('Magic Circus', 4),
+('Honey, So Do I', 4),
+('Sweetie, Lets Go Wild', 4),
+('She Knows', 4),
+('Thang Of Thunder', 5),
+('Words Of Her Life', 5),
+('Without My Streets', 5);
   
 INSERT INTO
-	Followers (user_id, artist_id)
+Followers (user_id, artist_id)
 VALUES
-	(1, 4),
-  (1, 1),
-  (1, 2),
-  (2, 4),
-  (2, 2),
-  (3, 3),
-  (3, 4),
-  (4, 1);
+(1, 4),
+(1, 1),
+(1, 2),
+(2, 4),
+(2, 2),
+(3, 3),
+(3, 4),
+(4, 1);
   
 INSERT INTO
-	Playback_History (user_id, song_id)
+Playback_History (user_id, song_id)
 VALUES 
-	(1, 1),
-  (1, 12),
-  (1, 10),
-  (1, 16),
-  (2, 9),
-  (2, 17),
-  (2, 2),
-  (2, 11),
-  (2, 4),
-  (3, 16),
-  (3, 12),
-  (4, 3),
-  (4, 18),
-  (4, 7);
+(1, 1),
+(1, 12),
+(1, 10),
+(1, 16),
+(2, 9),
+(2, 17),
+(2, 2),
+(2, 11),
+(2, 4),
+(3, 16),
+(3, 12),
+(4, 3),
+(4, 18),
+(4, 7);
