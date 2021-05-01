@@ -1,3 +1,5 @@
+USE SpotifyClone;
+
 DELIMITER $$
 
 CREATE FUNCTION quantidade_musicas_no_historico(userID INT)
@@ -5,11 +7,11 @@ RETURNS INT READS SQL DATA
 BEGIN
 DECLARE songs_total INT;
 SELECT 
-    COUNT(p.user_id)
+    COUNT(*)
 FROM
-    SpotifyClone.Playback_History AS p
+    Playback_History
 WHERE
-    userID = p.user_id INTO songs_total;
+    userID = user_id INTO songs_total;
     RETURN songs_total;
 END $$
 
