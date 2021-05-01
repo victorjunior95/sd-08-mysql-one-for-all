@@ -23,7 +23,7 @@ CREATE TABLE Usuarios (
 CREATE TABLE Artistas(
     artista_id int(4) AUTO_INCREMENT,
     artistaName varchar(50),
-	PRIMARY KEY (artista_id)
+    PRIMARY KEY (artista_id)
 );
 
 CREATE TABLE Albums(
