@@ -28,10 +28,10 @@ CREATE TABLE usuarios (
 
 INSERT INTO usuarios(usuario, idade, planoID)
 VALUES 
-	('Thati',23,1),
-    ('Cintia',35,2),
-    ('Bill',20,3),
-    ('Roger',45,1);
+('Thati',23,1),
+('Cintia',35,2),
+('Bill',20,3),
+('Roger',45,1);
 
 CREATE TABLE artistas (
     artistaID INT PRIMARY KEY AUTO_INCREMENT,
