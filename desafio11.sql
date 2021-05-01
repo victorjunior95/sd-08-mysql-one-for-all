@@ -12,6 +12,3 @@ ON H.cancao_id = C.cancao_id
 WHERE plano <> 'gratuito') AS Sub
 GROUP BY Sub.ca
 ORDER BY 1;
-
-
-
