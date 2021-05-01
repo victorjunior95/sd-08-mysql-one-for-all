@@ -68,10 +68,10 @@ VALUES
 INSERT INTO
 Users (user_name, user_age, plan_id)
 VALUES
-('Bill', 20, 2),
+('Thati', 23, 1),
 ('Cintia', 35, 3),
-('Roger', 45, 1),
-('Thati', 23, 1);
+('Bill', 20, 2),
+('Roger', 45, 1);
   
 INSERT INTO
 Artists (artist_name)
@@ -103,10 +103,10 @@ VALUES
 ('Rock His Everything', 3),
 ('Home Forever', 3),
 ('Diamond Power', 3),
-('Honey, Lets Be Silly', 3),
+("Honey, Let's Be Silly", 3),
 ('Magic Circus', 4),
 ('Honey, So Do I', 4),
-('Sweetie, Lets Go Wild', 4),
+("Sweetie, Let's Go Wild", 4),
 ('She Knows', 4),
 ('Thang Of Thunder', 5),
 ('Words Of Her Life', 5),
@@ -135,7 +135,7 @@ VALUES
 (2, 17),
 (2, 2),
 (2, 11),
-(2, 4),
+(3, 4),
 (3, 16),
 (3, 12),
 (4, 3),
