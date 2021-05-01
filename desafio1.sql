@@ -12,71 +12,60 @@ DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS user_follows;
 
 CREATE TABLE plans(
-ID INT PRIMARY KEY AUTO_INCREMENT,
+id INT NOT NULL AUTO_INCREMENT,
 `name` VARCHAR(50) NOT NULL,
-price DECIMAL(10,2) NOT NULL
-) ENGINE=InnoDB;
+price DECIMAL(10,2) NOT NULL,
+PRIMARY KEY (id)
+) ENGINE = InnoDB;
 
 CREATE TABLE artists(
-ID INT PRIMARY KEY AUTO_INCREMENT,
-`name` VARCHAR(50) NOT NULL
-) ENGINE=InnoDB;
+id INT NOT NULL AUTO_INCREMENT,
+`name` VARCHAR(50) NOT NULL,
+PRIMARY KEY (id)
+) ENGINE = InnoDB;
 
 CREATE TABLE albuns(
-ID INT PRIMARY KEY AUTO_INCREMENT,
+id INT NOT NULL AUTO_INCREMENT,
 `name` VARCHAR(50) NOT NULL,
 artist_id INT NOT NULL,
-FOREIGN KEY (artist_id) REFERENCES artists(ID)
-) ENGINE=InnoDB;
+FOREIGN KEY (artist_id) REFERENCES artists(id),
+PRIMARY KEY (id)
+) ENGINE = InnoDB;
 
 CREATE TABLE songs(
-ID INT PRIMARY KEY AUTO_INCREMENT,
+id INT NOT NULL AUTO_INCREMENT,
 `name` VARCHAR(50) NOT NULL,
 album_id INT NOT NULL,
 artist_id INT NOT NULL,
-FOREIGN KEY (album_id) REFERENCES albuns(ID),
-FOREIGN KEY (artist_id) REFERENCES artists(ID)
-) ENGINE=InnoDB;
+FOREIGN KEY (album_id) REFERENCES albuns(id),
+FOREIGN KEY (artist_id) REFERENCES artists(id),
+PRIMARY KEY (id)
+) ENGINE = InnoDB;
 
 CREATE TABLE users(
-ID INT PRIMARY KEY AUTO_INCREMENT,
+id INT NOT NULL AUTO_INCREMENT,
 `name` VARCHAR(50) NOT NULL,
 age INT NOT NULL,
 plan_id INT NOT NULL,
-FOREIGN KEY (plan_id) REFERENCES plans(ID)
-) ENGINE=InnoDB;
+FOREIGN KEY (plan_id) REFERENCES plans(id),
+PRIMARY KEY (id)
+) ENGINE = InnoDB;
 
 CREATE TABLE histories(
 user_id INT NOT NULL,
 song_id INT NOT NULL,
 PRIMARY KEY (user_id, song_id),
-FOREIGN KEY (user_id) REFERENCES users(ID),
-FOREIGN KEY (song_id) REFERENCES songs(ID)
-) ENGINE=InnoDB;
-
-/* CREATE TABLE artist_albuns(
-artist_id INT NOT NULL,
-album_id INT NOT NULL,
-PRIMARY KEY (artist_id, album_id),
-FOREIGN KEY (artist_id) REFERENCES artists(ID),
-FOREIGN KEY (album_id) REFERENCES albuns(ID)
-) ENGINE=InnoDB; */
+FOREIGN KEY (user_id) REFERENCES users(id),
+FOREIGN KEY (song_id) REFERENCES songs(id)
+) ENGINE = InnoDB;
 
 CREATE TABLE user_follows(
 user_id INT NOT NULL,
 artist_id INT NOT NULL,
 PRIMARY KEY (user_id, artist_id),
-FOREIGN KEY (user_id) REFERENCES users(ID),
-FOREIGN KEY (artist_id) REFERENCES artists(ID)
-) ENGINE=InnoDB;
-
-/* CREATE TABLE album_songs(
-album_id INT NOT NULL,
-song_id INT NOT NULL,
-PRIMARY KEY (album_id, song_id),
-FOREIGN KEY (song_id) REFERENCES songs(ID),
-FOREIGN KEY (album_id) REFERENCES albuns(ID)
-) ENGINE=InnoDB; */
+FOREIGN KEY (user_id) REFERENCES users(id),
+FOREIGN KEY (artist_id) REFERENCES artists(id)
+) ENGINE = InnoDB;
 
 INSERT INTO plans (`name`, price) VALUES
 ('gratuito', 0.00),
