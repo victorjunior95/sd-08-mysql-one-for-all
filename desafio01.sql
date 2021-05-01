@@ -1,6 +1,3 @@
--- tive auxilio dos alunos ana karine e do arnaelcio Gomes 
--- https://github.com/tryber/sd-08-mysql-one-for-all/tree/ana-karine-mysql-one-for-all
--- https://github.com/tryber/sd-08-mysql-one-for-all/pull/8
 DROP DATABASE IF EXISTS SpotifyClone;
 CREATE DATABASE SpotifyClone;
 USE SpotifyClone;
@@ -90,6 +87,10 @@ VALUES
 ("Thang Of Thunder",5),
 ("Words Of Her Life",5),
 ("Without My Streets",5);
+
+-- tive auxilio dos alunos ana karine e do arnaelcio Gomes 
+-- https://github.com/tryber/sd-08-mysql-one-for-all/tree/ana-karine-mysql-one-for-all
+-- https://github.com/tryber/sd-08-mysql-one-for-all/pull/8
 
 CREATE TABLE seguindores (
     seguindorID INT AUTO_INCREMENT,
