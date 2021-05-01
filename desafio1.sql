@@ -74,8 +74,8 @@ VALUES ('Walter Phoenix'), ('Peter Strong'), ('Lance Day'), ('Freddie Shannon');
 INSERT INTO SpotifyClone.albuns(album_nome, artista_id)
 VALUES ('Envious', 1), ('Exuberant', 1), ('Hallowed Steam', 2), ('Incandescent', 3), ('Temporary Culture', 4);
 
-INSERT INTO SpotifyClone.cancoes(cancao_nome, album_id)
-VALUES ('Soul for Us', 1), ('Reflections Of Magic', 1),
+INSERT INTO SpotifyClone.cancoes(cancao_nome, album_id) VALUES 
+('Soul for Us', 1), ('Reflections Of Magic', 1),
 ('Dance With Her Own', 1), ('Troubles Of My Inner Fire', 2),
 ('Time Fireworks', 2), ('Magic Circus', 3),
 ('Honey, So Do I', 3), ("Sweetie, Let's Go Wild", 3),
@@ -95,19 +95,18 @@ INSERT INTO SpotifyClone.usuario_artista(usuario_id, artista_id) VALUES
 (3, 1),
 (4, 4);
 
-INSERT INTO SpotifyClone.usuario_cancao(usuario_id, cancao_id)
-VALUES
-  (1, 1),
-  (1, 6),
-  (1, 14),
-  (1, 16),
-  (2, 2),
-  (2, 13),
-  (2, 15),
-  (2, 17),
-  (3, 4),
-  (3, 6),
-  (3, 16),
-  (4, 3),
-  (4, 11),
-  (4, 18);
+INSERT INTO SpotifyClone.usuario_cancao(usuario_id, cancao_id) VALUES
+(1, 1),
+(1, 6),
+(1, 14),
+(1, 16),
+(2, 2),
+(2, 13),
+(2, 15),
+(2, 17),
+(3, 4),
+(3, 6),
+(3, 16),
+(4, 3),
+(4, 11),
+(4, 18);
