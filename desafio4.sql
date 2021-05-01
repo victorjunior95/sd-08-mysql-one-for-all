@@ -8,5 +8,4 @@ CREATE VIEW top_3_artistas AS
         SpotifyClone.artistas AS a ON ua.artista_id = a.artista_id
     GROUP BY a.artista_id
     ORDER BY `seguidores` DESC , `artista`
-    LIMIT 3;
-      
+    LIMIT 3;        
