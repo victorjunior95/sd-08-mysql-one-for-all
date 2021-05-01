@@ -40,19 +40,19 @@ FOREIGN KEY(album_id) REFERENCES albuns(album_id)
 ) ENGINE = InnoDB;
 
 CREATE TABLE seguidores(
-artista_id INT NOT NULL,
-usuario_id INT NOT NULL,    
+usuario_id INT NOT NULL,
+artista_id INT NOT NULL,    
 PRIMARY KEY(artista_id, usuario_id),
-FOREIGN KEY(artista_id) REFERENCES artistas(artista_id),
-FOREIGN KEY(usuario_id) REFERENCES usuarios(usuario_id)
+FOREIGN KEY(usuario_id) REFERENCES usuarios(usuario_id),
+FOREIGN KEY(artista_id) REFERENCES artistas(artista_id)
 ) ENGINE = InnoDB;
 
 CREATE TABLE historico(
 musica_id INT NOT NULL,
 usuario_id INT NOT NULL,
 PRIMARY KEY(musica_id, usuario_id),
-FOREIGN KEY(musica_id) REFERENCES musicas(musica_id),
-FOREIGN KEY(usuario_id) REFERENCES usuarios(usuario_id)
+FOREIGN KEY(usuario_id) REFERENCES usuarios(usuario_id),
+FOREIGN KEY(musica_id) REFERENCES musicas(musica_id)
 ) ENGINE = InnoDB;
 
 INSERT INTO SpotifyClone.artistas(artista_nome)
