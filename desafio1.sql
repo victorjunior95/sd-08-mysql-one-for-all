@@ -4,7 +4,7 @@ USE SpotifyClone;
 CREATE TABLE planos(
 plano_id INT NOT NULL auto_increment,
 plano_nome VARCHAR(50),
-plano_valor DOUBLE,
+plano_valor DECIMAL(4,2),
 PRIMARY KEY(plano_id)
 ) ENGINE = InnoDB;
 
@@ -81,17 +81,15 @@ VALUES
 
 INSERT INTO SpotifyClone.seguidores(usuario_id, artista_id)
 VALUES
-(1,1),(2,1),
-(3,2),(4,4),
-(1,4), (1,3),
-(2,3), (3,1);
+(1,1), (1,4), (1,3), (2,1),
+(2,3), (3,2), (3,1), (3,4);
 
 INSERT INTO SpotifyClone.historico(usuario_id, musica_id)
 VALUES
 (1,1), (1,6),
 (1,14), (1,16),
-(2,2), (2,13),
-(2,15), (2,17),
-(3,4), (3,6),
-(3,16), (4,3),
+(2,13),(2,17),
+(2,2), (2,15), 
+(3,14), (3,16),
+(3,6), (4,3),
 (4,11), (4,18);
