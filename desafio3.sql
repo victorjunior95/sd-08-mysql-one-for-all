@@ -1,11 +1,10 @@
 CREATE VIEW historico_reproducao_usuarios AS
     SELECT 
-        u.usuario_nome AS usuario, c.cancao_nome AS nome
+        u.usuario_nome AS `usuario`, c.cancao_nome AS `nome`
     FROM
-        SpotifyClone.usuarios AS u,
-        SpotifyClone.cancoes AS c,
-        SpotifyClone.usuario_cancao AS h
-    WHERE
-        u.usuario_id = h.usuario_id
-            AND c.cancao_id = h.cancao_id
-    ORDER BY `usuario` , `nome`;
+        SpotifyClone.usuarios AS u
+            INNER JOIN
+        SpotifyClone.usuario_cancao AS uc ON u.usuario_id = uc.usuario_id
+            INNER JOIN
+        SpotifyClone.cancoes AS c ON uc.cancao_id = c.cancao_id
+    ORDER BY usuario , nome;
