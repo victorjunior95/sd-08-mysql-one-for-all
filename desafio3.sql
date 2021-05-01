@@ -1,5 +1,5 @@
 CREATE VIEW historico_reproducao_usuarios AS
-SELECT u.usuario_nome usuario, m.musica_nome 
+SELECT u.usuario_nome usuario, m.musica_nome nome
 FROM SpotifyClone.usuarios u, SpotifyClone.historico h, SpotifyClone.musicas m
 WHERE 
 u.usuario_id = h.usuario_id AND
