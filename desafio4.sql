@@ -1,3 +1,4 @@
+USE SpotifyClone;
 CREATE VIEW top_3_artistas AS
     SELECT 
         a.artista_nome AS `artista`,
