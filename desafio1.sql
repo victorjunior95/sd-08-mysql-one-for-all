@@ -7,7 +7,7 @@ USE SpotifyClone;
 CREATE TABLE Plans (
     plan_id TINYINT NOT NULL,
     plan_name VARCHAR(50) NOT NULL,
-    plan_price DOUBLE NOT NULL,
+    plan_price DECIMAL(3,2) NOT NULL,
     PRIMARY KEY (plan_id)
 )  ENGINE=INNODB;
 
@@ -61,7 +61,7 @@ CREATE TABLE Playback_History (
 INSERT INTO
 Plans (plan_id, plan_name, plan_price)
 VALUES
-(1, 'Gratuito', 0),
+(1, 'Gratuito', 0.00),
 (2, 'Universitário', 5.99),
 (3, 'Familiar', 7.99);
   
