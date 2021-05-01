@@ -2,57 +2,57 @@ CREATE DATABASE IF NOT EXISTS SpotifyClone;
 USE SpotifyClone;
 
 CREATE TABLE planos(
-	plano_id INT NOT NULL auto_increment,
-    plano_nome VARCHAR(50),
-    plano_valor DOUBLE,
-    PRIMARY KEY(plano_id)
+plano_id INT NOT NULL auto_increment,
+plano_nome VARCHAR(50),
+plano_valor DOUBLE,
+PRIMARY KEY(plano_id)
 ) ENGINE = InnoDB;
 
 CREATE TABLE artistas(
-	artista_id INT NOT NULL auto_increment,
-    artista_nome VARCHAR(50),
-    PRIMARY KEY(artista_id)
+artista_id INT NOT NULL auto_increment,
+artista_nome VARCHAR(50),
+PRIMARY KEY(artista_id)
 ) ENGINE = InnoDB;
 
 CREATE TABLE usuarios(
-	usuario_id INT NOT NULL auto_increment,
-    usuario_nome VARCHAR(50),
-    usuario_idade INT,
-    plano_id INT,
-    PRIMARY KEY(usuario_id),
-    FOREIGN KEY(plano_id) REFERENCES planos(plano_id)
+usuario_id INT NOT NULL auto_increment,
+usuario_nome VARCHAR(50),
+usuario_idade INT,
+plano_id INT,
+PRIMARY KEY(usuario_id),
+FOREIGN KEY(plano_id) REFERENCES planos(plano_id)
 ) ENGINE = InnoDB;
 
 CREATE TABLE albuns(
-	album_id INT NOT NULL auto_increment,
-    album_nome VARCHAR(50),
-    artista_id INT,
-    PRIMARY KEY(album_id),
-    FOREIGN KEY(artista_id) REFERENCES artistas(artista_id)
+album_id INT NOT NULL auto_increment,
+album_nome VARCHAR(50),
+artista_id INT,
+PRIMARY KEY(album_id),
+FOREIGN KEY(artista_id) REFERENCES artistas(artista_id)
 ) ENGINE = InnoDB;
 
 CREATE TABLE musicas(
-	musica_id INT NOT NULL auto_increment,
-    musica_nome VARCHAR(50),
-    album_id INT,
-    PRIMARY KEY(musica_id),
-    FOREIGN KEY(album_id) REFERENCES albuns(album_id)
+musica_id INT NOT NULL auto_increment,
+musica_nome VARCHAR(50),
+album_id INT,
+PRIMARY KEY(musica_id),
+FOREIGN KEY(album_id) REFERENCES albuns(album_id)
 ) ENGINE = InnoDB;
 
 CREATE TABLE seguidores(
-	artista_id INT NOT NULL,
-    usuario_id INT NOT NULL,    
-    PRIMARY KEY(artista_id, usuario_id),
-    FOREIGN KEY(artista_id) REFERENCES artistas(artista_id),
-    FOREIGN KEY(usuario_id) REFERENCES usuarios(usuario_id)
+artista_id INT NOT NULL,
+usuario_id INT NOT NULL,    
+PRIMARY KEY(artista_id, usuario_id),
+FOREIGN KEY(artista_id) REFERENCES artistas(artista_id),
+FOREIGN KEY(usuario_id) REFERENCES usuarios(usuario_id)
 ) ENGINE = InnoDB;
 
 CREATE TABLE historico(
-	musica_id INT NOT NULL,
-    usuario_id INT NOT NULL,
-    PRIMARY KEY(musica_id, usuario_id),
-    FOREIGN KEY(musica_id) REFERENCES musicas(musica_id),
-    FOREIGN KEY(usuario_id) REFERENCES usuarios(usuario_id)
+musica_id INT NOT NULL,
+usuario_id INT NOT NULL,
+PRIMARY KEY(musica_id, usuario_id),
+FOREIGN KEY(musica_id) REFERENCES musicas(musica_id),
+FOREIGN KEY(usuario_id) REFERENCES usuarios(usuario_id)
 ) ENGINE = InnoDB;
 
 INSERT INTO SpotifyClone.artistas(artista_nome)
@@ -95,10 +95,3 @@ VALUES
 (4,3), (6,3),
 (16,3), (3,4),
 (11,4), (18,4);
-
-
-
-
-    
-    
-
