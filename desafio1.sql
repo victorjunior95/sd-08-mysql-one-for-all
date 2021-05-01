@@ -61,7 +61,7 @@ VALUES ('Walter Phoenix'), ('Peter Strong'), ('Lance Day'), ('Freddie Shannon');
 INSERT INTO SpotifyClone.planos(plano_nome, plano_valor)
 VALUES ('gratuito', 0.00), ('familiar', 7.99), ('universitário', 5.99);
 
-INSERT INTO SpotifyClone.usuarios(usuario_nome, usuario__idade, plano_id)
+INSERT INTO SpotifyClone.usuarios(usuario_nome, usuario_idade, plano_id)
 VALUES ('Thati', 23, 1), ('Cintia', 35, 2), ('Bill', 20, 3), ('Roger', 45, 1);
 
 INSERT INTO SpotifyClone.albuns(album_nome, artista_id)
