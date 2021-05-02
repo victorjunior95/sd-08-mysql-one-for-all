@@ -128,7 +128,7 @@ VALUES
 (4, 3),
 (4, 11),
 (4, 18);
- 
+
 INSERT
 INTO SpotifyClone.acompanha (usuario_id, artista_id)
 VALUES
