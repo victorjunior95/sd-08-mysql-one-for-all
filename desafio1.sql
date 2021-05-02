@@ -82,7 +82,15 @@ VALUES
   (3,3,'Bill',20),
   (4,1,'Roger',45);
   
-SET FOREIGN_KEY_CHECKS=0;  
+
+INSERT INTO _albums (album_id,album,artista_id)
+VALUES
+  (1,'Envious',1),
+  (2,'Exuberant',1),
+  (3,'Hallowed Steam',2),
+  (4,'Incandescent',3),
+  (5,'Temporary Culture',4);
+-- SET FOREIGN_KEY_CHECKS=0;  
 INSERT INTO _musicas (cancoes_id,cancoes,album_id)
 VALUES
   (1,'Soul For Us',1),
@@ -104,15 +112,7 @@ VALUES
   (17,'Words Of Her Life',5),
   (18,'Without My Streets',5);
 
- SET FOREIGN_KEY_CHECKS=1; 
-INSERT INTO _albums (album_id,album,artista_id)
-VALUES
-  (1,'Envious',1),
-  (2,'Exuberant',1),
-  (3,'Hallowed Steam',2),
-  (4,'Incandescent',3),
-  (5,'Temporary Culture',4);
-
+-- SET FOREIGN_KEY_CHECKS=1; 
 
 INSERT INTO _historico (usuario_id,cancoes_id)
 VALUES
