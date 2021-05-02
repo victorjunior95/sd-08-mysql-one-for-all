@@ -7,7 +7,7 @@ USE SpotifyClone;
 CREATE TABLE Planos(
     plano_id int(4) AUTO_INCREMENT,
     planoName varchar(50),
-    valorPlano float(4),
+    valorPlano decimal(4,2),
     PRIMARY KEY (plano_id)
 );
 
@@ -68,7 +68,7 @@ INSERT INTO Usuarios (  usuario_id, usuarioName, age, plano_id)
 VALUES
 (1, 'Thati', 23, 1),
 (2, 'Cintia', 35, 2),
-(3, 'Bill', 20, 1),
+(3, 'Bill', 20, 3),
 (4, 'Roger', 45, 1);
 
 INSERT INTO Artistas (artista_id, artistaName)
