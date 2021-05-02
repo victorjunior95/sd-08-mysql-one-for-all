@@ -89,7 +89,7 @@ INSERT INTO albums (album, artista_id)
     ("Envious", 1),
     ("Exuberant", 1),
     ("Hallowed Steam", 2),
-    ("Incadescent", 3),
+    ("Incandescent", 3),
     ("Temporary Culture", 4);
     
 INSERT INTO songs (cancao, album_id)
