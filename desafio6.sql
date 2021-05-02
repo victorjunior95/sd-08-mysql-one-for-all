@@ -7,4 +7,3 @@ sum(p.plano_valor) faturamento_total
 FROM SpotifyClone.planos p
 INNER JOIN SpotifyClone.usuarios u
 ON p.plano_id = u.plano_id
-
