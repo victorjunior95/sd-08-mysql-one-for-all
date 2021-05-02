@@ -1,4 +1,4 @@
-CREATE VIEW top_2_hits_no_momento AS
+CREATE VIEW top_2_hits_do_momento AS
   SELECT
     songs.cancao AS cancao,
     COUNT(historic.cancao_id) AS reproducoes
