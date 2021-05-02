@@ -7,4 +7,3 @@ INNER JOIN artistas a ON a.artista_id = al.artista_id
 ORDER BY seguidores DESC,
 artista,
 album;
-
