@@ -4,7 +4,7 @@ sub.`artista` AS 'artista',
 sub.`album` AS 'album',
 sub.`seguidores` AS 'seguidores'
 FROM(
-SELECT  ar.artistaName AS 'artista', al.album AS  'album' , CONVERT( SUM(CASE WHEN s.artista_id = al.artista_id THEN 1 ELSE 0 END ), CHAR)  AS 'seguidores'  FROM SpotifyClone.Albums AS al
+SELECT  ar.artistaName AS 'artista', al.album AS  'album' ,  CONVERT(SUM(CASE WHEN s.artista_id = al.artista_id THEN 1 ELSE 0 END ),UNSIGNED INTEGER)  AS 'seguidores'  FROM SpotifyClone.Albums AS al
 INNER JOIN SpotifyClone.Artistas AS ar
 ON ar.artista_id = al.artista_id
 INNER JOIN SpotifyClone.Seguidores AS s
