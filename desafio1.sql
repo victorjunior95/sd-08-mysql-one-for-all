@@ -39,7 +39,7 @@ DROP TABLE IF EXISTS _musicas;
 CREATE TABLE _musicas(
   cancoes_id INT PRIMARY KEY NOT NULL,
   cancoes VARCHAR(80) NOT NULL,
-  album_id INT,
+  album_id INT NOT NULL,
   FOREIGN KEY (album_id) REFERENCES _albums(album_id)
   ) ENGINE = INNODB;
 
@@ -82,14 +82,14 @@ VALUES
   (3,3,'Bill',20),
   (4,1,'Roger',45);
   
-  
+SET FOREIGN_KEY_CHECKS=0;  
 INSERT INTO _musicas (cancoes_id,cancoes,album_id)
 VALUES
   (1,'Soul For Us',1),
   (2,'Troubles Of My Inner Fire',2),
   (3,'Magic Circus',3),
   (4,'Fantasy For Me',4),
-  (5,'Thang Of Thunder',4),
+  (5,'Thang Of Thunder',5),
   (6,'Reflections Of Magic',1),
   (7,'Dance With Her Own',1),
   (8,'Time Fireworks',2),
@@ -101,10 +101,10 @@ VALUES
   (14,'Home Forever',4),
   (15,'Diamond Power',4),
   (16,"Honey, Let's Be Silly",4),
-  (17,'Words Of Her Life',4),
-  (18,'Without My Streets',4);
+  (17,'Words Of Her Life',5),
+  (18,'Without My Streets',5);
 
-  
+ SET FOREIGN_KEY_CHECKS=1; 
 INSERT INTO _albums (album_id,album,artista_id)
 VALUES
   (1,'Envious',1),
