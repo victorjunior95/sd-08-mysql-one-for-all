@@ -45,6 +45,7 @@ CREATE TABLE _musicas(
 
 DROP TABLE IF EXISTS _historico;
 CREATE TABLE _historico(
+    id int not null,
     usuario_id INT NOT NULL,
     cancoes_id INT NOT NULL,
     CONSTRAINT PRIMARY KEY (cancoes_id,usuario_id),
@@ -114,22 +115,22 @@ VALUES
 
 -- SET FOREIGN_KEY_CHECKS=1; 
 
-INSERT INTO _historico (usuario_id,cancoes_id)
+INSERT INTO _historico (id,usuario_id,cancoes_id)
 VALUES
-  (1,1),
-  (2,14),
-  (3,2),
-  (4,7),
-  (1,3),
-  (1,15),
-  (1,5),
-  (2,17),
-  (2,6),
-  (2,16),
-  (3,5),
-  (3,3),
-  (4,18),
-  (4,12);
+  (1,1,1),
+  (2,2,14),
+  (3,3,2),
+  (4,4,7),
+  (5,1,3),
+  (6,1,15),
+  (7,1,5),
+  (8,2,17),
+  (9,2,6),
+  (10,2,16),
+  (11,3,5),
+  (12,3,3),
+  (13,4,18),
+  (14,4,12);
 
   
 INSERT INTO _seguindo (usuario_id,artista_id)
