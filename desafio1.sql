@@ -39,15 +39,15 @@ DROP TABLE IF EXISTS _musicas;
 CREATE TABLE _musicas(
   cancoes_id INT PRIMARY KEY NOT NULL,
   cancoes VARCHAR(80) NOT NULL,
-  artista_id INT NOT NULL,
-  FOREIGN KEY(artista_id) REFERENCES _artistas(artista_id)
+  album_id INT,
+  FOREIGN KEY (album_id) REFERENCES _albums(album_id)
   ) ENGINE = INNODB;
 
 DROP TABLE IF EXISTS _historico;
 CREATE TABLE _historico(
-    historico_id INT PRIMARY KEY NOT NULL,
     usuario_id INT NOT NULL,
     cancoes_id INT NOT NULL,
+    CONSTRAINT PRIMARY KEY (cancoes_id,usuario_id),
     FOREIGN KEY(cancoes_id) REFERENCES _musicas(cancoes_id),
     FOREIGN KEY(usuario_id) REFERENCES _usuarios(usuario_id)
   ) ENGINE = INNODB;
@@ -55,9 +55,9 @@ CREATE TABLE _historico(
 
 DROP TABLE IF EXISTS _seguindo;
 CREATE TABLE _seguindo(
-  seguindo_id INT PRIMARY KEY NOT NULL,
   usuario_id INT NOT NULL,
   artista_id INT NOT NULL,
+  CONSTRAINT PRIMARY KEY (usuario_id,artista_id),
   FOREIGN KEY(usuario_id) REFERENCES _usuarios(usuario_id),
   FOREIGN KEY(artista_id) REFERENCES _artistas(artista_id)
   ) ENGINE = INNODB;
@@ -83,24 +83,24 @@ VALUES
   (4,1,'Roger',45);
   
   
-INSERT INTO _musicas (cancoes_id,cancoes,artista_id)
+INSERT INTO _musicas (cancoes_id,cancoes,album_id)
 VALUES
   (1,'Soul For Us',1),
-  (2,'Troubles Of My Inner Fire',1),
-  (3,'Magic Circus',2),
-  (4,'Fantasy For Me',3),
+  (2,'Troubles Of My Inner Fire',2),
+  (3,'Magic Circus',3),
+  (4,'Fantasy For Me',4),
   (5,'Thang Of Thunder',4),
   (6,'Reflections Of Magic',1),
   (7,'Dance With Her Own',1),
-  (8,'Time Fireworks',1),
-  (9,'Honey, So Do I',2),
-  (10,"Sweetie, Let's Go Wild",2),
+  (8,'Time Fireworks',2),
+  (9,'Honey, So Do I',3),
+  (10,"Sweetie, Let's Go Wild",3),
   (11,'She Knows',3),
-  (12,'Celebration Of More',3),
-  (13,'Rock His Everything',3),
-  (14,'Home Forever',3),
-  (15,'Diamond Power',3),
-  (16,"Honey, Let's Be Silly",3),
+  (12,'Celebration Of More',4),
+  (13,'Rock His Everything',4),
+  (14,'Home Forever',4),
+  (15,'Diamond Power',4),
+  (16,"Honey, Let's Be Silly",4),
   (17,'Words Of Her Life',4),
   (18,'Without My Streets',4);
 
@@ -114,22 +114,22 @@ VALUES
   (5,'Temporary Culture',4);
 
 
-INSERT INTO _historico (historico_id,usuario_id,cancoes_id)
+INSERT INTO _historico (usuario_id,cancoes_id)
 VALUES
-  (1,1,1),
-  (2,2,14),
-  (3,3,2),
-  (4,4,7),
-  (5,1,3),
-  (6,1,15),
-  (7,1,5),
-  (8,2,17),
-  (9,2,6),
-  (10,2,16),
-  (11,3,5),
-  (12,3,3),
-  (13,4,18),
-  (14,4,12);
+  (1,1),
+  (2,14),
+  (3,2),
+  (4,7),
+  (1,3),
+  (1,15),
+  (1,5),
+  (2,17),
+  (2,6),
+  (2,16),
+  (3,5),
+  (3,3),
+  (4,18),
+  (4,12);
 
   
 INSERT INTO _seguindo (seguindo_id,usuario_id,artista_id)
