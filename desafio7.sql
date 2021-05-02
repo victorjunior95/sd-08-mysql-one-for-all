@@ -10,4 +10,4 @@ CREATE VIEW perfil_artistas AS
             INNER JOIN
         SpotifyClone.Followers AS f ON ar.artist_id = f.artist_id
     GROUP BY al.album_id
-    ORDER BY `seguidores` DESC , `artista`;
+    ORDER BY `seguidores` DESC , `artista` , `album`;
