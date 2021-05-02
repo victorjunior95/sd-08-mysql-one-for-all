@@ -1,7 +1,9 @@
 -- DESAFIO 1
 
 -- criando banco de dados
-CREATE DATABASE IF NOT EXISTS SpotifyClone;
+DROP DATABASE IF EXISTS SpotifyClone;
+CREATE DATABASE SpotifyClone;
+USE SpotifyClone;
 
 -- criando tabelas do banco de dados
 CREATE TABLE plano (
