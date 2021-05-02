@@ -2,3 +2,7 @@ node_modules/
 
 # VSCode repo settings
 .vscode
+.~lock.SpotifyClone-Non-NormalizedTable.ods
+.~lock.SpotifyClone-Non-NormalizedTable.xlsx
+SpotifyClone-Non-NormalizedTable.ods
+
