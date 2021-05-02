@@ -94,7 +94,7 @@ INSERT INTO albums (album, artista_id)
     
 INSERT INTO songs (cancao, album_id)
   VALUES
-    ("Souls For Us", 1),
+    ("Soul For Us", 1),
     ("Reflections Of Magic", 1),
     ("Dance With Her Own", 1),
     ("Troubles Of My Inner Fire", 2),
