@@ -10,6 +10,3 @@ DELETE FROM seguidores s
 WHERE s.usuario_id = OLD.usuario_id;
 END $$
 DELIMITER ;
-
-
-
