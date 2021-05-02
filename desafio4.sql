@@ -6,4 +6,3 @@ INNER JOIN artistas a ON a.artista_id = usa.artista_id
 GROUP BY usa.artista_id
 ORDER BY seguidores DESC, artista ASC
 LIMIT 3;
-

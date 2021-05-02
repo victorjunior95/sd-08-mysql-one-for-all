@@ -6,4 +6,3 @@ FROM historico_de_reproducoes h
 INNER JOIN usuarios u ON h.usuario_id = u.usuario_id
 INNER JOIN cancoes c ON h.cancao_id = c.cancao_id
 ORDER BY usuario, nome;
-
