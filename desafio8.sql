@@ -1,6 +1,6 @@
+USE SpotifyClone;
 DELIMITER $$
-
-CREATE TRIGGER SpotifyClone.trigger_usuario_delete
+CREATE TRIGGER trigger_usuario_delete
 BEFORE DELETE ON usuarios
 FOR EACH ROW
 BEGIN
