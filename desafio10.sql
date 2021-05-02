@@ -9,4 +9,5 @@ BEGIN
     WHERE usuario_id = id INTO quantidadeReproducoes;
     RETURN quantidadeReproducoes;
 END
-    
+
+DELIMITER ;

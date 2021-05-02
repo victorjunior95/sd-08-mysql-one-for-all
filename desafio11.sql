@@ -9,4 +9,3 @@ CREATE VIEW cancoes_premium AS
     ON u.usuario_id = hr.usuario_id AND (u.plano_id = 2 OR u.plano_id = 3)
     GROUP BY c.cancao_id
     ORDER BY `nome`;
-    
