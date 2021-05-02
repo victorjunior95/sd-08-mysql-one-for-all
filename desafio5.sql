@@ -6,3 +6,4 @@ INNER JOIN cancoes c ON h.cancao_id = c.cancao_id
 GROUP BY cancao
 ORDER BY reproducoes DESC, cancao ASC
 LIMIT 2;
+

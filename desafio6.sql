@@ -6,3 +6,4 @@ ROUND(AVG(p.valor_plano), 2) AS 'faturamento_medio',
 SUM(p.valor_plano) AS 'faturamento_total'
 FROM usuarios u
 INNER JOIN planos p ON u.plano_id = p.plano_id;
+
