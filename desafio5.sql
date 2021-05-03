@@ -7,6 +7,6 @@ SELECT
 COUNT((SELECT users FROM SpotifyClone.table_users tu
   WHERE tu.id_users = th.id_users)) AS reproducoes
 FROM SpotifyClone.table_history th
-GROUP BY cancoes
+GROUP BY cancao
 ORDER BY reproducoes DESC, cancao
 LIMIT 2;
