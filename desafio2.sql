@@ -9,3 +9,4 @@ CREATE VIEW estatisticas_musicais AS
         SpotifyClone.albunsTB AS al
             INNER JOIN
         SpotifyClone.artistaTB AS art;
+--  SELECT * FROM estatisticas_musicais;
