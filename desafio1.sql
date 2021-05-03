@@ -39,7 +39,7 @@ CREATE TABLE seguindo(
 CREATE TABLE reproducoes(
   usuario_id INT NOT NULL,
   musica_id INT NOT NULL,
-  PRIMARY KEY (usario_id, musica_id),
+  PRIMARY KEY (usuario_id, musica_id),
   FOREIGN KEY (usuario_id) REFERENCES usuarios(id),
   FOREIGN KEY (musica_id) REFERENCES musicas(id)
 ) ENGINE = InnoDB;
