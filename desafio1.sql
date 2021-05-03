@@ -27,7 +27,7 @@ CREATE TABLE artistas (
 CREATE TABLE seguidores (
     usuario_id INT NOT NULL,
     artista_id INT NOT NULL,
-    PRIMARY KEY (usuario_id, artista_id),
+    PRIMARY KEY (usuario_id , artista_id),
     FOREIGN KEY (usuario_id)
         REFERENCES usuarios (usuario_id),
     FOREIGN KEY (artista_id)
@@ -56,7 +56,7 @@ CREATE TABLE musicas (
 CREATE TABLE historico (
     usuario_id INT NOT NULL,
     musica_id INT NOT NULL,
-    PRIMARY KEY (usuario_id, musica_id),
+    PRIMARY KEY (usuario_id , musica_id),
     FOREIGN KEY (usuario_id)
         REFERENCES usuarios (usuario_id),
     FOREIGN KEY (musica_id)
