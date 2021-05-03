@@ -1,3 +1,6 @@
+CREATE VIEW
+faturamento_atual
+AS
 SELECT
 (SELECT MIN(`value`) FROM SpotifyClone.table_plans)
 AS faturamento_minimo,
