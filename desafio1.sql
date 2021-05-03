@@ -24,14 +24,20 @@ CREATE TABLE artistas (
 ) ENGINE = InnoDB;
 
 CREATE TABLE albuns(
-  `id_album` INT NOT NULL AUTO_INCREMENT,
+  `id_album` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `album` VARCHAR(100) NOT NULL,
   `id_artista` INT NOT NULL,
   FOREIGN KEY (`id_artista`)
     REFERENCES `artistas` (`id_artista`)
 ) ENGINE = InnoDB;
 
-CREATE TABLE cancoes() ENGINE = InnoDB;
+CREATE TABLE cancoes(
+  `id_cancoes` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  `cancao` VARCHAR(100) NOT NULL,
+  `id_album` INT NOT NULL,
+  FOREIGN KEY(`id_album`)
+    REFERENCES `album` (`id_album`)
+) ENGINE = InnoDB;
 
 CREATE TABLE usuarios (
   `id_usuario` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
