@@ -24,7 +24,7 @@ CREATE TABLE artistas (
 ) ENGINE = InnoDB;
 
 CREATE TABLE usuarios (
-  `id_usuario` INI PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  `id_usuario` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `usuario` VARCHAR(40) NOT NULL,
   `idade` INT NOT NULL,
   `id_plano` INT NOT NULL,
