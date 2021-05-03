@@ -1,2 +1,2 @@
 git add --all
-git commit -am "REQ-1: Buid"
+git commit -am "FIX: 'REQ-1 Buid' "
