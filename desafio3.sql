@@ -4,6 +4,7 @@ CREATE VIEW historico_reproducao_usuarios AS
       cc.nome_cancao AS cancoes
     FROM
       SpotifyClone.usuarioTB AS us INNER JOIN
-      SpotifyClone.cancoesTB AS cc
+      SpotifyClone.historicoTB AS his ON his.usuarioID = us.usuarioID INNER JOIN
+      SpotifyClone.cancoesTB AS cc ON cc.cancaoID = his.cancaoID
 ORDER BY usuario, cancoes;   
 -- SELECT * FROM historico_reproducao_usuarios;
