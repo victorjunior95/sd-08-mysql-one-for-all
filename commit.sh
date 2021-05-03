@@ -1,2 +1,2 @@
 git add --all
-git commit -am "buiding"
+git commit -am "REQ-1: Buid"
