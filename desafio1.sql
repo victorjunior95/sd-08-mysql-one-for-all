@@ -1,14 +1,16 @@
-CREATE DATABASE IF NOT EXISTS SpotifyClone;
+DROP DATABASE IF EXISTS SpotifyClone;
+
+CREATE DATABASE SpotifyClone;
 
 USE SpotifyClone;
 
-CREATE TABLE IF NOT EXISTS ContractService (
+CREATE TABLE ContractService (
   service_id INT PRIMARY KEY AUTO_INCREMENT,
   service_name VARCHAR(20) NOT NULL,
   service_price DOUBLE NOT NULL
 );
 
-CREATE TABLE IF NOT EXISTS User (
+CREATE TABLE User (
   user_id INT PRIMARY KEY AUTO_INCREMENT,
   user_name VARCHAR(30) NOT NULL,
   age INT NOT NULL,
@@ -16,12 +18,12 @@ CREATE TABLE IF NOT EXISTS User (
   FOREIGN KEY (service_id) REFERENCES ContractService(service_id)
 );
 
-CREATE TABLE IF NOT EXISTS Artist (
+CREATE TABLE Artist (
   artist_id INT PRIMARY KEY AUTO_INCREMENT,
   artist_name VARCHAR(30),
 );
 
-CREATE TABLE IF NOT EXISTS Follow (
+CREATE TABLE Follow (
   user_id INT NOT NULL,
   artist_id INT NOT NULL,
   PRIMARY KEY (user_id, artist_id),
@@ -29,21 +31,21 @@ CREATE TABLE IF NOT EXISTS Follow (
   FOREIGN KEY (artist_id) REFERENCES Artist(artist_id)
 );
 
-CREATE TABLE IF NOT EXISTS Album (
+CREATE TABLE Album (
   album_id INT PRIMARY KEY AUTO_INCREMENT,
   album_name VARCHAR(30) NOT NULL,
   artist_id INT NOT NULL,
   FOREIGN KEY (artist_id) REFERENCES Artist(artist_id)
 );
 
-CREATE TABLE IF NOT EXISTS Song (
+CREATE TABLE Song (
   song_id INT PRIMARY KEY AUTO_INCREMENT,
   song_name VARCHAR(50) NOT NULL,
   album_id INT NOT NULL,
   FOREIGN KEY (album_id) REFERENCES Album(album_id)
 );
 
-CREATE TABLE IF NOT EXISTS History (
+CREATE TABLE History (
   user_id INT NOT NULL,
   song_id  INT NOT NULL,
   PRIMARY KEY (user_id, song_id),
