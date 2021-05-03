@@ -21,7 +21,7 @@ CREATE TABLE _albums(
 DROP TABLE IF EXISTS _planos;
 CREATE TABLE _planos (
     plano_id INT PRIMARY KEY NOT NULL,
-    valor_plano VARCHAR(80),
+    valor_plano decimal(8,2),
     plano VARCHAR(80)
 )  ENGINE=INNODB;
 
@@ -72,9 +72,9 @@ VALUES
   
 INSERT INTO _planos (plano_id,valor_plano,plano)
 VALUES
-  (1,'0','gratuito'),
-  (2,'7,99','familiar'),
-  (3,'5,99','universitário');
+  (1,0,'gratuito'),
+  (2,7.99,'familiar'),
+  (3,5.99,'universitário');
   
 INSERT INTO _usuarios (usuario_id,plano_id,usuario,idade)
 VALUES
