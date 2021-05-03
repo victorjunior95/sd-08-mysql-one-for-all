@@ -7,6 +7,6 @@ SELECT
 COUNT((SELECT users FROM SpotifyClone.table_users tu
   WHERE tu.id_users = tf.id_users)) AS seguidores
 FROM SpotifyClone.table_follow_stars tf
-GROUP BY artistas
-ORDER BY seguidores DESC, artistas
+GROUP BY artista
+ORDER BY seguidores DESC, artista
 LIMIT 3;
