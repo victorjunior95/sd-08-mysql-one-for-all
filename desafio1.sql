@@ -46,7 +46,7 @@ VALUES
 ('Lance Day'),
 ('Freedie Shannon');
 
-CREATE TABLE albums(
+CREATE TABLE albuns(
 album_id INT NOT NULL AUTO_INCREMENT,
 nome VARCHAR(100) NOT NULL,
 artista_id INT NOT NULL,
@@ -54,7 +54,7 @@ PRIMARY KEY (album_id),
 FOREIGN KEY (artista_id) REFERENCES artistas (artista_id)
 )ENGINE=InnoDB;
 
-INSERT INTO albums(nome, artista_id)
+INSERT INTO albuns(nome, artista_id)
 VALUES
 ('Envious', 1),
 ('Exuberant', 1),
@@ -67,7 +67,7 @@ musica_id INT NOT NULL AUTO_INCREMENT,
 nome VARCHAR(45) NOT NULL,
 album_id INT NOT NULL,
 PRIMARY KEY (musica_id),
-FOREIGN KEY (album_id) REFERENCES albums (album_id)
+FOREIGN KEY (album_id) REFERENCES albuns (album_id)
 )ENGINE=InnoDB;
 
 INSERT INTO musicas(nome, album_id) 
