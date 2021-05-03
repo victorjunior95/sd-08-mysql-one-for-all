@@ -45,6 +45,29 @@ VALUES
 (4, 18),
 (4, 11);
 
+-- Seguindo
+
+CREATE TABLE seguindo (
+  `id_usuario` INT NOT NULL,
+  `id_artista` INT NOT NULL,
+  PRIMARY KEY (`id_usuario`, `id_artista`),
+  FOREIGN KEY (`id_usuario`)
+    REFERENCES usuario (`id_usuario`),
+  FOREIGN KEY (`id_artista`)
+    REFERENCES artista (`id_artista`)
+) ENGINE = InnoDB;
+
+INSERT INTO seguindo(id_usuario, id_artista)
+VALUES
+(1, 1),
+(1, 4),
+(1, 3),
+(2, 1),
+(2, 3),
+(3, 2),
+(3, 1),
+(4, 4);
+
 -- Artistas
 
 CREATE TABLE artistas (
@@ -108,6 +131,8 @@ VALUES
 ('Words Of Her Life', 5),
 ('Without My Streets', 5);
 
+-- Usuarios
+
 CREATE TABLE usuarios (
   `id_usuario` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `usuario` VARCHAR(40) NOT NULL,
@@ -116,3 +141,10 @@ CREATE TABLE usuarios (
   FOREIGN KEY (`id_plano`)
     REFERENCES `planos` (`id_plano`)
 ) ENGINE = InnoDB;
+
+INSERT INTO usuarios (usuario, idade, id_plano)
+VALUES
+('Thati', 23, 1),
+('Cintia', 35, 2),
+('Bill', 20, 3),
+('Roger', 45, 1);
