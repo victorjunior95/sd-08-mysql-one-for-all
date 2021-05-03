@@ -10,7 +10,7 @@ CREATE TABLE artistas (
 CREATE TABLE planos (
     plano_id INT NOT NULL AUTO_INCREMENT,
     plano_nome VARCHAR(50) NOT NULL,
-    plano_valor DOUBLE NOT NULL,
+    plano_valor DECIMAL(3, 2) NOT NULL,
     PRIMARY KEY (plano_id)
 )  ENGINE=INNODB;
 
