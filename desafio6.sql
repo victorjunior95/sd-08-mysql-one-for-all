@@ -1,4 +1,3 @@
- 
 CREATE VIEW faturamento_atual AS
 SELECT
 MIN(cont_serv.service_price) AS 'faturamento_minimo',
