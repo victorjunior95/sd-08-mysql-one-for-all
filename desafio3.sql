@@ -9,4 +9,9 @@
 -- 		Será validado se existe uma VIEW chamada historico_reproducao_usuarios que exibe os dados
 -- 		corretos nas colunas usuario e nome".
 -- 		Será validado se as colunas estão ordenadas de forma correta.
-
+CREATE VIEW historico_reproducao_usuarios AS
+SELECT u.Name AS 'usuario', s.Title AS 'nome'
+FROM SpotifyClone.User AS u
+INNER JOIN SpotifyClone.Historic AS h ON u.UserID = h.UserID
+INNER JOIN SpotifyClone.Single AS s ON s.SingleID = h.SingleID
+ORDER BY u.Name, s.Title;
