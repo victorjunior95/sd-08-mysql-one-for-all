@@ -8,12 +8,26 @@ CREATE TABLE planos (
   `valor_plano` DECIMAL(4, 2),
 ) ENGINE = InnoDB;
 
-CREATE TABLE historico (
-  `usuario_id` INT NOT NULL,
-  `cancao_id` INT NOT NULL,
-  PRIMARY KEY(`usuario_id`, `cancao_id`),
-  FOREIGN KEY (`usuario_id`)
-    REFERENCES `usuarios` (`usuario_id`),
-  FOREIGN KEY (`cancao_id`)
-    REFERENCES `cancoes` (`cancao_id`),
+CREATE TABLE historicos (
+  `id_usuario` INT NOT NULL,
+  `id_cancao` INT NOT NULL,
+  PRIMARY KEY(`id_usuario`, `id_cancao`),
+  FOREIGN KEY (`id_usuario`)
+    REFERENCES `usuarios` (`id_usuario`),
+  FOREIGN KEY (`id_cancao`)
+    REFERENCES `cancoes` (`id_cancao`),
 ) ENGINE = InnoDB;
+
+CREATE TABLE artistas (
+  `id_artista` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  `artista` VARCHAR(100) NOT NULL UNIQUE,
+) ENGINE = InnoDB;
+
+CREATE TABLE usuarios (
+  `id_usuario` INI PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  `usuario` VARCHAR(40) NOT NULL,
+  `idade` INT NOT NULL,
+  `id_plano` INT NOT NULL,
+  FOREIGN KEY (`id_plano`)
+    REFERENCES `planos` (`id_plano`)
+)

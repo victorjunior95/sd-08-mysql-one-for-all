@@ -1,2 +1,2 @@
 git add --all
-git commit -am "Create 'historico' table in SpotifyClone database"
+git commit -am "Create 'usuarios' table in SpotifyClone database"
