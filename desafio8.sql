@@ -5,5 +5,4 @@ BEFORE DELETE ON usuarioTB
 BEGIN
   DELETE FROM seguidoresTB WHERE usuarioID = OLD.usuarioID;
   DELETE FROM historicoTB WHERE usuarioID = OLD.usuarioID;
-END
-$M DELIMITER ;
+END $M DELIMITER ;
