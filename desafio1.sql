@@ -52,11 +52,10 @@ REFERENCES table_albuns(id_albuns)
 ) ENGINE = InnoDB;
 
 CREATE TABLE table_history(
-id_history INT NOT NULL AUTO_INCREMENT,
 id_users INT NOT NULL,
 id_sings INT NOT NULL,
 PRIMARY KEY (`id_history`, id_sings),
-FOREIGN KEY(id_users)
+FOREIGN KEY(id_users, id_sings)
 REFERENCES table_users(id_users),
 FOREIGN KEY(id_sings)
 REFERENCES table_sings(id_sings)
@@ -91,7 +90,7 @@ VALUES
 (2, 3),
 (3, 2),
 (3, 1),
-(4, 1);
+(4, 4);
 
 INSERT INTO table_albuns(albuns, id_stars)
 VALUES 
