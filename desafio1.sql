@@ -7,7 +7,7 @@ USE SpotifyClone;
 CREATE TABLE ContractService (
   service_id INT PRIMARY KEY AUTO_INCREMENT,
   service_name VARCHAR(20) NOT NULL,
-  service_price DOUBLE NOT NULL
+  service_price DECIMAL(4, 2) NOT NULL
 );
 
 CREATE TABLE User (
@@ -20,7 +20,7 @@ CREATE TABLE User (
 
 CREATE TABLE Artist (
   artist_id INT PRIMARY KEY AUTO_INCREMENT,
-  artist_name VARCHAR(30),
+  artist_name VARCHAR(30)
 );
 
 CREATE TABLE Follow (
