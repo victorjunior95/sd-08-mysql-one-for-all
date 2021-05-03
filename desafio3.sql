@@ -10,5 +10,5 @@ WHERE
     u.id_usuario = hr.id_usuario
     AND c.id_cancao = hr.id_cancao
 ORDER BY
-    `usuario`,
-    `nome`;
+    usuario,
+    nome;
