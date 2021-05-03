@@ -8,6 +8,12 @@ CREATE TABLE planos (
   `valor_plano` DECIMAL(4, 2)
 ) ENGINE = InnoDB;
 
+INSERT INTO planos (plano, valor_plano)
+VALUES
+('gratuito', 0.00),
+('familiar', 7.99),
+('universitario', 5.99);
+
 CREATE TABLE historicos (
   `id_usuario` INT NOT NULL,
   `id_cancao` INT NOT NULL,
