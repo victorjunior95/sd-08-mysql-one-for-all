@@ -5,4 +5,3 @@ CREATE VIEW historico_reproducao_usuarios AS
   INNER JOIN Cancao c
   ON Cancao.Cancao_id = history.Cancao_id
   ORDER BY Usuario.Nome, Cancao.Nome;
-  
