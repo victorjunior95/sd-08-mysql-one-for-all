@@ -1,14 +1,14 @@
 USE SpotifyClone;
 DELIMITER $$
-CREATE PROCEDURE quantidade_musicas_no_historico(in nameOfUser varchar(50),  OUT numberOfHistoric NUMERIC)
+CREATE FUNCTION quantidade_musicas_no_historico( numberOfUser INT)
+RETURNS DOUBLE READS SQL DATA
 BEGIN
-    SELECT COUNT(usuario_id)  FROM Historico AS h
---     -- WHERE al.artista_id = ar.artista_id
-    INNER JOIN Usuarios AS u
-    ON u.usuarioName = nameOfUser AND  h.usuario_id = u.usuario_id
+    DECLARE numberOfHistoric INT;
+    SELECT SUM(CASE WHEN usuario_id =numberOfUser THEN 1 ELSE 0 END )  FROM SpotifyClone.Historico 
     INTO numberOfHistoric;
---     GROUP BY al.album
---     ORDER BY 2;
+RETURN numberOfHistoric;
 END $$
 DELIMITER ;
-CALL quantidade_musicas_no_historico("Bill");
+SELECT quantidade_musicas_no_historico(3);
+-- SELECT @numbers;
+--  SequelizeDatabaseError: Incorrect number of arguments for FUNCTION SpotifyClone.quantidade_musicas_no_historico; expected 2, got 1
