@@ -1,4 +1,4 @@
-CREATE VIEW perfil_artistas AS
+-- CREATE VIEW perfil_artistas AS
 SELECT 
 sub.`artista` AS 'artista',
 sub.`album` AS 'album',
@@ -11,7 +11,7 @@ INNER JOIN SpotifyClone.Seguidores AS s
 ON s.artista_id = al.artista_id
 GROUP BY al.album_id
 ) AS sub
-ORDER BY 3  DESC,1;
+ORDER BY 3  DESC,2 ;
 
 -- Error Code: 1140. In aggregated query without GROUP BY, expression #1 of SELECT list contains nonaggregated column 'SpotifyClone.ar.artistaName'; this is incompatible with sql_mode=only_full_group_by
 -- Error Code: 1055. Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'SpotifyClone.ar.artistaName' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
