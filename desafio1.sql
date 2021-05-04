@@ -1,3 +1,5 @@
+DROP IF EXISTS SpotifyClone;
+
 CREATE DATABASE IF NOT EXISTS SpotifyClone;
 
 USE SpotifyClone;
@@ -76,11 +78,10 @@ ENGINE = InnoDB;
 -- Table `SpotifyClone`.`Historicos`
 -- -----------------------------------------------------
 CREATE TABLE Historicos (
-  historico_id INT(11) AUTO_INCREMENT,
   usuario_id INT(11) NOT NULL,
-  historico_de_reproducoes VARCHAR(100) NOT NULL,
+--   historico_de_reproducoes VARCHAR(100) NOT NULL,
   cancao_id  INT(11) NOT NULL,
-  PRIMARY KEY (`historico_id`, `usuario_id`),
+  PRIMARY KEY (`usuario_id`, `cancao_id`),
   CONSTRAINT `fk_Historicos_Usuarios`
     FOREIGN KEY (`usuario_id`)
     REFERENCES `SpotifyClone`.`Usuarios` (`usuario_id`)
@@ -98,11 +99,10 @@ ENGINE = InnoDB;
 -- Table `SpotifyClone`.`Seguidos`
 -- -----------------------------------------------------
 CREATE TABLE Seguidos (
-  id INT(11) AUTO_INCREMENT,
   usuario_id INT(11) NOT NULL,
-  seguindo_artistas VARCHAR(100) NOT NULL,
+--   seguindo_artistas VARCHAR(100) NOT NULL,
   artista_id INT(11) NOT NULL,
-  PRIMARY KEY (`id`, `usuario_id`),
+  PRIMARY KEY (`usuario_id`, `artista_id`),
   CONSTRAINT `fk_Seguidos_Usuarios`
     FOREIGN KEY (`usuario_id`)
     REFERENCES `SpotifyClone`.`Usuarios` (`usuario_id`)
@@ -157,10 +157,10 @@ VALUES
 INSERT INTO `Albuns` (`album`, `artista_id`)
 VALUES
 ("Envious", 1),
-("Exuberant",	1),
+("Exuberant", 1),
 ("Hallowed Steam", 2),
-("Incandescent",	3),
-("Temporary Culture",	4);
+("Incandescent", 3),
+("Temporary Culture", 4);
 
 #
 # Dumping data for table "Cancoes"
@@ -189,33 +189,33 @@ VALUES
 #
 # Dumping data for table "Historicos"
 #
-INSERT INTO `Historicos` (`usuario_id`, `historico_de_reproducoes`, `cancao_id`)
+INSERT INTO `Historicos` (`usuario_id`, `cancao_id`)
 VALUES
-(1, "Soul For Us", 1),
-(1, "Magic Circus", 6),
-(1, "Diamond Power", 14),
-(1, "Thang Of Thunder", 16),
-(2, "Home Forever", 13),
-(2, "Words Of Her Life", 17),
-(2, "Reflections Of Magic", 2),
-(2, "Honey, Let's Be Silly", 15),
-(3, "Troubles Of My Inner Fire", 4),
-(3, "Thang Of Thunder", 16),
-(3, "Magic Circus", 6),
-(4, "Dance With Her Own", 3),
-(4, "Without My Streets", 18),
-(4, "Celebration Of More", 11);
+(1, 1),
+(1, 6),
+(1, 14),
+(1, 16),
+(2, 13),
+(2, 17),
+(2, 2),
+(2, 15),
+(3, 4),
+(3, 16),
+(3, 6),
+(4, 3),
+(4, 18),
+(4, 11);
 
 #
 # Dumping data for table "Seguidos"
 #
-INSERT INTO `Seguidos` (`usuario_id`, `seguindo_artistas`, `artista_id`)
+INSERT INTO `Seguidos` (`usuario_id`, `artista_id`)
 VALUES
-(1, "Walter Phoenix", 1),
-(1, "Freedie Shannon", 4),
-(1, "Lance Day", 3),
-(2, "Walter Phoenix", 1),
-(2, "Lance Day", 3),
-(3, "Peter Strong", 2),
-(3, "Walter Phoenix", 1),
-(4, "Freedie Shannon", 4);
+(1, 1),
+(1, 4),
+(1, 3),
+(2, 1),
+(2, 3),
+(3, 2),
+(3, 1),
+(4, 4);
