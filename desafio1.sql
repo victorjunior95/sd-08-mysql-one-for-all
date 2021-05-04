@@ -27,7 +27,7 @@ CREATE TABLE _planos (
 
 DROP TABLE IF EXISTS _usuarios;
 CREATE TABLE _usuarios(
-    usuario_id INT PRIMARY KEY NOT NULL,
+    usuario_id INT PRIMARY KEY NOT NULL ,
     plano_id INT NOT NULL,
     usuario VARCHAR(50) NOT NULL,
     idade INT,
@@ -49,8 +49,8 @@ CREATE TABLE _historico(
     usuario_id INT NOT NULL,
     cancoes_id INT NOT NULL,
     CONSTRAINT PRIMARY KEY (cancoes_id,usuario_id),
-    FOREIGN KEY(cancoes_id) REFERENCES _musicas(cancoes_id),
-    FOREIGN KEY(usuario_id) REFERENCES _usuarios(usuario_id)
+    FOREIGN KEY(cancoes_id) REFERENCES _musicas(cancoes_id)ON DELETE CASCADE,
+    FOREIGN KEY(usuario_id) REFERENCES _usuarios(usuario_id)ON DELETE CASCADE
   ) ENGINE = INNODB;
 
 
@@ -59,8 +59,8 @@ CREATE TABLE _seguindo(
   usuario_id INT NOT NULL,
   artista_id INT NOT NULL,
   CONSTRAINT PRIMARY KEY (usuario_id,artista_id),
-  FOREIGN KEY(usuario_id) REFERENCES _usuarios(usuario_id),
-  FOREIGN KEY(artista_id) REFERENCES _artistas(artista_id)
+  FOREIGN KEY(usuario_id) REFERENCES _usuarios(usuario_id)ON DELETE CASCADE,
+  FOREIGN KEY(artista_id) REFERENCES _artistas(artista_id)ON DELETE CASCADE
   ) ENGINE = INNODB;
 
 INSERT INTO  _artistas (artista_id,artista)
