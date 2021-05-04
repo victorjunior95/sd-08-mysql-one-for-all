@@ -6,14 +6,14 @@ USE SpotifyClone;
 
 CREATE TABLE Planos(
     plano_id INT(4) AUTO_INCREMENT,
-    planoName VARCHAR(50) NOT NULL,
-    preço DECIMAL(4,2) NOT NULL,
+    planoNome VARCHAR(50),
+    valor DECIMAL(4,2),
     PRIMARY KEY (plano_id)
 );
 
 CREATE TABLE Usuarios (
     usuario_id INT(4) AUTO_INCREMENT,
-    nome VARCHAR(50),
+    Nome VARCHAR(50),
     idade INT(2),
     plano_id INT(4),
     PRIMARY KEY (usuario_id), 
@@ -22,7 +22,7 @@ CREATE TABLE Usuarios (
 
 CREATE TABLE Artistas(
     artista_id int(4) AUTO_INCREMENT,
-    Nome_Artista varchar(50),
+    artistaNome varchar(50),
     PRIMARY KEY (artista_id)
 );
 
@@ -37,14 +37,14 @@ CREATE TABLE Albums(
 CREATE TABLE Seguidores(
     usuario_id int(4) ,
     artista_id int(2),
-	PRIMARY KEY(user_id, artist_id),
+    CONSTRAINT pk_seg primary key(artista_id, usuario_id ),
     FOREIGN KEY (usuario_id) REFERENCES Usuarios (usuario_id),
     FOREIGN KEY (artista_id) REFERENCES Artistas (artista_id)
 );
 
 CREATE TABLE Musicas(
     musica_id int(4) AUTO_INCREMENT,
-    Nome_Musica varchar(50),
+    musicaNome varchar(50),
     album_id int(4),
     PRIMARY KEY (musica_id),
     FOREIGN KEY (album_id) REFERENCES Albums (album_id)
@@ -55,23 +55,23 @@ CREATE TABLE Historico(
     usuario_id int(4),
     FOREIGN KEY (musica_id) REFERENCES Musicas (musica_id),
     FOREIGN KEY (usuario_id) REFERENCES Usuarios (usuario_id),
-	PRIMARY KEY (user_id, song_id),
+    CONSTRAINT pk_hist primary key(musica_id, usuario_id )
 );
 
-INSERT INTO Planos (plano_id, planoName, preço)
+INSERT INTO Planos (plano_id, planoNome, valor)
 VALUES
 (1, 'gratuito', 0),
 (2, 'familiar', 7.99),
 (3, 'universitário', 5.99);
 
-INSERT INTO Usuarios (usuario_id, nome, idade, plano_id)
+INSERT INTO Usuarios (  usuario_id, Nome, idade, plano_id)
 VALUES
 (1, 'Thati', 23, 1),
 (2, 'Cintia', 35, 2),
 (3, 'Bill', 20, 3),
 (4, 'Roger', 45, 1);
 
-INSERT INTO Artistas (artista_id, Nome_Artista)
+INSERT INTO Artistas (artista_id, artistaNome)
 VALUES
 (1, 'Walter Phoenix'),
 (2, 'Peter Strong'),
@@ -86,7 +86,7 @@ VALUES
 (4, 'Incandescent', 3),
 (5, 'Temporary Culture', 4);
 
-INSERT INTO Seguidores (usuario_id, artista_id)
+INSERT INTO Seguidores ( usuario_id, artista_id)
 VALUES
 (1, 1),
 (1, 4),
@@ -97,7 +97,7 @@ VALUES
 (3, 1),
 (4, 4);
 
-INSERT INTO Musicas (musica_id,Nome_Musica,album_id)
+INSERT INTO Musicas (musica_id,    musicaNome,    album_id)
 VALUES
 (1, 'Soul For Us', 1),
 (2, 'Reflections Of Magic', 1),
@@ -118,7 +118,7 @@ VALUES
 (17, 'Words Of Her Life', 5),
 (18, 'Without My Streets', 5);
 
-INSERT INTO Historico (musica_id, usuario_id)
+INSERT INTO Historico ( musica_id, usuario_id)
 VALUES
 (1, 1),
 (6, 1),
