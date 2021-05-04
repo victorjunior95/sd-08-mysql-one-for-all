@@ -37,7 +37,7 @@ CREATE TABLE Albums(
 CREATE TABLE Seguidores(
     usuario_id int(4) ,
     artista_id int(2),
-	CONSTRAINT pk_CE PRIMARY KEY (artista_id, usuario_id ),
+	CONSTRAINT pk_seg primary key(artista_id, usuario_id ),
     FOREIGN KEY (usuario_id) REFERENCES Usuarios (usuario_id),
     FOREIGN KEY (artista_id) REFERENCES Artistas (artista_id)
 );
@@ -55,7 +55,7 @@ CREATE TABLE Historico(
     usuario_id int(4),
     FOREIGN KEY (musica_id) REFERENCES Musicas (musica_id),
     FOREIGN KEY (usuario_id) REFERENCES Usuarios (usuario_id),
-	CONSTRAINT pk_CE PRIMARY KEY (musica_id, usuario_id )
+	CONSTRAINT pk_hist primary key(musica_id, usuario_id )
 );
 
 INSERT INTO Planos (plano_id, planoName, preço)
