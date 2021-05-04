@@ -22,7 +22,7 @@ CREATE TABLE users(
 
 CREATE TABLE artists(
   `artist_id` INT NOT NULL AUTO_INCREMENT,
-  `artist_name` VARCHAR(100) NOT NULL,
+  `artist_name` VARCHAR(100) NOT NULL UNIQUE,
   PRIMARY KEY (`artist_id`)
 ) engine = InnoDB;
 
