@@ -20,7 +20,7 @@ CREATE TABLE musicas(
 CREATE TABLE planos(
   id INT PRIMARY KEY NOT NULL,
   plano_nome VARCHAR(100) NOT NULL,
-  plano_valor DOUBLE NOT NULL
+  plano_valor DECIMAL(3, 2) NOT NULL
 ) ENGINE = InnoDB;
 CREATE TABLE usuarios(
   id INT PRIMARY KEY NOT NULL,
