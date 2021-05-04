@@ -1,5 +1,5 @@
 -- Colaboração:
--- Arnaelcio: https://github.com/Arnaelcio
+-- Ana Karine: https://github.com/ana-karine
 -- Marcelo: https://github.com/Marcelllombm
 DROP DATABASE IF EXISTS SpotifyClone;
 
