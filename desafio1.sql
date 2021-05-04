@@ -11,7 +11,8 @@ CREATE TABLE Planos (
   valor_plano DECIMAL(5, 2) DEFAULT '0.00',
   PRIMARY KEY (`plano_id`)
 )
-ENGINE = InnoDB;
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
 
 -- -----------------------------------------------------
 -- Table `SpotifyClone`.`Usuarios`
@@ -28,7 +29,8 @@ CREATE TABLE Usuarios (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION
 )
-ENGINE = InnoDB;
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
 
 -- -----------------------------------------------------
 -- Table `SpotifyClone`.`Artistas`
@@ -38,7 +40,8 @@ CREATE TABLE Artistas (
   artista VARCHAR(100) NOT NULL,
   PRIMARY KEY (`artista_id`)
 )
-ENGINE = InnoDB;
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
 
 -- -----------------------------------------------------
 -- Table `SpotifyClone`.`Albuns`
@@ -54,7 +57,8 @@ CREATE TABLE Albuns (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION
 )
-ENGINE = InnoDB;
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
 
 -- -----------------------------------------------------
 -- Table `SpotifyClone`.`Cancoes`
@@ -70,7 +74,8 @@ CREATE TABLE Cancoes (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION
 )
-ENGINE = InnoDB;
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
 
 -- -----------------------------------------------------
 -- Table `SpotifyClone`.`Historicos`
@@ -91,7 +96,8 @@ CREATE TABLE Historicos (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION
 )
-ENGINE = InnoDB;
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
 
 -- -----------------------------------------------------
 -- Table `SpotifyClone`.`Seguidos`
@@ -112,7 +118,8 @@ CREATE TABLE Seguidos (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION
 )
-ENGINE = InnoDB;
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
 
 -- ------------------------------------------------
 -- INSERTING DATA

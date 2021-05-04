@@ -10,8 +10,12 @@ describe('Queries de seleção', () => {
       { user: process.env.MYSQL_USER, password: process.env.MYSQL_PASSWORD, host: process.env.HOSTNAME },
     );
 
+    sequelize = new Sequelize(
+      `mysql://${process.env.MYSQL_USER}:${process.env.MYSQL_PASSWORD}@${process.env.HOSTNAME}:3306/SpotifyClone`,
+    );
+
     try {
-      await importer.import('./desafio1.sql');
+      await importer.import('../desafio1.sql');
     }
     catch(error) {
       console.log('Erro ao restaurar o dump!');
@@ -19,9 +23,7 @@ describe('Queries de seleção', () => {
 
     importer.disconnect();
 
-    sequelize = new Sequelize(
-      `mysql://${process.env.MYSQL_USER}:${process.env.MYSQL_PASSWORD}@${process.env.HOSTNAME}:3306/SpotifyClone`,
-    );
+
   });
 
   afterAll(async () => {
@@ -410,7 +412,9 @@ describe('Queries de deleção', () => {
         tabela_que_contem_usuario: userTable,
         coluna_usuario: userColumn,
       } = JSON.parse(readFileSync('desafio1.json', 'utf8'));
+      console.log(JSON.parse(readFileSync('desafio1.json', 'utf8')));
       const challengeQuery = readFileSync('desafio8.sql', 'utf8').trim();
+      console.log(challengeQuery);
       const createTriggerQuery = /CREATE TRIGGER.*END/si.exec(challengeQuery)[0];
 
       await sequelize.query(createTriggerQuery);
