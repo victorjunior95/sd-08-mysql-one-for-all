@@ -9,6 +9,12 @@ CREATE TABLE planos (
   valor_plano DOUBLE NOT NULL
 ) ENGINE = InnoDB;
 
+CREATE TABLE plano(
+plano_id INT PRIMARY KEY AUTO_INCREMENT,
+plano VARCHAR(50) NOT NULL,
+valor_plano DOUBLE NOT NULL
+) ENGINE = InnoDB;
+
 CREATE TABLE usuarios (
   ususario_id INT PRIMARY KEY AUTO_INCREMENT,
   usuario VARCHAR(100) NOT NULL,
@@ -63,9 +69,9 @@ VALUES
 
 INSERT INTO planos (plano, valor_plano)
 VALUES
-('gratuito', '0.00'),
-('familiar', '7.99'),
-('universitário', '5.99');
+('gratuito', 0.00),
+('familiar', 7.99),
+('universitário', 5.99);
 
 INSERT INTO artistas (artista)
 VALUES
