@@ -16,5 +16,5 @@ SELECT s.Title AS 'cancao', COUNT(h.SingleID) AS 'reproducoes'
 FROM SpotifyClone.Single AS s
 INNER JOIN SpotifyClone.Historic AS h ON s.SingleID = h.SingleID
 GROUP BY h.SingleID
-ORDER BY 'reproducoes', 'cancao'
+ORDER BY 'reproducoes', 'cancao' DESC
 LIMIT 2;
