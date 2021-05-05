@@ -4,9 +4,9 @@ DELIMITER kabô
     FOR EACH ROW
   BEGIN
     DELETE FROM historico
-    WHERE usuarios_id = OLD.id;
+    WHERE usuario_id = OLD.id;
     DELETE FROM seguidores
-    WHERE usuarios_id = OLD.id;
+    WHERE usuario_id = OLD.id;
   END;
 kabô 
 DELIMITER ;
