@@ -31,9 +31,7 @@ CREATE TABLE musicas (
 musica_id INT PRIMARY KEY AUTO_INCREMENT,
 musica VARCHAR(50) NOT NULL,
 album_id INT NOT NULL,
-artista_id INT NOT NULL,
 FOREIGN KEY(album_id) REFERENCES albuns(album_id),
-FOREIGN KEY(artista_id) REFERENCES artistas(artista_id)
 ) ENGINE=InnoDB;
 
 CREATE TABLE seguidores (
@@ -80,7 +78,7 @@ VALUES
 ('Incandescent', 3),
 ('Temporary Culture', 4);
 
-INSERT INTO musicas (musica, album_id)
+INSERT INTO musicas (musica, artista_id , album_id)
 VALUES
 ("Soul For Us", 1),
 ("Reflections Of Magic", 1),
