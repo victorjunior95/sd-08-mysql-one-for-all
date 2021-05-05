@@ -2,6 +2,12 @@ CREATE SCHEMA IF NOT EXISTS SpotifyClone;
 
 USE SpotifyClone;
 
+CREATE TABLE planos (
+id_plano INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+plano VARCHAR(50),
+valor_plano FLOAT NOT NULL
+)  ENGINE = InnoDB;
+
 CREATE TABLE artistas (
 id_artista INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
 artista VARCHAR(50)
@@ -23,16 +29,10 @@ FOREIGN KEY (id_album)
 REFERENCES albuns (id_album)
 )  ENGINE = InnoDB;
 
-CREATE TABLE planos (
-id_plano INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-plano VARCHAR(50),
-valor_plano FLOAT NOT NULL
-)  ENGINE = InnoDB;
-
 CREATE TABLE usuarios (
 id_usuario INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
 usuario VARCHAR(50) NOT NULL,
-idade TINYINT NOT NULL,
+idade INT NOT NULL,
 id_plano INT,
 FOREIGN KEY (id_plano)
 REFERENCES planos (id_plano)
