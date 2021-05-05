@@ -84,7 +84,7 @@ VALUES
 (17, "Words Of Her Life", 5),
 (18, "Without My Streets", 5);
 
-CREATE TABLE playlist_history (
+CREATE TABLE reproduction_history (
 user_id INT NOT NULL,
 music_id INT NOT NULL,
 PRIMARY KEY (user_id , music_id),
@@ -92,7 +92,7 @@ FOREIGN KEY (user_id) REFERENCES user (user_id),
 FOREIGN KEY (music_id) REFERENCES music (music_id)
 )  ENGINE=INNODB;
 
-INSERT INTO playlist_history
+INSERT INTO reproduction_history
 VALUES
 (1, 1),
 (1, 6),
