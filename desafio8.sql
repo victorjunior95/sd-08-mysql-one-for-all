@@ -1,6 +1,6 @@
 DELIMITER kabô
   CREATE TRIGGER trigger_usuario_delete
-    AFTER DELETE ON usuarios
+    BEFORE DELETE ON usuarios
     FOR EACH ROW
   BEGIN
     DELETE FROM historico
