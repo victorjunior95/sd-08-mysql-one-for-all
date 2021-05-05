@@ -10,7 +10,7 @@ USE SpotifyClone;
 CREATE TABLE planos (
     id INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(50),
-    valor DOUBLE
+    valor DECIMAL(6,2)
 )  ENGINE=INNODB;
 
 INSERT INTO planos (nome, valor)
