@@ -4,7 +4,7 @@ BEGIN
 SELECT
 A.artist_name AS "artista",
 C.album_name AS "album"
-FROM artistas AS A
+FROM artists AS A
 INNER JOIN albuns AS C
 ON A.artist_id = C.artist_id
 WHERE A.artist_name LIKE CONCAT("%",search,"%")
