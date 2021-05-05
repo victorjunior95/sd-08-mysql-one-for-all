@@ -1,4 +1,4 @@
-DROP DATABASE IF EXISTS SpotifyClone;
+CREATE DATABASE IF NOT EXISTS SpotifyClone;
 CREATE DATABASE SpotifyClone;
 
 USE SpotifyClone;
@@ -44,7 +44,7 @@ CREATE TABLE musicas (
   FOREIGN KEY (album_id) REFERENCES albuns (album_id)
 ) ENGINE = InnoDB;
 
-CREATE TABLE  seguindo (
+CREATE TABLE seguindo (
   usuario_id INT NOT NULL,
   artista_id INT NOT NULL,
   PRIMARY KEY (usuario_id, artista_id),
