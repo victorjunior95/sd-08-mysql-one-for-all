@@ -10,4 +10,16 @@
 -- 		Será validado se a procedure albuns_do_artista retorna a coluna artista contendo o nome da
 -- 		pessoa artista e a coluna album contendo o nome do album.
 -- 		Será validado se as colunas estão ordenadas de forma correta.
+DELIMITER $$
+CREATE PROCEDURE albuns_do_artista(IN artist VARCHAR(100))
+BEGIN
+SELECT artist AS artista, ab.Title AS album
+FROM SpotifyClone.Artist AS a
+INNER JOIN SpotifyClone.Album AS ab
+ON a.ArtistID = ab.ArtistID AND a.Name = artist
+ORDER BY ab.Title;
+END
+$$ DELIMITER ;
+
+CALL albuns_do_artista('Walter Phoenix') 
 
