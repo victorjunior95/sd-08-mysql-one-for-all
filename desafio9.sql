@@ -20,6 +20,3 @@ ON a.ArtistID = ab.ArtistID AND a.Name = artist
 ORDER BY ab.Title;
 END
 $$ DELIMITER ;
-
-CALL albuns_do_artista('Walter Phoenix') 
-
