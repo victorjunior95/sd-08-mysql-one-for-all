@@ -11,9 +11,8 @@
 -- 		colunas artista e seguidores".
 -- 		Será validado se as colunas estão ordenadas de forma correta.
 CREATE VIEW top_3_artistas AS
-SELECT a.Name AS 'artista', COUNT(f.UserID) AS 'seguidores'
+SELECT a.Name AS artista, COUNT(f.UserID) AS seguidores
 FROM SpotifyClone.Favorited AS f
 INNER JOIN SpotifyClone.Artist AS a ON f.ArtistID = a.ArtistID
-GROUP BY f.ArtistID
-ORDER BY 'seguidores' DESC, 'artista'
-LIMIT 3;
+GROUP BY a.Name
+ORDER BY COUNT(f.UserID) DESC, a.Name LIMIT 3;

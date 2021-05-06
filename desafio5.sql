@@ -12,9 +12,8 @@
 -- 		nas colunas cancao e reproducoes".
 -- 		Será validado se as colunas estão ordenadas de forma correta.
 CREATE VIEW top_2_hits_do_momento AS
-SELECT s.Title AS 'cancao', COUNT(h.SingleID) AS 'reproducoes'
-FROM SpotifyClone.Single AS s
-INNER JOIN SpotifyClone.Historic AS h ON s.SingleID = h.SingleID
-GROUP BY h.SingleID
-ORDER BY 'reproducoes', 'cancao' DESC
-LIMIT 2;
+SELECT s.Title AS cancao, COUNT(h.UserID) AS reproducoes
+FROM SpotifyClone.Historic AS h
+INNER JOIN SpotifyClone.Single AS s ON s.SingleID = h.SingleID
+GROUP BY s.SingleID
+ORDER BY COUNT(h.UserID) DESC, s.Title LIMIT 2;
