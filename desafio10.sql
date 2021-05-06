@@ -7,4 +7,3 @@
 -- 		Será validado se a function quantidade_musicas_no_historico, ao receber o código identificador
 -- 		de uma pessoa usuária, retorna a quantidade correta de canções presentes no histórico de reprodução
 -- 		desta pessoa.
-
