@@ -14,4 +14,10 @@
 -- 		Será validado se existe uma VIEW chamada perfil_artistas, que exibe os dados corretos nas
 -- 		colunas artista, album e seguidores.
 -- 		Será validado se as colunas estão ordenadas de forma correta.
-
+CREATE VIEW perfil_artistas AS
+SELECT a.Name AS artista, ab.Title AS album, COUNT(f.UserID) AS seguidores
+FROM SpotifyClone.Artist AS a
+INNER JOIN SpotifyClone.Album AS ab ON a.ArtistID = ab.ArtistID
+INNER JOIN SpotifyClone.Favorited AS f ON f.ArtistID = a.ArtistID
+GROUP BY a.Name, ab.Title
+ORDER BY COUNT(f.UserID) DESC, a.Name, ab.Title;
