@@ -6,7 +6,7 @@
 -- 		é ativada e a ação de exclusão reflete em todas as tabelas em que esta pessoa está presente.
 DELIMITER $$
 CREATE TRIGGER trigger_usuario_delete
-AFTER DELETE ON SpotifyClone.User
+BEFORE DELETE ON SpotifyClone.User
 FOR EACH ROW
 BEGIN
 DELETE FROM SpotifyClone.Historic

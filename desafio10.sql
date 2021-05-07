@@ -1,4 +1,4 @@
--- Crie uma function chamada de quantidade_musicas_no_historico que exibe a quantidade de músicas que
+-- 10 - Crie uma function chamada de quantidade_musicas_no_historico que exibe a quantidade de músicas que
 -- estão presentes atualmente no histórico de reprodução de uma pessoa usuária. Ao receber o código
 -- identificador da pessoa, exiba a quantidade de canções em seu histórico de reprodução.
 -- 	Confirme a execução correta da function, chamando-a e passando o id para a pessoa usuária com
