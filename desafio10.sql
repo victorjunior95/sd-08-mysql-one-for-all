@@ -7,3 +7,14 @@
 -- 		Será validado se a function quantidade_musicas_no_historico, ao receber o código identificador
 -- 		de uma pessoa usuária, retorna a quantidade correta de canções presentes no histórico de reprodução
 -- 		desta pessoa.
+DELIMITER $$
+CREATE FUNCTION quantidade_musicas_no_historico(ID_user INT)
+RETURNS INT READS SQL DATA
+BEGIN
+DECLARE quantity_singles_historic INT;
+SELECT COUNT(UserID) FROM SpotifyClone.Historic
+WHERE UserID = ID_user
+INTO quantity_singles_historic;
+RETURN quantity_singles_historic;
+END
+$$ DELIMITER ;
