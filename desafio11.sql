@@ -9,3 +9,10 @@
 -- 		Será validado se existe uma VIEW chamada cancoes_premium, que exibe os dados corretos nas
 -- 		colunas nome e reproducoes.
 -- 		Será validado se as colunas estão ordenadas de forma correta.
+CREATE VIEW cancoes_premium AS
+SELECT s.Title AS nome, COUNT(h.UserID) AS reproducoes
+FROM SpotifyClone.Single AS s
+INNER JOIN SpotifyClone.User AS u ON u.PlanID IN (2, 3)
+INNER JOIN SpotifyClone.Historic AS h ON s.SingleID = h.SingleID AND h.UserID = u.UserID
+GROUP BY s.Title
+ORDER BY s.Title;
