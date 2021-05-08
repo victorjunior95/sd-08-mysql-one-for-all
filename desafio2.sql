@@ -1,4 +1,4 @@
-CREATE VIEW estatisticas_musicas AS 
+CREATE VIEW estatisticas_musicais AS 
 SELECT
 COUNT(*) AS cancoes,
 (SELECT COUNT(*) FROM SpotifyClone.Artista) AS artistas,
