@@ -70,7 +70,7 @@ VALUES ('Thati', 23, 1),
 ('Bill', 20, 3),
 ('Roger', 45, 1);
 
-INSERT INTO `albuns` (album_name, artista_id) VALUES ('Envious', 1),
+INSERT INTO `albuns` (album_nome, artista_id) VALUES ('Envious', 1),
 ('Exuberant', 1),
 ('Hallowed Steam', 2),
 ('Incadescent', 3),
