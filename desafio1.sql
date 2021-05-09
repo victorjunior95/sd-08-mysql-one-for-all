@@ -73,7 +73,7 @@ VALUES ('Thati', 23, 1),
 INSERT INTO `albuns` (album_nome, artista_id) VALUES ('Envious', 1),
 ('Exuberant', 1),
 ('Hallowed Steam', 2),
-('Incadescent', 3),
+('Incandescent', 3),
 ('Temporary Culture', 4);
 
 INSERT INTO `cancoes` (cancao_titulo, artista_id, album_id)
