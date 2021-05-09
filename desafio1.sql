@@ -12,7 +12,7 @@ CREATE TABLE `planos`(
 
 CREATE TABLE `usuarios`(
   usuario_id INT PRIMARY KEY AUTO_INCREMENT,
-  usurario_nome VARCHAR(100) NOT NULL,
+  usuario_nome VARCHAR(100) NOT NULL,
   usuario_idade TINYINT NOT NULL,
   plano_id INT NOT NULL,
   FOREIGN KEY (plano_id) REFERENCES `planos`(plano_id)
@@ -64,7 +64,7 @@ INSERT INTO `artistas` (artista_nome) VALUES ('Walter Phoenix'),
 ('Lance Day'),
 ('Freedie Shannon');
 
-INSERT INTO `usuarios` (usurario_nome, usuario_idade, plano_id)
+INSERT INTO `usuarios` (usuario_nome, usuario_idade, plano_id)
 VALUES ('Thati', 23, 1),
 ('Cintia', 35, 2),
 ('Bill', 20, 3),
