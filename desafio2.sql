@@ -12,4 +12,3 @@ CREATE VIEW SpotifyClone.historico_reproducao_usuarios AS
                 COUNT(album_id)
             FROM
                 SpotifyClone.albums) AS 'albuns';
-
