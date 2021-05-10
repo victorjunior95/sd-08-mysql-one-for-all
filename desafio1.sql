@@ -52,9 +52,9 @@ FOREIGN KEY (artist_id) REFERENCES artists(artist_id)
 ) ENGINE = InnoDB;
 
 INSERT INTO SpotifyClone.plans (plan, plan_value)
-VALUES ('gratuito', 1),
-('familiar', 2),
-('universitário', 3);
+VALUES ('gratuito', 0.00),
+('familiar', 7.99),
+('universitário', 5.99);
 
 INSERT INTO SpotifyClone.users (user_name, age, plan_id)
 VALUES ('Thati', 23, 1),

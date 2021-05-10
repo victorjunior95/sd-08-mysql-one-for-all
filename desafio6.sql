@@ -2,7 +2,7 @@ CREATE VIEW faturamento_atual AS
     SELECT 
         MIN(p.plan_value) AS 'faturamento_minimo',
         MAX(p.plan_value) AS 'faturamento_maximo',
-        ROUND(SUM(p.plan_value) / COUNT(u.plan_id), 2) AS 'faturamento_medio',
+        ROUND(SUM(p.plan_value) / COUNT(u.user_id), 2) AS 'faturamento_medio',
         SUM(p.plan_value) AS 'faturamento_total'
     FROM
         SpotifyClone.plans AS p
