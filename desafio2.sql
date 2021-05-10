@@ -1,4 +1,4 @@
-CREATE VIEW SpotifyClone.historico_reproducao_usuarios AS
+CREATE VIEW SpotifyClone.estatisticas_musicais AS
     SELECT 
         (SELECT 
                 COUNT(song_id)
