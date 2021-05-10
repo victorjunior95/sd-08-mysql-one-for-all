@@ -108,7 +108,7 @@ VALUES (1, 1),
 (3, 16),
 (3, 6),
 (4, 3),
-(4, 16),
+(4, 18),
 (4, 11);
 
 INSERT INTO SpotifyClone.following_artists (user_id, artist_id)
