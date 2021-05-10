@@ -1,4 +1,15 @@
 CREATE VIEW SpotifyClone.historico_reproducao_usuarios AS
-SELECT
-(SELECT user_name FROM SpotifyClone.users) AS usuario,
-(SELECT * FROM SpotifyClone.history) AS nome
+    SELECT 
+        (SELECT 
+                COUNT(song_id)
+            FROM
+                SpotifyClone.songs) AS 'cancoes',
+        (SELECT 
+                COUNT(artist_id)
+            FROM
+                SpotifyClone.artists) AS 'artistas',
+        (SELECT 
+                COUNT(album_id)
+            FROM
+                SpotifyClone.albums) AS 'albuns';
+
