@@ -11,6 +11,7 @@ FROM
     SpotifyClone.albums AS al
         INNER JOIN
     SpotifyClone.artists AS ar ON al.artist_id = ar.artist_id
+WHERE ar.artist = nome_artista
 ORDER BY `album`;
 END $$
 
