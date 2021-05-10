@@ -2,11 +2,11 @@ DROP DATABASE IF EXISTS SpotifyClone;
 
 CREATE DATABASE SpotifyClone;
 
-CREATE TABLE SpotifyClone.plans(
+CREATE TABLE SpotifyClone.plans (
 plan_id INT PRIMARY KEY AUTO_INCREMENT,
 plan VARCHAR(50) NOT NULL,
-plan_value DOUBLE NOT NULL
-) ENGINE = InnoDB;
+plan_value DECIMAL(5, 2) NOT NULL
+)  ENGINE=INNODB;
 
 CREATE TABLE SpotifyClone.users(
 user_id INT PRIMARY KEY AUTO_INCREMENT,
