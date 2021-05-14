@@ -2,8 +2,8 @@ DELIMITER $$
 CREATE PROCEDURE albuns_do_artista(IN artistaNome VARCHAR(40))
   BEGIN
     SELECT 
-    artistas.nome 'artista', 
-    albuns.nome 'album'
+    artistas.nome AS'artista', 
+    albuns.nome AS 'album'
     FROM artistas 
     INNER JOIN albuns ON albuns.artista_id = artistas.id
     WHERE artistas.nome = artistaNome
