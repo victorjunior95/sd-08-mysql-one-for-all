@@ -1,13 +1,13 @@
 DELIMITER $$ 
-CREATE PROCEDURE albuns_do_artista(IN buscaNome VARCHAR(100))
+CREATE PROCEDURE albuns_do_artista(IN artistaNome VARCHAR(40))
   BEGIN
     SELECT 
-    artista.nome 'artista', 
+    artistas.nome 'artista', 
     albuns.nome 'album'
-    FROM artistas
-    INNER JOIN albuns ON albuns.artista_id = artista.id
-    WHERE artista.nome = buscaNome
-    ORDER BY albuns.nome ASC ;
+    FROM artistas 
+    INNER JOIN albuns ON albuns.artista_id = artistas.id
+    WHERE artistas.nome = artistaNome
+    ORDER BY albuns.nome ASC;
   END
 $$ 
 DELIMITER ;
