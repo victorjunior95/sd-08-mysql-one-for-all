@@ -1,7 +1,7 @@
 -- consultei o repositorio de arnaelcio
 -- https://github.com/tryber/sd-08-mysql-one-for-all/blob/65480a31863f87fb24c5dedd1c98659c17420ecc/desafio1.sql
-
-    SELECT 
+CREATE VIEW cancoes_premium AS 
+   SELECT 
         musicas.nome AS 'nome', 1 AS 'reproducoes'
     FROM
         musicas
