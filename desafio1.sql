@@ -55,9 +55,9 @@ ENGINE = InnoDB;
 INSERT INTO artista(artista)
 VALUES
   ('Walter Phoenix'),
-  ('Freedie Shannon'),
+  ('Peter Strong'),
   ('Lance Day'),
-  ('Peter Strong');
+  ('Freedie Shannon');
 
 -- -----------------------------------------------------
 -- Table seguindo_artistas
@@ -73,13 +73,13 @@ ENGINE=InnoDB;
 INSERT INTO seguindo_artistas(usuario_id, artista_id)
 VALUES
   (1, 1),
-  (1, 2),
+  (1, 4),
   (1, 3),
   (2, 1),
   (2, 3),
-  (3, 4),
+  (3, 2),
   (3, 1),
-  (4, 2);
+  (4, 4);
 
 
 -- -----------------------------------------------------
