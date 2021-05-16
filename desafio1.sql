@@ -89,7 +89,7 @@ CREATE TABLE album (
   album_id INT NOT NULL AUTO_INCREMENT,
   album VARCHAR(100) NOT NULL,
   artista_id INT NOT NULL,
-  PRIMARY KEY (album_id, artista_id),
+  PRIMARY KEY (album_id),
   FOREIGN KEY (artista_id) REFERENCES artista (artista_id))
 ENGINE = InnoDB;
 
