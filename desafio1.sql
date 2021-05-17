@@ -1,6 +1,4 @@
-DROP DATABASE IF EXISTS SpotifyClone;
-
-CREATE DATABASE SpotifyClone;
+CREATE DATABASE IF NOT EXISTS SpotifyClone;
 
 USE SpotifyClone;
 
@@ -12,7 +10,7 @@ plan_price DOUBLE NOT NULL
 
 CREATE TABLE artist(
 artist_id INT PRIMARY KEY AUTO_INCREMENT,
-artist VARCHAR(50) NOT NULL
+artist_name VARCHAR(50) NOT NULL
 ) ENGINE = InnoDB;
 
 CREATE TABLE user (
@@ -63,7 +61,7 @@ VALUES
 ('familiar', 7.99), 
 ('universitário', 5.99);
 
-INSERT INTO artist (artist)
+INSERT INTO artist (artist_name)
 VALUES
 ("Walter Phoenix"),
 ("Peter Strong"),
