@@ -97,8 +97,8 @@ VALUES
 (14, 'Diamond Power', 4), 
 (15, "Honey, Let's Be Silly", 4),
 (16, 'Thang Of Thunder', 5),
- (17, 'Words Of Her Life', 5), 
- (18, 'Without My Streets', 5);
+(17, 'Words Of Her Life', 5), 
+(18, 'Without My Streets', 5);
 
 INSERT INTO my_playlist
 VALUES
@@ -116,7 +116,6 @@ VALUES
 (4, 3),
 (4, 18), 
 (4, 11);
-
 
 INSERT INTO followed_artist
 VALUES
