@@ -60,9 +60,9 @@ REFERENCES artist (artist_id)
 )  ENGINE=INNODB;
 
 INSERT INTO plan 
-VALUES (1, 'gratuito', 0.00)
-(2, 'familiar', 7.99)
-(3, 'universitário', 5.99)
+VALUES (1, 'gratuito', 0.00),
+(2, 'familiar', 7.99),
+(3, 'universitário', 5.99);
 
 INSERT INTO user
 VALUES (1, 'Thati', 23, 1), 
