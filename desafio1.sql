@@ -4,7 +4,7 @@ USE SpotifyClone;
 
 CREATE TABLE plan(
 plan_id INT PRIMARY KEY AUTO_INCREMENT,
-plan VARCHAR(50) NOT NULL,
+plan_name VARCHAR(50) NOT NULL,
 plan_price DOUBLE NOT NULL
 ) ENGINE = InnoDB;
 
