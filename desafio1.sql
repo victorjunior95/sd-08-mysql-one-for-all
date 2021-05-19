@@ -84,7 +84,7 @@ VALUES("Envious"),
 ("Incandescent"),
 ("Temporary Culture");
 
-	CREATE TABLE artistas_seguindo (
+CREATE TABLE artistas_seguindo (
     seguir_id INT PRIMARY KEY AUTO_INCREMENT,
     usuario_id INT,
     artista_id INT,
@@ -103,5 +103,3 @@ CREATE TABLE historico_reproducoes (
     FOREIGN KEY (album_id)
         REFERENCES albuns (album_id)
 )  ENGINE=INNODB;
-
-
