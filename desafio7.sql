@@ -1,3 +1,4 @@
+CREATE VIEW perfil_artistas AS
 SELECT A.artist_name AS artista,
 AL.album_name AS album,
 count(*) AS seguidores

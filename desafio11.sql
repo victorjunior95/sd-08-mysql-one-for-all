@@ -1,3 +1,4 @@
+CREATE VIEW cancoes_premium AS
 SELECT song_name AS nome,
 COUNT(*) AS reproducoes
 FROM SpotifyClone.my_playlist AS MP
