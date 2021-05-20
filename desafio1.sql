@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS historico_de_reproducoes (
   cancoes_id INT NOT NULL,
   PRIMARY KEY (usuario_id, cancoes_id),
     FOREIGN KEY (usuario_id) REFERENCES usuario (usuario_id),
-  	FOREIGN KEY (cancoes_id) REFERENCES cancoes (cancoes_id))
+    FOREIGN KEY (cancoes_id) REFERENCES cancoes (cancoes_id))
 ENGINE = InnoDB;
 
 
