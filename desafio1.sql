@@ -116,7 +116,7 @@ INSERT INTO SpotifyClone.historico_de_reproducoes (usuario_id, cancoes_id) VALUE
 (2, 13),
 (2, 17),
 (2, 2),
-(2, 7),
+(2, 15),
 (3, 4),
 (3, 16),
 (3, 6),
