@@ -5,8 +5,8 @@
     "coluna_plano": "planos_id",
     "tabela_que_contem_plano": "tipos_de_Planos",
 
-    "coluna_historico_de_reproducoes": "historico_reproducoes",
-    "tabela_que_contem_historico_de_reproducoes": "historico_id",
+    "coluna_historico_de_reproducoes": "historico_id",
+    "tabela_que_contem_historico_de_reproducoes": "historico_reproducoes",
 
     "coluna_seguindo_artistas": "seguir_id",
     "tabela_que_contem_seguindo_artistas": "artistas_seguindo",
@@ -15,6 +15,6 @@
     "coluna_album": "nome_do_album",
     "tabela_que_contem_album": "albuns",
 
-    "coluna_cancoes": "cancoes_id",
+    "coluna_cancoes": "nome_das_cancoes",
     "tabela_que_contem_cancoes": "cancoes"
   }
