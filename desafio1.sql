@@ -84,7 +84,7 @@ INSERT INTO SpotifyClone.albuns (artista_id, nome) VALUES
 (1, 'Envious'),
 (1, 'Exuberant'),
 (2, 'Hallowed Steam'),
-(3, 'Hallowed Steam'),
+(3, 'Incandescent'),
 (4, 'Temporary Culture');
 
 INSERT INTO SpotifyClone.cancoes (album_id, titulo) VALUES
