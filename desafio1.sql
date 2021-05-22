@@ -149,7 +149,7 @@ ENGINE = InnoDB;
 
 
 
-INSERT INTO album_info (album_id, album_name, album_artist_id)
+INSERT INTO SpotifyClone.album_info (album_id, album_name, album_artist_id)
 VALUES (1, 'Envious', 1),
 (2, 'Exuberant', 1),
 (3, 'Hallowed Steam', 2),
@@ -157,14 +157,14 @@ VALUES (1, 'Envious', 1),
 (5, 'Temporary Culture', 4);
 
 
-INSERT INTO artist_info (artist_id, artist_name)
+INSERT INTO SpotifyClone.artist_info (artist_id, artist_name)
 VALUES (1,'Walter Phoenix'),
 (2, 'Peter Strong'),
 (3, 'Lance Day'),
 (4, 'Freedie Shannon');
 
 
-INSERT INTO following_artist (`user_id`, artist_id)
+INSERT INTO SpotifyClone.following_artist (`user_id`, artist_id)
 VALUES (1, 1),
 (1, 4),
 (1, 3),
@@ -175,13 +175,13 @@ VALUES (1, 1),
 (4, 4);
 
 
-INSERT INTO plano_info (plano_id, plano_name, plano_valor)
+INSERT INTO SpotifyClone.plano_info (plano_id, plano_name, plano_valor)
 VALUES (1, 'gratuito', 0),
 (2, 'familiar', 7.99),
 (3, 'universitário', 5.99);
 
 
-INSERT INTO songs (song_id, song_name, artist_id, album_id)
+INSERT INTO SpotifyClone.songs (song_id, song_name, artist_id, album_id)
 VALUES (1, 'Soul For Us', 1, 1),
 (2, 'Reflections Of Magic', 1, 1),
 (3, 'Dance With Her Own', 1, 1),
@@ -203,7 +203,7 @@ VALUES (1, 'Soul For Us', 1, 1),
 
 
 
-INSERT INTO rep_history (`user_id`, song_id)
+INSERT INTO SpotifyClone.rep_history (`user_id`, song_id)
 VALUES (1, 1),
 (1, 6),
 (1, 14),
@@ -220,7 +220,7 @@ VALUES (1, 1),
 (4, 11);
 
 
-INSERT INTO `user_info` (`user_id`, user_plano, `user_name`, user_age)
+INSERT INTO SpotifyClone.`user_info` (`user_id`, user_plano, `user_name`, user_age)
 VALUES (1, 1, 'Thati', 23),
 (2, 2, 'Cintia', 35),
 (3, 3, 'Bill', 20),
