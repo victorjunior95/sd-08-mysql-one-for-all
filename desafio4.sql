@@ -10,4 +10,6 @@ Será validado se as colunas estão ordenadas de forma correta.
 DROP VIEW IF EXISTS top_3_artistas;
 
 CREATE VIEW top_3_artistas AS
-  
+  SELECT 
+    followed.artist_id AS artista,
+    followed.
