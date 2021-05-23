@@ -12,4 +12,3 @@ Será validado se existe uma VIEW chamada top_2_hits_do_momento,
 que exibe os dados corretos nas colunas cancao e reproducoes".
 Será validado se as colunas estão ordenadas de forma correta.
 */
-
