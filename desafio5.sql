@@ -12,3 +12,21 @@ Será validado se existe uma VIEW chamada top_2_hits_do_momento,
 que exibe os dados corretos nas colunas cancao e reproducoes".
 Será validado se as colunas estão ordenadas de forma correta.
 */
+
+DROP VIEW IF EXISTS top_2_hits_do_momento;
+
+CREATE VIEW top_2_hits_do_momento AS
+  SELECT 
+      songs.song_name AS cancao, 
+      COUNT(history.song_id) AS reproducoes
+  FROM
+      SpotifyClone.songs AS songs
+  INNER JOIN
+      SpotifyClone.history AS history 
+  ON 
+      songs.song_id = history.song_id
+  GROUP BY 
+      cancao
+  ORDER BY 
+      reproducoes DESC, cancao
+  LIMIT 2;
