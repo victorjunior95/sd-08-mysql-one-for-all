@@ -106,18 +106,7 @@ VALUES
   ('Words Of Her Life', 5),
   ('Without My Streets', 5);
 
-INSERT INTO followed (artist_id, user_id)
-VALUES
-  (1, 1),
-  (1, 2),
-  (1, 3),
-  (2, 3),
-  (3, 1),
-  (3, 2),
-  (4, 1),
-  (4, 4);
-
-INSERT INTO history (song_id, user_id)
+INSERT INTO history (user_id, song_id)
 VALUES
   (1, 1),
   (2, 2),
@@ -133,3 +122,14 @@ VALUES
   (16, 3),
   (17, 2),
   (18, 4);
+
+INSERT INTO followed (user_id, artist_id)
+VALUES
+  (1, 1),
+  (1, 2),
+  (1, 3),
+  (2, 3),
+  (3, 1),
+  (3, 2),
+  (4, 1),
+  (4, 4);
