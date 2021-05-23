@@ -13,8 +13,6 @@ que exibe os dados corretos nas colunas cancao e reproducoes".
 Será validado se as colunas estão ordenadas de forma correta.
 */
 
-DROP VIEW IF EXISTS top_2_hits_do_momento;
-
 CREATE VIEW top_2_hits_do_momento AS
   SELECT 
       songs.song_name AS cancao, 
