@@ -7,9 +7,9 @@ USE SpotifyClone;
 -- creating tables --
 
 CREATE TABLE plans (
-	  plan_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-	  plan_name VARCHAR(60) NOT NULL,
-	  plan_price DOUBLE NULL
+    plan_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    plan_name VARCHAR(60) NOT NULL,
+    plan_price DOUBLE NULL
 ) engine = InnoDB;
 
 CREATE TABLE users (
