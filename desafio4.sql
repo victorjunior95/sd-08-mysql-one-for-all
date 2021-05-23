@@ -6,3 +6,20 @@ Seu resultado deve estar ordenado em ordem decrescente, baseando-se na quantidad
 Será validado se existe uma VIEW chamada top_3_artistas que exibe os dados corretos nas colunas artista e seguidores".
 Será validado se as colunas estão ordenadas de forma correta.
 */
+
+CREATE VIEW top_3_artistas AS
+	SELECT
+		artists.artist_name AS artista,
+		COUNT(followed.user_id) AS seguidores
+	FROM 
+		SpotifyClone.followed AS followed
+	INNER JOIN
+		SpotifyClone.artists AS artists
+	ON 
+		followed.artist_id = artists.artist_id
+	GROUP BY 
+		artista
+  ORDER BY
+		seguidores DESC
+	LIMIT
+		3
