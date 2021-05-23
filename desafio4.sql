@@ -8,18 +8,18 @@ Será validado se as colunas estão ordenadas de forma correta.
 */
 
 CREATE VIEW top_3_artistas AS
-	SELECT
-		artists.artist_name AS artista,
-		COUNT(followed.user_id) AS seguidores
-	FROM 
-		SpotifyClone.followed AS followed
-	INNER JOIN
-		SpotifyClone.artists AS artists
-	ON 
-		followed.artist_id = artists.artist_id
-	GROUP BY 
-		artista
-  ORDER BY
-		seguidores DESC
-	LIMIT
-		3
+  SELECT
+      artists.artist_name AS artista,
+      COUNT(followed.user_id) AS seguidores
+  FROM 
+      SpotifyClone.followed AS followed
+  INNER JOIN
+      SpotifyClone.artists AS artists
+  ON 
+      followed.artist_id = artists.artist_id
+  GROUP BY 
+      artista
+  ORDER BY 
+      seguidores DESC
+  LIMIT
+      3
