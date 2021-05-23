@@ -20,4 +20,4 @@ CREATE VIEW historico_reproducao_usuarios AS
     SpotifyClone.songs AS songs
   ON 
     songs.song_id = history.song_id
-    ORDER BY usuario;
+    ORDER BY usuario, nome;
