@@ -6,8 +6,6 @@ Será validado se existe uma VIEW chamada historico_reproducao_usuarios que exib
 Será validado se as colunas estão ordenadas de forma correta.
 */
 
-DROP VIEW IF EXISTS historico_reproducao_usuarios;
-
 CREATE VIEW historico_reproducao_usuarios AS
   SELECT
     users.user_name AS usuario,
