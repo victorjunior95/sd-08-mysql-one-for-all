@@ -6,10 +6,3 @@ Seu resultado deve estar ordenado em ordem decrescente, baseando-se na quantidad
 Será validado se existe uma VIEW chamada top_3_artistas que exibe os dados corretos nas colunas artista e seguidores".
 Será validado se as colunas estão ordenadas de forma correta.
 */
-
-DROP VIEW IF EXISTS top_3_artistas;
-
-CREATE VIEW top_3_artistas AS
-  SELECT 
-    followed.artist_id AS artista,
-    followed.
