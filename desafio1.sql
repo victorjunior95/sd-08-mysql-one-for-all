@@ -63,12 +63,12 @@ VALUES
   ('familiar', 7.99),
   ('universitário', 5.99);
 
-INSERT INTO users (user_name, user_age, plan_id)
+INSERT INTO users (user_id, user_name, user_age, plan_id)
 VALUES
-  ('Thati', 23, 1),
-  ('Cintia', 35, 2),
-  ('Bill', 20, 3),
-  ('Roger', 45, 1);
+  ('1', 'Thati', 23, 1),
+  ('2', 'Cintia', 35, 2),
+  ('3', 'Bill', 20, 3),
+  ('4', 'Roger', 45, 1);
 
 INSERT INTO artists (artist_name)
 VALUES 
@@ -110,26 +110,28 @@ INSERT INTO history (user_id, song_id)
 VALUES
   (1, 1),
   (2, 2),
-  (3, 4),
   (4, 3),
-  (6, 1),
-  (6, 3),
-  (11, 4),
-  (13, 2),
-  (14, 1),
-  (15, 2),
-  (16, 1),
-  (16, 3),
-  (17, 2),
-  (18, 4);
+  (3, 4),
+  (1, 6),
+  (3, 6),
+  (4, 11),
+  (2, 13),
+  (1, 14),
+  (2, 15),
+  (1, 16),
+  (3, 16),
+  (2, 17),
+  (4, 18);
 
 INSERT INTO followed (user_id, artist_id)
 VALUES
   (1, 1),
-  (1, 2),
   (1, 3),
+  (1, 4),
+  (2, 1),
   (2, 3),
   (3, 1),
   (3, 2),
-  (4, 1),
   (4, 4);
+
+-- Error Code: 1452. Cannot add or update a child row: a foreign key constraint fails (`SpotifyClone`.`history`, CONSTRAINT `history_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`)) --
