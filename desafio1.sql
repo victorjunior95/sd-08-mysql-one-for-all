@@ -31,7 +31,7 @@ CREATE TABLE SpotifyClone.albuns(
   album_id INT NOT NULL AUTO_INCREMENT,
   album VARCHAR(50) NOT NULL,
   artista_id INT NOT NULL,
-  PRIMARY KEY (album_id)
+  PRIMARY KEY (album_id),
   FOREIGN KEY (artista_id)
     REFERENCES artistas (artista_id)
 ) ENGINE = InnoDB;
@@ -87,7 +87,7 @@ INSERT INTO SpotifyClone.artistas(artista)
     ('Lance Day'),
     ('Freedie Shannon');
 
-INSERT INTO SpotifyClone.albums(album, artista_id)
+INSERT INTO SpotifyClone.albuns(album, artista_id)
   VALUES 
     ('Envious', 1),
     ('Exuberant', 1),
