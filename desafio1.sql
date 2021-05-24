@@ -5,7 +5,7 @@ CREATE DATABASE SpotifyClone;
 -- Tabelas --
 
 CREATE TABLE SpotifyClone.planos(
-  plano_id TINYINT(1) NOT NULL AUTO_INCREMENT,
+  plano_id INT NOT NULL AUTO_INCREMENT,
   plano VARCHAR(50) NOT NULL,
   preco DECIMAL(5, 2) NOT NULL,
   PRIMARY KEY (plano_id)
@@ -14,8 +14,8 @@ CREATE TABLE SpotifyClone.planos(
 CREATE TABLE SpotifyClone.usuarios(
   usuario_id INT NOT NULL AUTO_INCREMENT,
   nome VARCHAR(50) NOT NULL,
-  idade TINYINT(3),
-  plano_id TINYINT(1) NOT NULL,
+  idade INT,
+  plano_id INT NOT NULL,
   PRIMARY KEY (usuario_id),
   FOREIGN KEY (plano_id)
     REFERENCES planos (plano_id)
