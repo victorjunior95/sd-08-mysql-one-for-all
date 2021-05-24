@@ -1,4 +1,4 @@
-DELIMITER $$
+DELIMITER $
 CREATE FUNCTION quantidade_musicas_no_historico(usuario_id INT)
 RETURNS INT READS SQL DATA
 BEGIN
@@ -10,5 +10,5 @@ FROM
 WHERE
     h.usuario_id = usuario_id INTO qnt_songs;
     RETURN qnt_songs;
-END $$
+END $
 DELIMITER ;
