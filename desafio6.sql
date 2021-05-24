@@ -14,3 +14,16 @@ deve-se arredondar o faturamento usando apenas duas casas decimais.
 Será validado se existe uma VIEW chamada faturamento_atual, 
 que exibe os dados corretos nas colunas faturamento_minimo, faturamento_maximo, faturamento_medio e faturamento_total.
 */
+
+CREATE VIEW faturamento_atual AS
+  SELECT 
+      ROUND(MIN(plans.plan_price), 2) AS faturamento_minimo,
+      ROUND(MAX(plans.plan_price), 2) AS faturamento_maximo,
+      ROUND(AVG(plans.plan_price), 2) AS faturamento_medio,
+      ROUND(SUM(plans.plan_price), 2) AS faturamento_total
+  FROM 
+      SpotifyClone.plans AS plans
+  INNER JOIN 
+      SpotifyClone.users AS users
+  ON 
+      plans.plan_id = users.plan_id;
