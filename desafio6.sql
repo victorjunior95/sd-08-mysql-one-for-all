@@ -17,10 +17,10 @@ que exibe os dados corretos nas colunas faturamento_minimo, faturamento_maximo, 
 
 CREATE VIEW faturamento_atual AS
   SELECT 
-      ROUND(MIN(plans.plan_price), 2) AS faturamento_minimo,
-      ROUND(MAX(plans.plan_price), 2) AS faturamento_maximo,
-      ROUND(AVG(plans.plan_price), 2) AS faturamento_medio,
-      ROUND(SUM(plans.plan_price), 2) AS faturamento_total
+      CAST(ROUND(MIN(plans.plan_price), 2) AS VARCHAR) AS faturamento_minimo,
+      CAST(ROUND(MAX(plans.plan_price), 2) AS VARCHAR) AS faturamento_maximo,
+      CAST(ROUND(AVG(plans.plan_price), 2) AS VARCHAR) AS faturamento_medio,
+      CAST(ROUND(SUM(plans.plan_price), 2) AS VARCHAR) AS faturamento_total
   FROM 
       SpotifyClone.plans AS plans
   INNER JOIN 
