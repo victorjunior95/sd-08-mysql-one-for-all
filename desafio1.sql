@@ -16,9 +16,9 @@ CREATE TABLE IF NOT EXISTS `SpotifyClone`.`usuarios`(
     usuario_nome VARCHAR(100) NULL,
     usuario_idade INT NULL,
     plano_id INT NULL,
-	  PRIMARY KEY (`usuario_id`),
+PRIMARY KEY (`usuario_id`),
     FOREIGN KEY (`plano_id`)
-	  REFERENCES `SpotifyClone`.`planos` (`plano_id`)
+REFERENCES `SpotifyClone`.`planos` (`plano_id`)
 ) engine = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `SpotifyClone`.`artistas`(
@@ -32,15 +32,15 @@ CREATE TABLE IF NOT EXISTS `SpotifyClone`.`albuns`(
     album_nome VARCHAR(100) NULL,
     artista_id INT NULL,
     PRIMARY KEY (`album_id`),
-	  FOREIGN KEY (`artista_id`)
-	  REFERENCES `SpotifyClone`.`artistas` (`artista_id`)
+FOREIGN KEY (`artista_id`)
+REFERENCES `SpotifyClone`.`artistas` (`artista_id`)
 ) engine = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `SpotifyClone`.`artistas_seguidos`(
     usuario_id INT NOT NULL,
     artista_id INT NOT NULL,
     PRIMARY KEY (`usuario_id`, `artista_id`),
-	  FOREIGN KEY (`usuario_id`)
+FOREIGN KEY (`usuario_id`)
 	  REFERENCES `SpotifyClone`.`usuarios` (`usuario_id`),
 	  FOREIGN KEY (`artista_id`)
   	REFERENCES `SpotifyClone`.`artistas` (`artista_id`)
