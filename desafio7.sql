@@ -11,7 +11,7 @@ baseando-se no número de pessoas seguidoras. Em caso de empate no número de pe
 Será validado se existe uma VIEW chamada perfil_artistas, 
 que exibe os dados corretos nas colunas artista, album e seguidores.
 Será validado se as colunas estão ordenadas de forma correta.
-*/
+
 
 DROP VIEW IF EXISTS perfil_artistas;
 
@@ -25,3 +25,5 @@ CREATE VIEW perfil_artistas AS
 		SpotifyClone.followed AS followed
 	ON 
 		artists.artist_id = followed.artist_id
+
+*/
