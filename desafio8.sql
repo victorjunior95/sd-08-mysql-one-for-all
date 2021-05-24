@@ -7,3 +7,15 @@ O que será verificado:
 Será validado se ao excluir uma pessoa usuária do banco de dados a trigger_usuario_delete é 
 ativada e a ação de exclusão reflete em todas as tabelas em que esta pessoa está presente.
 */
+
+DELIMITER $$
+
+CREATE TRIGGER trigger_usuario_delete
+    AFTER DELETE ON SpotifyClone.users
+    FOR EACH ROW
+BEGIN
+    DELETE FROM SpotifyClone.history WHERE user_id = OLD.user_id;
+    DELETE FROM SpotifyClone.followed WHERE user_id = OLD.user_id;
+END $$
+
+DELIMITER ;
