@@ -1,5 +1,4 @@
 
-
 CREATE VIEW historico_reproducao_usuarios AS SELECT
 us.nome AS "usuario",
 cs.nome_das_cancoes AS "nome"
