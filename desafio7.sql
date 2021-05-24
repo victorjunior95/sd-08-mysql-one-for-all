@@ -11,19 +11,25 @@ baseando-se no número de pessoas seguidoras. Em caso de empate no número de pe
 Será validado se existe uma VIEW chamada perfil_artistas, 
 que exibe os dados corretos nas colunas artista, album e seguidores.
 Será validado se as colunas estão ordenadas de forma correta.
-
-
-DROP VIEW IF EXISTS perfil_artistas;
+*/
 
 CREATE VIEW perfil_artistas AS
-	SELECT 
-		artists.artist_name AS artista,
-    COUNT(followed.artist_id) AS seguidores
-	FROM 
-		SpotifyClone.artists AS artists
-	INNER JOIN 
-		SpotifyClone.followed AS followed
-	ON 
-		artists.artist_id = followed.artist_id
-
-*/
+  SELECT 
+      artists.artist_name AS artista,
+      albums.album_name AS album,
+      COUNT(followed.artist_id) AS seguidores
+  FROM 
+      SpotifyClone.albums AS albums
+  INNER JOIN 
+      SpotifyClone.artists AS artists
+  ON 
+      artists.artist_id = albums.artist_id
+  INNER JOIN 
+      SpotifyClone.followed AS followed
+  ON 
+      followed.artist_id = albums.artist_id 
+  GROUP BY 
+      artista, album
+  ORDER BY
+      seguidores DESC,
+      artista
