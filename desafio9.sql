@@ -14,15 +14,24 @@ contendo o nome da pessoa artista e a coluna album contendo o nome do album.
 Será validado se as colunas estão ordenadas de forma correta.
 */
 
+
 DELIMITER $$
 
-CREATE PROCEDURE albuns_do_artista(IN artista_nome VARCHAR(100))
-BEGIN
-SELECT nome AS artista, titulo AS album
-FROM SpotifyClone.artista a
-INNER JOIN SpotifyClone.album al
-ON a.artista_id = al.artista_id
-WHERE a.nome = artista_nome;
+CREATE PROCEDURE albuns_do_artista(IN name VARCHAR(60))
+  BEGIN
+  SELECT 
+    artists.artist_name AS artista, 
+    albums.album_name AS album
+  FROM 
+    SpotifyClone.artists AS artists
+  INNER JOIN 
+    SpotifyClone.albums AS albums
+  ON 
+    artists.artist_id = albums.artist_id
+  WHERE 
+    artists.artist_name = name
+  ORDER BY
+    album;
 END $$
 
 DELIMITER ;
