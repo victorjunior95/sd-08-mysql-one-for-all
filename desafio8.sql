@@ -11,7 +11,7 @@ ativada e a ação de exclusão reflete em todas as tabelas em que esta pessoa e
 DELIMITER $$
 
 CREATE TRIGGER trigger_usuario_delete
-    AFTER DELETE ON SpotifyClone.users
+    BEFORE DELETE ON SpotifyClone.users
     FOR EACH ROW
 BEGIN
     DELETE FROM SpotifyClone.history WHERE user_id = OLD.user_id;
