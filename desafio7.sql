@@ -10,4 +10,3 @@ INNER JOIN SpotifyClone.albuns AS albuns_1
 ON albuns_1.artista_id = artistas_1.artista_id
 GROUP BY artista, album
 ORDER BY seguidores DESC, artista, album;
-
