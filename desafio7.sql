@@ -32,4 +32,5 @@ CREATE VIEW perfil_artistas AS
       artista, album
   ORDER BY
       seguidores DESC,
-      artista
+      artista,
+      album
