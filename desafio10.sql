@@ -6,7 +6,7 @@ BEGIN
 SELECT 
     COUNT(h.cancoes_id)
 FROM
-    SpotifyClone.historico_reproducoes AS h
+    SpotifyClone.historico_reproducoes h
 WHERE
     h.usuario_id = usuario_id INTO qnt_songs;
     RETURN qnt_songs;
